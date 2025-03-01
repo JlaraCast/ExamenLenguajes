@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ExamenGrupo5
 {
-    public partial class FrmRepVentas : Form
+    public partial class VentanaGestionCompra : Form
     {
-        public FrmRepVentas()
+        public VentanaGestionCompra()
         {
             InitializeComponent();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

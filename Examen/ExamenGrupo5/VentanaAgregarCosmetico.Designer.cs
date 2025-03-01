@@ -38,14 +38,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtImagen = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxEstado = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.cb_Estado = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerFechaVencimiento = new System.Windows.Forms.DateTimePicker();
+            this.numericUpDownStock = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownPrecioUnitario = new System.Windows.Forms.NumericUpDown();
+            this.cbCategoría = new System.Windows.Forms.ComboBox();
             this.label_Estado = new System.Windows.Forms.Label();
             this.label_Clave = new System.Windows.Forms.Label();
             this.btn_Aceptar = new System.Windows.Forms.Button();
@@ -54,8 +54,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecioUnitario)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,14 +144,14 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.AliceBlue;
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtImagen);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.comboBoxEstado);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.numericUpDown2);
-            this.panel2.Controls.Add(this.numericUpDown1);
-            this.panel2.Controls.Add(this.cb_Estado);
+            this.panel2.Controls.Add(this.dateTimePickerFechaVencimiento);
+            this.panel2.Controls.Add(this.numericUpDownStock);
+            this.panel2.Controls.Add(this.numericUpDownPrecioUnitario);
+            this.panel2.Controls.Add(this.cbCategoría);
             this.panel2.Controls.Add(this.label_Estado);
             this.panel2.Controls.Add(this.label_Clave);
             this.panel2.Controls.Add(this.btn_Aceptar);
@@ -179,17 +179,17 @@
             this.label6.Text = "Imagen";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox1
+            // txtImagen
             // 
-            this.textBox1.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Snow;
-            this.textBox1.Location = new System.Drawing.Point(14, 851);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(560, 39);
-            this.textBox1.TabIndex = 37;
-            this.textBox1.Text = "URL";
+            this.txtImagen.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.txtImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtImagen.ForeColor = System.Drawing.Color.Snow;
+            this.txtImagen.Location = new System.Drawing.Point(14, 851);
+            this.txtImagen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtImagen.Name = "txtImagen";
+            this.txtImagen.Size = new System.Drawing.Size(560, 39);
+            this.txtImagen.TabIndex = 37;
+            this.txtImagen.Text = "URL";
             // 
             // label5
             // 
@@ -203,22 +203,22 @@
             this.label5.Text = "Estado";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // comboBox1
+            // comboBoxEstado
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.Snow;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxEstado.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.comboBoxEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxEstado.ForeColor = System.Drawing.Color.Snow;
+            this.comboBoxEstado.FormattingEnabled = true;
+            this.comboBoxEstado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.comboBox1.Location = new System.Drawing.Point(17, 733);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(548, 40);
-            this.comboBox1.TabIndex = 35;
-            this.comboBox1.Text = "Seleccione";
+            this.comboBoxEstado.Location = new System.Drawing.Point(17, 733);
+            this.comboBoxEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxEstado.Name = "comboBoxEstado";
+            this.comboBoxEstado.Size = new System.Drawing.Size(548, 40);
+            this.comboBoxEstado.TabIndex = 35;
+            this.comboBoxEstado.Text = "Seleccione";
             // 
             // label4
             // 
@@ -232,51 +232,51 @@
             this.label4.Text = "Categoría";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dateTimePicker1
+            // dateTimePickerFechaVencimiento
             // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.HighlightText;
-            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.Snow;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dateTimePicker1.Location = new System.Drawing.Point(17, 501);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(548, 39);
-            this.dateTimePicker1.TabIndex = 33;
+            this.dateTimePickerFechaVencimiento.CalendarForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.dateTimePickerFechaVencimiento.CalendarMonthBackground = System.Drawing.SystemColors.HighlightText;
+            this.dateTimePickerFechaVencimiento.CalendarTitleBackColor = System.Drawing.Color.Snow;
+            this.dateTimePickerFechaVencimiento.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateTimePickerFechaVencimiento.Location = new System.Drawing.Point(17, 501);
+            this.dateTimePickerFechaVencimiento.Name = "dateTimePickerFechaVencimiento";
+            this.dateTimePickerFechaVencimiento.Size = new System.Drawing.Size(548, 39);
+            this.dateTimePickerFechaVencimiento.TabIndex = 33;
             // 
-            // numericUpDown2
+            // numericUpDownStock
             // 
-            this.numericUpDown2.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.numericUpDown2.ForeColor = System.Drawing.Color.Snow;
-            this.numericUpDown2.Location = new System.Drawing.Point(14, 383);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(557, 39);
-            this.numericUpDown2.TabIndex = 32;
+            this.numericUpDownStock.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.numericUpDownStock.ForeColor = System.Drawing.Color.Snow;
+            this.numericUpDownStock.Location = new System.Drawing.Point(14, 383);
+            this.numericUpDownStock.Name = "numericUpDownStock";
+            this.numericUpDownStock.Size = new System.Drawing.Size(557, 39);
+            this.numericUpDownStock.TabIndex = 32;
             // 
-            // numericUpDown1
+            // numericUpDownPrecioUnitario
             // 
-            this.numericUpDown1.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.numericUpDown1.ForeColor = System.Drawing.Color.Snow;
-            this.numericUpDown1.Location = new System.Drawing.Point(17, 275);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(557, 39);
-            this.numericUpDown1.TabIndex = 31;
+            this.numericUpDownPrecioUnitario.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.numericUpDownPrecioUnitario.ForeColor = System.Drawing.Color.Snow;
+            this.numericUpDownPrecioUnitario.Location = new System.Drawing.Point(17, 275);
+            this.numericUpDownPrecioUnitario.Name = "numericUpDownPrecioUnitario";
+            this.numericUpDownPrecioUnitario.Size = new System.Drawing.Size(557, 39);
+            this.numericUpDownPrecioUnitario.TabIndex = 31;
             // 
-            // cb_Estado
+            // cbCategoría
             // 
-            this.cb_Estado.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.cb_Estado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_Estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_Estado.ForeColor = System.Drawing.Color.Snow;
-            this.cb_Estado.FormattingEnabled = true;
-            this.cb_Estado.Items.AddRange(new object[] {
+            this.cbCategoría.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.cbCategoría.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCategoría.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCategoría.ForeColor = System.Drawing.Color.Snow;
+            this.cbCategoría.FormattingEnabled = true;
+            this.cbCategoría.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cb_Estado.Location = new System.Drawing.Point(17, 620);
-            this.cb_Estado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cb_Estado.Name = "cb_Estado";
-            this.cb_Estado.Size = new System.Drawing.Size(548, 40);
-            this.cb_Estado.TabIndex = 30;
-            this.cb_Estado.Text = "Seleccione";
+            this.cbCategoría.Location = new System.Drawing.Point(17, 620);
+            this.cbCategoría.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbCategoría.Name = "cbCategoría";
+            this.cbCategoría.Size = new System.Drawing.Size(548, 40);
+            this.cbCategoría.TabIndex = 30;
+            this.cbCategoría.Text = "Seleccione";
             // 
             // label_Estado
             // 
@@ -364,8 +364,8 @@
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecioUnitario)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -379,20 +379,20 @@
         private System.Windows.Forms.Label Label;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cb_Estado;
+        private System.Windows.Forms.ComboBox cbCategoría;
         private System.Windows.Forms.Label label_Estado;
         private System.Windows.Forms.Label label_Clave;
         private System.Windows.Forms.Button btn_Aceptar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.NumericUpDown numericUpDownStock;
+        private System.Windows.Forms.NumericUpDown numericUpDownPrecioUnitario;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFechaVencimiento;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxEstado;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtImagen;
     }
 }
