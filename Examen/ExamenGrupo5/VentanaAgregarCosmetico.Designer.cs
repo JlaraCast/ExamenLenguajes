@@ -5,6 +5,8 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
+        //JJ se la come con papas
+
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -35,6 +37,14 @@
             this.Label = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.cb_Estado = new System.Windows.Forms.ComboBox();
             this.label_Estado = new System.Windows.Forms.Label();
             this.label_Clave = new System.Windows.Forms.Label();
@@ -42,24 +52,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_Email
             // 
-            this.txt_Email.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.txt_Email.BackColor = System.Drawing.Color.DarkCyan;
             this.txt_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Email.ForeColor = System.Drawing.Color.Snow;
             this.txt_Email.Location = new System.Drawing.Point(9, 75);
@@ -141,6 +145,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label5);
@@ -164,6 +169,100 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(596, 1028);
             this.panel2.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label6.Location = new System.Drawing.Point(11, 803);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 32);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "Imagen";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.Snow;
+            this.textBox1.Location = new System.Drawing.Point(14, 851);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(560, 39);
+            this.textBox1.TabIndex = 37;
+            this.textBox1.Text = "URL";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label5.Location = new System.Drawing.Point(11, 684);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(109, 32);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Estado";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.ForeColor = System.Drawing.Color.Snow;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.comboBox1.Location = new System.Drawing.Point(17, 733);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(548, 40);
+            this.comboBox1.TabIndex = 35;
+            this.comboBox1.Text = "Seleccione";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label4.Location = new System.Drawing.Point(11, 571);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(147, 32);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Categoría";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.HighlightText;
+            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.Snow;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateTimePicker1.Location = new System.Drawing.Point(17, 501);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(548, 39);
+            this.dateTimePicker1.TabIndex = 33;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.numericUpDown2.ForeColor = System.Drawing.Color.Snow;
+            this.numericUpDown2.Location = new System.Drawing.Point(14, 383);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(557, 39);
+            this.numericUpDown2.TabIndex = 32;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.numericUpDown1.ForeColor = System.Drawing.Color.Snow;
+            this.numericUpDown1.Location = new System.Drawing.Point(17, 275);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(557, 39);
+            this.numericUpDown1.TabIndex = 31;
             // 
             // cb_Estado
             // 
@@ -255,99 +354,13 @@
             this.panel1.Size = new System.Drawing.Size(675, 1110);
             this.panel1.TabIndex = 4;
             // 
-            // numericUpDown1
+            // pictureBox1
             // 
-            this.numericUpDown1.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.numericUpDown1.ForeColor = System.Drawing.Color.Snow;
-            this.numericUpDown1.Location = new System.Drawing.Point(17, 275);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(557, 39);
-            this.numericUpDown1.TabIndex = 31;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.numericUpDown2.ForeColor = System.Drawing.Color.Snow;
-            this.numericUpDown2.Location = new System.Drawing.Point(14, 383);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(557, 39);
-            this.numericUpDown2.TabIndex = 32;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.HighlightText;
-            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.Snow;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dateTimePicker1.Location = new System.Drawing.Point(17, 501);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(548, 39);
-            this.dateTimePicker1.TabIndex = 33;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label4.Location = new System.Drawing.Point(11, 571);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 32);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Categoría";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label5.Location = new System.Drawing.Point(11, 684);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 32);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "Estado";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.Snow;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.comboBox1.Location = new System.Drawing.Point(17, 733);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(548, 40);
-            this.comboBox1.TabIndex = 35;
-            this.comboBox1.Text = "Seleccione";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Snow;
-            this.textBox1.Location = new System.Drawing.Point(14, 851);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(560, 39);
-            this.textBox1.TabIndex = 37;
-            this.textBox1.Text = "URL";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label6.Location = new System.Drawing.Point(11, 803);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 32);
-            this.label6.TabIndex = 38;
-            this.label6.Text = "Imagen";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.pictureBox1.Location = new System.Drawing.Point(526, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 20);
+            this.pictureBox1.TabIndex = 42;
+            this.pictureBox1.TabStop = false;
             // 
             // VentanaAgregarCosmetico
             // 
@@ -362,9 +375,10 @@
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -392,5 +406,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

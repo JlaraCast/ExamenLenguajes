@@ -5,6 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
+        // Josue se la re come con papas
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -31,6 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxImagen = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,13 +53,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecioUnitario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,6 +91,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
@@ -113,6 +117,30 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(596, 1028);
             this.panel2.TabIndex = 7;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.Snow;
+            this.textBox1.Location = new System.Drawing.Point(32, 63);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(560, 39);
+            this.textBox1.TabIndex = 40;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label7.Location = new System.Drawing.Point(29, 19);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(220, 32);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "ID del producto";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label6
             // 
@@ -353,29 +381,13 @@
             this.label1.TabIndex = 9;
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox1
+            // pictureBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Snow;
-            this.textBox1.Location = new System.Drawing.Point(32, 63);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(560, 39);
-            this.textBox1.TabIndex = 40;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label7.Location = new System.Drawing.Point(29, 19);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(220, 32);
-            this.label7.TabIndex = 39;
-            this.label7.Text = "ID del producto";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.pictureBox1.Location = new System.Drawing.Point(487, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 20);
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
             // 
             // VentanaEditarCosmetico
             // 
@@ -393,6 +405,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecioUnitario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -423,5 +436,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
