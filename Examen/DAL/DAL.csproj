@@ -42,10 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.cs" />
-    <Compile Include="ConexionCompra.cs" />
-    <Compile Include="ConexionConsumidor.cs" />
-    <Compile Include="ConexionCosmeticos.cs" />
-    <Compile Include="ConexionVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
