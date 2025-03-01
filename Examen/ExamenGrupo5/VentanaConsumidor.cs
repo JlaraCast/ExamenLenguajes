@@ -21,5 +21,10 @@ namespace ExamenGrupo5
         {
 
         }
+
+        private void Label_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

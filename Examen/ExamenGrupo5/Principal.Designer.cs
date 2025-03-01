@@ -28,202 +28,242 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.PanelDerecha = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
+            this.btn_Ventas = new System.Windows.Forms.Button();
+            this.btn_Compras = new System.Windows.Forms.Button();
+            this.txt_Bienvienido = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_Cosmeticos = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pb_Salir = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelTitulo = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.Consumidores = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBoxAccesos = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.buttonCompra = new System.Windows.Forms.Button();
-            this.buttonConsumidor = new System.Windows.Forms.Button();
-            this.buttonVenta = new System.Windows.Forms.Button();
-            this.ButtonCosmeticos = new System.Windows.Forms.Button();
-            this.PanelPrincipal = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.PanelDerecha.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Salir)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBoxAccesos.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox2
+            // btn_Ventas
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(868, 18);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(84, 62);
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            this.btn_Ventas.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Ventas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Ventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btn_Ventas.ForeColor = System.Drawing.Color.Snow;
+            this.btn_Ventas.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_Ventas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_Ventas.Location = new System.Drawing.Point(7, 294);
+            this.btn_Ventas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Ventas.Name = "btn_Ventas";
+            this.btn_Ventas.Size = new System.Drawing.Size(257, 80);
+            this.btn_Ventas.TabIndex = 4;
+            this.btn_Ventas.Text = "Ventas";
+            this.btn_Ventas.UseVisualStyleBackColor = false;
+            this.btn_Ventas.Click += new System.EventHandler(this.btn_Venta_Click);
             // 
-            // PanelDerecha
+            // btn_Compras
             // 
-            this.PanelDerecha.BackColor = System.Drawing.Color.MidnightBlue;
-            this.PanelDerecha.Controls.Add(this.panel1);
-            this.PanelDerecha.Controls.Add(this.labelTitulo);
-            this.PanelDerecha.Controls.Add(this.pictureBox1);
-            this.PanelDerecha.Controls.Add(this.groupBoxAccesos);
-            this.PanelDerecha.Location = new System.Drawing.Point(0, 2);
-            this.PanelDerecha.Margin = new System.Windows.Forms.Padding(4);
-            this.PanelDerecha.Name = "PanelDerecha";
-            this.PanelDerecha.Size = new System.Drawing.Size(273, 566);
-            this.PanelDerecha.TabIndex = 4;
+            this.btn_Compras.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Compras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Compras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Compras.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btn_Compras.ForeColor = System.Drawing.Color.Snow;
+            this.btn_Compras.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_Compras.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_Compras.Location = new System.Drawing.Point(2, 182);
+            this.btn_Compras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Compras.Name = "btn_Compras";
+            this.btn_Compras.Size = new System.Drawing.Size(259, 77);
+            this.btn_Compras.TabIndex = 3;
+            this.btn_Compras.Text = "Compras";
+            this.btn_Compras.UseVisualStyleBackColor = false;
+            // 
+            // txt_Bienvienido
+            // 
+            this.txt_Bienvienido.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txt_Bienvienido.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.txt_Bienvienido.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txt_Bienvienido.Location = new System.Drawing.Point(44, 52);
+            this.txt_Bienvienido.Name = "txt_Bienvienido";
+            this.txt_Bienvienido.Size = new System.Drawing.Size(203, 46);
+            this.txt_Bienvienido.TabIndex = 0;
+            this.txt_Bienvienido.Text = "Bienvenido";
+            this.txt_Bienvienido.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Consumidores);
+            this.groupBox1.Controls.Add(this.btn_Cosmeticos);
+            this.groupBox1.Controls.Add(this.btn_Ventas);
+            this.groupBox1.Controls.Add(this.btn_Compras);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.groupBox1.ForeColor = System.Drawing.Color.Snow;
+            this.groupBox1.Location = new System.Drawing.Point(15, 122);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(270, 536);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Accesos Directos";
+            // 
+            // btn_Cosmeticos
+            // 
+            this.btn_Cosmeticos.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Cosmeticos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Cosmeticos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cosmeticos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btn_Cosmeticos.ForeColor = System.Drawing.Color.Snow;
+            this.btn_Cosmeticos.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_Cosmeticos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_Cosmeticos.Location = new System.Drawing.Point(6, 65);
+            this.btn_Cosmeticos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Cosmeticos.Name = "btn_Cosmeticos";
+            this.btn_Cosmeticos.Size = new System.Drawing.Size(253, 70);
+            this.btn_Cosmeticos.TabIndex = 0;
+            this.btn_Cosmeticos.Text = "Cosméticos";
+            this.btn_Cosmeticos.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.Controls.Add(this.pb_Salir);
+            this.panel2.Controls.Add(this.menuStrip1);
+            this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel2.Location = new System.Drawing.Point(304, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(811, 113);
+            this.panel2.TabIndex = 7;
+            // 
+            // pb_Salir
+            // 
+            this.pb_Salir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pb_Salir.Location = new System.Drawing.Point(1006, 15);
+            this.pb_Salir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pb_Salir.Name = "pb_Salir";
+            this.pb_Salir.Size = new System.Drawing.Size(78, 69);
+            this.pb_Salir.TabIndex = 0;
+            this.pb_Salir.TabStop = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(56, 56);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(811, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(272, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.txt_Bienvienido);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.ForeColor = System.Drawing.Color.Red;
+            this.panel1.Location = new System.Drawing.Point(16, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(811, 71);
-            this.panel1.TabIndex = 3;
+            this.panel1.Size = new System.Drawing.Size(307, 965);
+            this.panel1.TabIndex = 6;
             // 
-            // labelTitulo
+            // panel3
             // 
-            this.labelTitulo.AutoSize = true;
-            this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.labelTitulo.ForeColor = System.Drawing.Color.Goldenrod;
-            this.labelTitulo.Location = new System.Drawing.Point(80, 129);
-            this.labelTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(101, 20);
-            this.labelTitulo.TabIndex = 3;
-            this.labelTitulo.Text = "Bienvenido";
+            this.panel3.BackColor = System.Drawing.Color.Snow;
+            this.panel3.Location = new System.Drawing.Point(329, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(809, 732);
+            this.panel3.TabIndex = 8;
+            // 
+            // Consumidores
+            // 
+            this.Consumidores.BackColor = System.Drawing.Color.MidnightBlue;
+            this.Consumidores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Consumidores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Consumidores.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.Consumidores.ForeColor = System.Drawing.Color.Snow;
+            this.Consumidores.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.Consumidores.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Consumidores.Location = new System.Drawing.Point(2, 415);
+            this.Consumidores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Consumidores.Name = "Consumidores";
+            this.Consumidores.Size = new System.Drawing.Size(259, 77);
+            this.Consumidores.TabIndex = 5;
+            this.Consumidores.Text = "Consumidores";
+            this.Consumidores.UseVisualStyleBackColor = false;
+            this.Consumidores.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Location = new System.Drawing.Point(326, 4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(815, 100);
+            this.panel4.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(96, 42);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(709, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(87, 54);
-            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.Size = new System.Drawing.Size(96, 96);
+            this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // groupBoxAccesos
-            // 
-            this.groupBoxAccesos.Controls.Add(this.button5);
-            this.groupBoxAccesos.Controls.Add(this.buttonCompra);
-            this.groupBoxAccesos.Controls.Add(this.buttonConsumidor);
-            this.groupBoxAccesos.Controls.Add(this.buttonVenta);
-            this.groupBoxAccesos.Controls.Add(this.ButtonCosmeticos);
-            this.groupBoxAccesos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.groupBoxAccesos.ForeColor = System.Drawing.Color.Goldenrod;
-            this.groupBoxAccesos.Location = new System.Drawing.Point(29, 175);
-            this.groupBoxAccesos.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBoxAccesos.Name = "groupBoxAccesos";
-            this.groupBoxAccesos.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxAccesos.Size = new System.Drawing.Size(227, 346);
-            this.groupBoxAccesos.TabIndex = 0;
-            this.groupBoxAccesos.TabStop = false;
-            this.groupBoxAccesos.Text = "Accesos Rápidos";
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Goldenrod;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(40, 289);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(149, 33);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Salir";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // buttonCompra
-            // 
-            this.buttonCompra.BackColor = System.Drawing.Color.Goldenrod;
-            this.buttonCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonCompra.ForeColor = System.Drawing.Color.Black;
-            this.buttonCompra.Location = new System.Drawing.Point(40, 105);
-            this.buttonCompra.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonCompra.Name = "buttonCompra";
-            this.buttonCompra.Size = new System.Drawing.Size(149, 33);
-            this.buttonCompra.TabIndex = 3;
-            this.buttonCompra.Text = "Compra";
-            this.buttonCompra.UseVisualStyleBackColor = false;
-            // 
-            // buttonConsumidor
-            // 
-            this.buttonConsumidor.BackColor = System.Drawing.Color.Goldenrod;
-            this.buttonConsumidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonConsumidor.ForeColor = System.Drawing.Color.Black;
-            this.buttonConsumidor.Location = new System.Drawing.Point(40, 228);
-            this.buttonConsumidor.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonConsumidor.Name = "buttonConsumidor";
-            this.buttonConsumidor.Size = new System.Drawing.Size(149, 33);
-            this.buttonConsumidor.TabIndex = 2;
-            this.buttonConsumidor.Text = "Consumidor";
-            this.buttonConsumidor.UseVisualStyleBackColor = false;
-            // 
-            // buttonVenta
-            // 
-            this.buttonVenta.BackColor = System.Drawing.Color.Goldenrod;
-            this.buttonVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonVenta.ForeColor = System.Drawing.Color.Black;
-            this.buttonVenta.Location = new System.Drawing.Point(40, 166);
-            this.buttonVenta.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonVenta.Name = "buttonVenta";
-            this.buttonVenta.Size = new System.Drawing.Size(149, 33);
-            this.buttonVenta.TabIndex = 1;
-            this.buttonVenta.Text = "Venta";
-            this.buttonVenta.UseVisualStyleBackColor = false;
-            // 
-            // ButtonCosmeticos
-            // 
-            this.ButtonCosmeticos.BackColor = System.Drawing.Color.Goldenrod;
-            this.ButtonCosmeticos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.ButtonCosmeticos.ForeColor = System.Drawing.Color.Black;
-            this.ButtonCosmeticos.Location = new System.Drawing.Point(40, 49);
-            this.ButtonCosmeticos.Margin = new System.Windows.Forms.Padding(4);
-            this.ButtonCosmeticos.Name = "ButtonCosmeticos";
-            this.ButtonCosmeticos.Size = new System.Drawing.Size(149, 33);
-            this.ButtonCosmeticos.TabIndex = 0;
-            this.ButtonCosmeticos.Text = "Cosméticos";
-            this.ButtonCosmeticos.UseVisualStyleBackColor = false;
-            // 
-            // PanelPrincipal
-            // 
-            this.PanelPrincipal.BackColor = System.Drawing.Color.Snow;
-            this.PanelPrincipal.Location = new System.Drawing.Point(272, 109);
-            this.PanelPrincipal.Margin = new System.Windows.Forms.Padding(4);
-            this.PanelPrincipal.Name = "PanelPrincipal";
-            this.PanelPrincipal.Size = new System.Drawing.Size(737, 480);
-            this.PanelPrincipal.TabIndex = 5;
             // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(1009, 591);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.PanelDerecha);
-            this.Controls.Add(this.PanelPrincipal);
+            this.ClientSize = new System.Drawing.Size(1135, 739);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Principal";
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Principal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.PanelDerecha.ResumeLayout(false);
-            this.PanelDerecha.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Salir)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBoxAccesos.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel PanelDerecha;
+        private System.Windows.Forms.Button btn_Ventas;
+        private System.Windows.Forms.Button btn_Compras;
+        private System.Windows.Forms.Label txt_Bienvienido;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btn_Cosmeticos;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pb_Salir;
+        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelTitulo;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button Consumidores;
+        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.GroupBox groupBoxAccesos;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button buttonCompra;
-        private System.Windows.Forms.Button buttonConsumidor;
-        private System.Windows.Forms.Button buttonVenta;
-        private System.Windows.Forms.Button ButtonCosmeticos;
-        private System.Windows.Forms.Panel PanelPrincipal;
     }
 }

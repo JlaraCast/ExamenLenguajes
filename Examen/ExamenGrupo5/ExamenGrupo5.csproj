@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="editar con img.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editar con img.Designer.cs">
+      <DependentUpon>editar con img.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditarCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,21 @@
     <Compile Include="VentanaConsumidor.Designer.cs">
       <DependentUpon>VentanaConsumidor.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaCosmetico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaCosmetico.Designer.cs">
+      <DependentUpon>VentanaCosmetico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaVentas.Designer.cs">
+      <DependentUpon>VentanaVentas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="editar con img.resx">
+      <DependentUpon>editar con img.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditarCompras.resx">
       <DependentUpon>EditarCompras.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +223,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaConsumidor.resx">
       <DependentUpon>VentanaConsumidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaCosmetico.resx">
+      <DependentUpon>VentanaCosmetico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaVentas.resx">
+      <DependentUpon>VentanaVentas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

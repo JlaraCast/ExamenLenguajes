@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ExamenGrupo5
 {
-    public partial class VentanaAgregarCompra : Form
+    public partial class VentanaAgregarCosmetico : Form
     {
-        public VentanaAgregarCompra()
+        public VentanaAgregarCosmetico()
         {
             InitializeComponent();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
