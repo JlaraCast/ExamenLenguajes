@@ -47,6 +47,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_Editar = new System.Windows.Forms.Button();
             this.groupBoxBuscador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -241,6 +242,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel2.Controls.Add(this.btn_Editar);
             this.panel2.Controls.Add(this.btn_Volver);
             this.panel2.Controls.Add(this.btn_Imprimir);
             this.panel2.Controls.Add(this.panel5);
@@ -264,6 +266,23 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1056, 724);
             this.panel3.TabIndex = 6;
+            // 
+            // btn_Editar
+            // 
+            this.btn_Editar.AutoSize = true;
+            this.btn_Editar.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Editar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Editar.ForeColor = System.Drawing.Color.Snow;
+            this.btn_Editar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_Editar.Location = new System.Drawing.Point(431, 13);
+            this.btn_Editar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Editar.Name = "btn_Editar";
+            this.btn_Editar.Size = new System.Drawing.Size(151, 58);
+            this.btn_Editar.TabIndex = 27;
+            this.btn_Editar.Text = "Editar";
+            this.btn_Editar.UseVisualStyleBackColor = false;
             // 
             // VentanaVentas
             // 
@@ -307,5 +326,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btn_Editar;
     }
 }
