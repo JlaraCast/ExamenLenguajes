@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
 
 namespace ExamenGrupo5
 {
@@ -35,6 +36,10 @@ namespace ExamenGrupo5
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCosmeticosCLick(object sender, EventArgs e)
+        {
         }
     }
 }

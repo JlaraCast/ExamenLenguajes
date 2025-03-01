@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class conexion
+    public class Conexion
     {
 
         private string StringConexion;
@@ -17,7 +17,7 @@ namespace DAL
         private SqlCommand _command;
         private SqlDataReader _reader;
 
-        public conexion(string pStringCnx)
+        public Conexion(string pStringCnx)
         {
             StringConexion = pStringCnx;
         }
@@ -118,7 +118,7 @@ namespace DAL
             }
         }
 
-        public Cosmetico MostrarCosmetico(int IDCosmetico)
+        public Cosmetico BuscarPorNombreCosmetico(string nombre)
         {
             try
             {
@@ -128,8 +128,8 @@ namespace DAL
                 _command.Connection = _connection;
 
                 _command.CommandType = CommandType.StoredProcedure;
-                _command.CommandText = "[Sp_Most_IDCosmetico]";
-                _command.Parameters.AddWithValue("@IDCosmeticos", IDCosmetico);
+                _command.CommandText = "[Sp_Most_Cosmetico]";
+                _command.Parameters.AddWithValue("@Nombre", nombre);
                 _reader = _command.ExecuteReader();
                 Cosmetico temp = null;
 
