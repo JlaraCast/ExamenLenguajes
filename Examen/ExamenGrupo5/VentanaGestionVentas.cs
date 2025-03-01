@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ExamenGrupo5
 {
-    public partial class FrmRepCompras : Form
+    public partial class VentanaGestionVentas : Form
     {
-        public FrmRepCompras()
+        public VentanaGestionVentas()
         {
             InitializeComponent();
+        }
+
+        private void numericUpDownPuntosUsados_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

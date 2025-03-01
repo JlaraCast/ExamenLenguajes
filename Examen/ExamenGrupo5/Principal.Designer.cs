@@ -33,13 +33,13 @@
             this.btn_Compras = new System.Windows.Forms.Button();
             this.txt_Bienvienido = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Consumidores = new System.Windows.Forms.Button();
             this.btn_Cosmeticos = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pb_Salir = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Consumidores = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
@@ -104,16 +104,35 @@
             this.groupBox1.Controls.Add(this.btn_Ventas);
             this.groupBox1.Controls.Add(this.btn_Compras);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.groupBox1.ForeColor = System.Drawing.Color.Snow;
-            this.groupBox1.Location = new System.Drawing.Point(15, 122);
+            this.groupBox1.Location = new System.Drawing.Point(15, 126);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(270, 536);
+            this.groupBox1.Size = new System.Drawing.Size(270, 532);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Accesos Directos";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // Consumidores
+            // 
+            this.Consumidores.BackColor = System.Drawing.Color.MidnightBlue;
+            this.Consumidores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Consumidores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Consumidores.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.Consumidores.ForeColor = System.Drawing.Color.Snow;
+            this.Consumidores.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.Consumidores.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Consumidores.Location = new System.Drawing.Point(2, 415);
+            this.Consumidores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Consumidores.Name = "Consumidores";
+            this.Consumidores.Size = new System.Drawing.Size(259, 77);
+            this.Consumidores.TabIndex = 5;
+            this.Consumidores.Text = "Consumidores";
+            this.Consumidores.UseVisualStyleBackColor = false;
+            this.Consumidores.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_Cosmeticos
             // 
@@ -187,26 +206,8 @@
             this.panel3.Location = new System.Drawing.Point(329, 4);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(809, 732);
+            this.panel3.Size = new System.Drawing.Size(809, 745);
             this.panel3.TabIndex = 8;
-            // 
-            // Consumidores
-            // 
-            this.Consumidores.BackColor = System.Drawing.Color.MidnightBlue;
-            this.Consumidores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Consumidores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Consumidores.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.Consumidores.ForeColor = System.Drawing.Color.Snow;
-            this.Consumidores.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.Consumidores.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Consumidores.Location = new System.Drawing.Point(2, 415);
-            this.Consumidores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Consumidores.Name = "Consumidores";
-            this.Consumidores.Size = new System.Drawing.Size(259, 77);
-            this.Consumidores.TabIndex = 5;
-            this.Consumidores.Text = "Consumidores";
-            this.Consumidores.UseVisualStyleBackColor = false;
-            this.Consumidores.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel4
             // 
@@ -219,9 +220,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(709, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(711, 14);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(96, 96);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
