@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -14,7 +13,6 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
@@ -25,7 +23,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
@@ -35,7 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -50,7 +46,6 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Include="editar con img.cs">
       <SubType>Form</SubType>
@@ -72,15 +67,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VentanaGestionConsumidor.cs" />
+    <Compile Include="VentanaGestionConsumidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VentanaGestionCompra.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VentanaGestionCompra.Designer.cs">
       <DependentUpon>VentanaGestionCompra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VentanaAgregarCosmetico.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="VentanaGestionConsumidor.Designer.cs">
       <DependentUpon>VentanaGestionConsumidor.cs</DependentUpon>
@@ -121,48 +115,34 @@
     <Compile Include="VentanaVentas.Designer.cs">
       <DependentUpon>VentanaVentas.cs</DependentUpon>
     </Compile>
-
     <EmbeddedResource Include="VentanaGestionConsumidor.resx">
       <DependentUpon>VentanaGestionConsumidor.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="VentanaGestionCompra.resx">
       <DependentUpon>VentanaGestionCompra.cs</DependentUpon>
     </EmbeddedResource>
-
-    <EmbeddedResource Include="VentanaAgregarCosmetico.resx">
-      <DependentUpon>VentanaAgregarCosmetico.cs</DependentUpon>
-    </EmbeddedResource>
-
     <EmbeddedResource Include="VentanaCompras.resx">
       <DependentUpon>VentanaCompras.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="VentanaConsumidor.resx">
       <DependentUpon>VentanaConsumidor.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="VentanaCosmetico.resx">
       <DependentUpon>VentanaCosmetico.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="VentanaEditarCosmetico.resx">
       <DependentUpon>VentanaEditarCosmetico.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="VentanaGestionVentas.resx">
       <DependentUpon>VentanaGestionVentas.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="VentanaVentas.resx">
       <DependentUpon>VentanaVentas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{9ed7c709-2cd8-4858-8c3b-19f56ecf118c}</Project>
@@ -173,6 +153,5 @@
       <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
-
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
