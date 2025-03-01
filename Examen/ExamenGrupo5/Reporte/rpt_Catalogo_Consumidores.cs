@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ExamenGrupo5.Reportes {
+namespace ExamenGrupo5.Reporte {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace ExamenGrupo5.Reportes {
         
         public override string FullResourceName {
             get {
-                return "ExamenGrupo5.Reportes.rpt_Catalogo_Consumidores.rpt";
+                return "ExamenGrupo5.Reporte.rpt_Catalogo_Consumidores.rpt";
             }
             set {
                 // Do nothing
