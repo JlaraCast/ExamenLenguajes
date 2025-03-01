@@ -67,11 +67,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VentanaAgregarCosmetico.cs">
+    <Compile Include="VentanaGestionConsumidor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaAgregarCosmetico.Designer.cs">
-      <DependentUpon>VentanaAgregarCosmetico.cs</DependentUpon>
+    <Compile Include="VentanaGestionConsumidor.Designer.cs">
+      <DependentUpon>VentanaGestionConsumidor.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanaCompras.cs">
       <SubType>Form</SubType>
@@ -121,8 +121,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="VentanaAgregarCosmetico.resx">
-      <DependentUpon>VentanaAgregarCosmetico.cs</DependentUpon>
+    <EmbeddedResource Include="VentanaGestionConsumidor.resx">
+      <DependentUpon>VentanaGestionConsumidor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaCompras.resx">
       <DependentUpon>VentanaCompras.cs</DependentUpon>
