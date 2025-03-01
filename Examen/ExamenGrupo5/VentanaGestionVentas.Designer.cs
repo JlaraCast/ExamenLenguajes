@@ -49,7 +49,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Label = new System.Windows.Forms.Label();
             this.numericUpDownPuntosUsados = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtConsumidor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidadVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTotalCompra)).BeginInit();
             this.panel1.SuspendLayout();
@@ -174,7 +174,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtConsumidor);
             this.panel2.Controls.Add(this.numericUpDownPuntosUsados);
             this.panel2.Controls.Add(this.numericUpDownCantidadVenta);
             this.panel2.Controls.Add(this.label6);
@@ -328,16 +328,16 @@
             this.numericUpDownPuntosUsados.TabIndex = 40;
             this.numericUpDownPuntosUsados.ValueChanged += new System.EventHandler(this.numericUpDownPuntosUsados_ValueChanged);
             // 
-            // textBox1
+            // txtConsumidor
             // 
-            this.textBox1.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Snow;
-            this.textBox1.Location = new System.Drawing.Point(14, 828);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(560, 39);
-            this.textBox1.TabIndex = 41;
+            this.txtConsumidor.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.txtConsumidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConsumidor.ForeColor = System.Drawing.Color.Snow;
+            this.txtConsumidor.Location = new System.Drawing.Point(14, 828);
+            this.txtConsumidor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConsumidor.Name = "txtConsumidor";
+            this.txtConsumidor.Size = new System.Drawing.Size(560, 39);
+            this.txtConsumidor.TabIndex = 41;
             // 
             // VentanaGestionVentas
             // 
@@ -383,6 +383,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Label;
         private System.Windows.Forms.NumericUpDown numericUpDownPuntosUsados;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtConsumidor;
     }
 }
