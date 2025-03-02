@@ -35,16 +35,16 @@ namespace ExamenGrupo5
             try
             {
                 // Se crea una instancia del formulario FrmRepConsumidores
-                FrmRepConsumidores formulario = new FrmRepConsumidores();
+                //FrmRepConsumidores formulario = new FrmRepConsumidores();
 
-                // Se actualiza la lista de usuarios cuando se cierra el formulario
-                formulario.FormClosed += (s, args) => Buscar("");
+                //// Se actualiza la lista de usuarios cuando se cierra el formulario
+                //formulario.FormClosed += (s, args) => Buscar("");
 
-                // Se muestra el formulario de informe de usuarios en un diálogo modal
-                formulario.ShowDialog();
+                //// Se muestra el formulario de informe de usuarios en un diálogo modal
+                //formulario.ShowDialog();
 
-                // Se libera la memoria del formulario después de cerrarlo
-                formulario.Dispose();
+                //// Se libera la memoria del formulario después de cerrarlo
+                //formulario.Dispose();
             }
             catch (Exception ex)
             {

@@ -38,7 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.LabelVenta = new System.Windows.Forms.Label();
             this.dtgDatos = new System.Windows.Forms.DataGridView();
-            this.btn_Volver = new System.Windows.Forms.PictureBox();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,9 +49,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbEstadoVenta = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel7 = new System.Windows.Forms.Panel();
@@ -63,21 +60,25 @@
             this.Label = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.Icnrefrescar = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_Volver = new System.Windows.Forms.PictureBox();
             this.groupBoxBuscador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Volver)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTablaDatos)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Icnrefrescar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Volver)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -171,22 +172,11 @@
             this.dtgDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDatos.GridColor = System.Drawing.Color.DarkGoldenrod;
             this.dtgDatos.Location = new System.Drawing.Point(0, 0);
-            this.dtgDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgDatos.Margin = new System.Windows.Forms.Padding(4);
             this.dtgDatos.Name = "dtgDatos";
             this.dtgDatos.RowHeadersWidth = 51;
             this.dtgDatos.Size = new System.Drawing.Size(852, 336);
             this.dtgDatos.TabIndex = 1;
-            // 
-            // btn_Volver
-            // 
-            this.btn_Volver.Image = ((System.Drawing.Image)(resources.GetObject("btn_Volver.Image")));
-            this.btn_Volver.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_Volver.Location = new System.Drawing.Point(804, 12);
-            this.btn_Volver.Name = "btn_Volver";
-            this.btn_Volver.Size = new System.Drawing.Size(48, 48);
-            this.btn_Volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.btn_Volver.TabIndex = 25;
-            this.btn_Volver.TabStop = false;
             // 
             // btn_Imprimir
             // 
@@ -317,52 +307,23 @@
             this.toolStripMenuItem2.Text = "Editar";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.TbEditar);
             // 
-            // comboBox1
+            // cbEstadoVenta
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.comboBox1.ForeColor = System.Drawing.Color.Snow;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbEstadoVenta.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.cbEstadoVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.cbEstadoVenta.ForeColor = System.Drawing.Color.Snow;
+            this.cbEstadoVenta.FormattingEnabled = true;
+            this.cbEstadoVenta.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.cbEstadoVenta.Items.AddRange(new object[] {
             "Pendiente",
             "Completada",
             "Cancelada"});
-            this.comboBox1.Location = new System.Drawing.Point(22, 62);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(305, 39);
-            this.comboBox1.TabIndex = 28;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.EstadoVentaChanged);
-            // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Snow;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button1.Location = new System.Drawing.Point(383, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 46);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Editar_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox1.Location = new System.Drawing.Point(804, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 38);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.Salir);
+            this.cbEstadoVenta.Location = new System.Drawing.Point(22, 62);
+            this.cbEstadoVenta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbEstadoVenta.Name = "cbEstadoVenta";
+            this.cbEstadoVenta.Size = new System.Drawing.Size(305, 39);
+            this.cbEstadoVenta.TabIndex = 28;
+            this.cbEstadoVenta.SelectedIndexChanged += new System.EventHandler(this.EstadoVentaChanged);
             // 
             // button2
             // 
@@ -412,7 +373,7 @@
             this.dtgTablaDatos.GridColor = System.Drawing.Color.DarkGoldenrod;
             this.dtgTablaDatos.ImeMode = System.Windows.Forms.ImeMode.On;
             this.dtgTablaDatos.Location = new System.Drawing.Point(0, 0);
-            this.dtgTablaDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgTablaDatos.Margin = new System.Windows.Forms.Padding(4);
             this.dtgTablaDatos.MultiSelect = false;
             this.dtgTablaDatos.Name = "dtgTablaDatos";
             this.dtgTablaDatos.ReadOnly = true;
@@ -423,8 +384,8 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel8.Controls.Add(this.comboBox1);
-            this.panel8.Controls.Add(this.button1);
+            this.panel8.Controls.Add(this.Icnrefrescar);
+            this.panel8.Controls.Add(this.cbEstadoVenta);
             this.panel8.Controls.Add(this.pictureBox1);
             this.panel8.Controls.Add(this.button2);
             this.panel8.Controls.Add(this.panel7);
@@ -474,9 +435,9 @@
             this.Label.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.Label.Location = new System.Drawing.Point(29, 20);
             this.Label.Name = "Label";
-            this.Label.Size = new System.Drawing.Size(292, 32);
+            this.Label.Size = new System.Drawing.Size(267, 32);
             this.Label.TabIndex = 9;
-            this.Label.Text = "Estado de la compra";
+            this.Label.Text = "Estado de la venta";
             this.Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel9
@@ -498,6 +459,41 @@
             this.panel10.Size = new System.Drawing.Size(939, 579);
             this.panel10.TabIndex = 8;
             // 
+            // Icnrefrescar
+            // 
+            this.Icnrefrescar.Image = global::ExamenGrupo5.Properties.Resources.icons8_synchronize_48;
+            this.Icnrefrescar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Icnrefrescar.Location = new System.Drawing.Point(467, 14);
+            this.Icnrefrescar.Name = "Icnrefrescar";
+            this.Icnrefrescar.Size = new System.Drawing.Size(43, 38);
+            this.Icnrefrescar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Icnrefrescar.TabIndex = 29;
+            this.Icnrefrescar.TabStop = false;
+            this.Icnrefrescar.Click += new System.EventHandler(this.btnRefrescar);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox1.Location = new System.Drawing.Point(804, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(43, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.Salir);
+            // 
+            // btn_Volver
+            // 
+            this.btn_Volver.Image = ((System.Drawing.Image)(resources.GetObject("btn_Volver.Image")));
+            this.btn_Volver.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_Volver.Location = new System.Drawing.Point(804, 12);
+            this.btn_Volver.Name = "btn_Volver";
+            this.btn_Volver.Size = new System.Drawing.Size(48, 48);
+            this.btn_Volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btn_Volver.TabIndex = 25;
+            this.btn_Volver.TabStop = false;
+            // 
             // VentanaVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -512,7 +508,6 @@
             this.groupBoxBuscador.ResumeLayout(false);
             this.groupBoxBuscador.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Volver)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -520,7 +515,6 @@
             this.panel3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgTablaDatos)).EndInit();
@@ -528,6 +522,9 @@
             this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Icnrefrescar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Volver)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -554,7 +551,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
@@ -566,6 +562,7 @@
         private System.Windows.Forms.Label Label;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbEstadoVenta;
+        private System.Windows.Forms.PictureBox Icnrefrescar;
     }
 }

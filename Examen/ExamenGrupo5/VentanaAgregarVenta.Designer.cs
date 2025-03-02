@@ -133,11 +133,11 @@
             this.cbIdConsumidor.Name = "cbIdConsumidor";
             this.cbIdConsumidor.Size = new System.Drawing.Size(495, 37);
             this.cbIdConsumidor.TabIndex = 55;
-            this.cbIdConsumidor.Text = "Seleccione";
             // 
             // cbIdCosmetico
             // 
             this.cbIdCosmetico.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.cbIdCosmetico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIdCosmetico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbIdCosmetico.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cbIdCosmetico.ForeColor = System.Drawing.Color.Snow;
@@ -150,7 +150,6 @@
             this.cbIdCosmetico.Name = "cbIdCosmetico";
             this.cbIdCosmetico.Size = new System.Drawing.Size(495, 37);
             this.cbIdCosmetico.TabIndex = 54;
-            this.cbIdCosmetico.Text = "Seleccione";
             // 
             // txtPrecioTotal
             // 
@@ -313,6 +312,7 @@
             // cbEstadoVentas
             // 
             this.cbEstadoVentas.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.cbEstadoVentas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEstadoVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbEstadoVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cbEstadoVentas.ForeColor = System.Drawing.Color.Snow;
@@ -327,11 +327,11 @@
             this.cbEstadoVentas.Name = "cbEstadoVentas";
             this.cbEstadoVentas.Size = new System.Drawing.Size(488, 37);
             this.cbEstadoVentas.TabIndex = 35;
-            this.cbEstadoVentas.Text = "Seleccione";
             // 
             // cbMetodoPago
             // 
             this.cbMetodoPago.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.cbMetodoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMetodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbMetodoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cbMetodoPago.ForeColor = System.Drawing.Color.Snow;
@@ -348,7 +348,6 @@
             this.cbMetodoPago.Name = "cbMetodoPago";
             this.cbMetodoPago.Size = new System.Drawing.Size(495, 37);
             this.cbMetodoPago.TabIndex = 30;
-            this.cbMetodoPago.Text = "Seleccione";
             // 
             // label_Clave
             // 
