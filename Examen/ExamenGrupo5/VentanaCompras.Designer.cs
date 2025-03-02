@@ -47,7 +47,6 @@
             this.groupBoxBuscador = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_Editar = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -82,7 +81,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel2.Controls.Add(this.btn_Editar);
             this.panel2.Controls.Add(this.btn_Volver);
             this.panel2.Controls.Add(this.btn_Imprimir);
             this.panel2.Controls.Add(this.panel5);
@@ -105,9 +103,10 @@
             this.btn_Volver.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Volver.Name = "btn_Volver";
             this.btn_Volver.Size = new System.Drawing.Size(48, 48);
-            this.btn_Volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btn_Volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Volver.TabIndex = 25;
             this.btn_Volver.TabStop = false;
+            this.btn_Volver.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // btn_Imprimir
             // 
@@ -168,16 +167,18 @@
             this.editarToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(200, 38);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(240, 38);
             this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.Editar_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.BackColor = System.Drawing.Color.MidnightBlue;
             this.eliminarToolStripMenuItem.ForeColor = System.Drawing.Color.Snow;
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(200, 38);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(240, 38);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // btn_agregar
             // 
@@ -195,6 +196,7 @@
             this.btn_agregar.TabIndex = 22;
             this.btn_agregar.Text = "Agregar";
             this.btn_agregar.UseVisualStyleBackColor = false;
+            this.btn_agregar.Click += new System.EventHandler(this.Agregar_Click);
             // 
             // txt_Estado_compra
             // 
@@ -206,6 +208,7 @@
             this.txt_Estado_compra.Name = "txt_Estado_compra";
             this.txt_Estado_compra.Size = new System.Drawing.Size(938, 39);
             this.txt_Estado_compra.TabIndex = 21;
+            this.txt_Estado_compra.TextChanged += new System.EventHandler(this.BuscarCompraPorEstado);
             // 
             // label2
             // 
@@ -267,23 +270,6 @@
             this.label1.TabIndex = 9;
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btn_Editar
-            // 
-            this.btn_Editar.AutoSize = true;
-            this.btn_Editar.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Editar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Editar.ForeColor = System.Drawing.Color.Snow;
-            this.btn_Editar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_Editar.Location = new System.Drawing.Point(431, 11);
-            this.btn_Editar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_Editar.Name = "btn_Editar";
-            this.btn_Editar.Size = new System.Drawing.Size(151, 58);
-            this.btn_Editar.TabIndex = 27;
-            this.btn_Editar.Text = "Editar";
-            this.btn_Editar.UseVisualStyleBackColor = false;
-            // 
             // VentanaCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -327,6 +313,5 @@
         private System.Windows.Forms.GroupBox groupBoxBuscador;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_Editar;
     }
 }

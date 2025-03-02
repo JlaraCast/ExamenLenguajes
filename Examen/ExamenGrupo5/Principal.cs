@@ -47,5 +47,10 @@ namespace ExamenGrupo5
         {
             Close();
         }
+
+        private void btn_Compras_Click(object sender, EventArgs e)
+        {
+            new VentanaCompras().ShowDialog();
+        }
     }
 }

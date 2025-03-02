@@ -83,6 +83,7 @@
             this.btn_Compras.TabIndex = 3;
             this.btn_Compras.Text = "Compras";
             this.btn_Compras.UseVisualStyleBackColor = false;
+            this.btn_Compras.Click += new System.EventHandler(this.btn_Compras_Click);
             // 
             // txt_Bienvienido
             // 

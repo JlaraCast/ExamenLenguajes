@@ -106,7 +106,7 @@ namespace DAL
 
                 _command.CommandType = CommandType.StoredProcedure;
                 _command.CommandText = "[Sp_Del_Cosmetico]";
-                _command.Parameters.AddWithValue("@IDCosmeticos", IDCosmetico);
+                _command.Parameters.AddWithValue("@IDCosmetico", IDCosmetico);
                 _command.ExecuteNonQuery();
                 _connection.Close();
                 _connection.Dispose();
