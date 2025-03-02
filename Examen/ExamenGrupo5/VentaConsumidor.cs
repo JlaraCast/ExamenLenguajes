@@ -19,7 +19,7 @@ namespace ExamenGrupo5
         {
             InitializeComponent();
             _conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
-
+            ShowToolTipOnMouseUp(pictureBox1, "Actualizar");
             Buscar("");
 
         }
@@ -119,6 +119,16 @@ namespace ExamenGrupo5
 
             }
 
+        }
+
+        private void ShowToolTipOnMouseUp(PictureBox pictureBox, string message)
+        {
+            ToolTip toolTip = new ToolTip();
+
+            pictureBox.MouseUp += (sender, e) =>
+            {
+                toolTip.SetToolTip(pictureBox, message);
+            };
         }
 
         private void Buscar(string pNombre)
