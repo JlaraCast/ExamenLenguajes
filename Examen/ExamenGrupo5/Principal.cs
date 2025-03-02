@@ -31,6 +31,7 @@ namespace ExamenGrupo5
         private void btn_Venta_Click(object sender, EventArgs e)
         {
 
+            new VentanaVentas().ShowDialog();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -46,6 +47,11 @@ namespace ExamenGrupo5
         private void SalirClick(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void compras(object sender, EventArgs e)
+        {
+            new VentanaVentas().ShowDialog();
         }
     }
 }

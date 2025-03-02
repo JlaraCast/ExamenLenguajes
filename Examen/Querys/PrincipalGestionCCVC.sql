@@ -55,7 +55,6 @@ CREATE TABLE Compras (
     CONSTRAINT FK_Compras_Cosmeticos FOREIGN KEY (IDCosmeticos) REFERENCES Cosmeticos(IDCosmetico) -- Clave foránea que relaciona la compra con la tabla "Cosmeticos"
 );
 GO
-
 -- Creación de la tabla "Ventas"
 CREATE TABLE Ventas (
     IdVenta INT NOT NULL PRIMARY KEY IDENTITY(1,1), -- Identificador único de la venta (Clave primaria con autoincremento)
@@ -277,7 +276,7 @@ GO
 
 
 --Parte de Ventasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-create or alter procedure [Sp_Ins_Venta]
+create or alter procedure [Sp_Ins_Ventas]
 @FechaVenta DATETIME,
 @TotalVenta Decimal(10,000),
 @MetodoPago VARCHAR(250),
@@ -551,6 +550,5 @@ select
     c.IDCosmeticos
 from Compras c
 go
-
 
 

@@ -79,11 +79,11 @@
     <Compile Include="VentanaCompras.Designer.cs">
       <DependentUpon>VentanaCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaConsumidor.cs">
+    <Compile Include="VentaConsumidor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaConsumidor.Designer.cs">
-      <DependentUpon>VentanaConsumidor.cs</DependentUpon>
+    <Compile Include="VentaConsumidor.Designer.cs">
+      <DependentUpon>VentaConsumidor.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanaCosmetico.cs">
       <SubType>Form</SubType>
@@ -130,8 +130,8 @@
     <EmbeddedResource Include="VentanaCompras.resx">
       <DependentUpon>VentanaCompras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaConsumidor.resx">
-      <DependentUpon>VentanaConsumidor.cs</DependentUpon>
+    <EmbeddedResource Include="VentaConsumidor.resx">
+      <DependentUpon>VentaConsumidor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaCosmetico.resx">
       <DependentUpon>VentanaCosmetico.cs</DependentUpon>

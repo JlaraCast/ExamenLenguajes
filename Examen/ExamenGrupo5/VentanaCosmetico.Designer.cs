@@ -218,7 +218,9 @@
             this.dtgDatos.GridColor = System.Drawing.Color.DarkGoldenrod;
             this.dtgDatos.Location = new System.Drawing.Point(0, 0);
             this.dtgDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtgDatos.MultiSelect = false;
             this.dtgDatos.Name = "dtgDatos";
+            this.dtgDatos.ReadOnly = true;
             this.dtgDatos.RowHeadersWidth = 51;
             this.dtgDatos.Size = new System.Drawing.Size(945, 420);
             this.dtgDatos.TabIndex = 1;
