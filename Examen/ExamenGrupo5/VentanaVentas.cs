@@ -23,6 +23,8 @@ namespace ExamenGrupo5
             conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
             cbCategoria.SelectedIndex = 0; // Selecciona el primer ítem del combo box
             dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta("").Tables[0];
+            cbEstadoVenta.SelectedIndex = 0; // Selecciona el primer ítem del combo box
+
         }
 
         private void Salir(object sender, EventArgs e)
@@ -33,7 +35,8 @@ namespace ExamenGrupo5
       
         private void EstadoVentaChanged(object sender, EventArgs e)
         {
-            dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta(cbCategoria.SelectedItem.ToString()).Tables[0];
+
+            dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta(cbEstadoVenta.SelectedItem.ToString()).Tables[0];
         }
 
         private void Agregar_click(object sender, EventArgs e)
@@ -49,9 +52,10 @@ namespace ExamenGrupo5
                 if (ID > 0)
                 {
                     Venta venta = conexion.MostrarIDVenta(ID);
+                    
                     if (venta != null)
                     {
-                       // new VentanaAgregarCompra(ID).ShowDialog();
+                        new VentanaAgregarVenta(venta).ShowDialog();
                     }
                     else
                     {
@@ -76,26 +80,45 @@ namespace ExamenGrupo5
 
         private void TbEditar(object sender, EventArgs e)
         {
-            if (dtgDatos.SelectedRows.Count > 0)
+            if (dtgTablaDatos.SelectedRows.Count > 0) // Verifica si hay filas seleccionadas
             {
-                 int ID = Convert.ToInt32(dtgDatos.SelectedRows[0].Cells["ID"].Value);
-               
-                    Venta compra = conexion.MostrarIDVenta(ID);
-                    if (compra != null)
+                DataGridViewRow filaSeleccionada = dtgTablaDatos.SelectedRows[0]; // Obtiene la primera fila seleccionada
+
+                // Verifica si la celda "IdVenta" existe y no es nula
+                if (filaSeleccionada.Cells["IdVenta"] != null && filaSeleccionada.Cells["IdVenta"].Value != DBNull.Value)
+                {
+                    int ID;
+                    bool conversionExitosa = int.TryParse(filaSeleccionada.Cells["IdVenta"].Value.ToString(), out ID);
+
+                    if (conversionExitosa)
                     {
-                        //new VentanaAgregarCompra(compra).ShowDialog();
+                        Venta venta = conexion.MostrarIDVenta(ID);
+                        venta.IdVenta = ID;
+                        if (venta != null)
+                        {
+                            new VentanaAgregarVenta(venta).ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Venta no encontrada.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Compra no encontrada.");
+                        MessageBox.Show("El ID de la venta no es válido.");
                     }
-                
+                }
+                else
+                {
+                    MessageBox.Show("La celda 'IdVenta' está vacía o no existe en la tabla.");
+                }
             }
             else
             {
-                MessageBox.Show("Seleccione la fila entera para poder editar una compra.");
+                MessageBox.Show("Seleccione una fila para editar.");
             }
         }
+
 
         private void Eliminar(object sender, EventArgs e)
         {
@@ -104,8 +127,8 @@ namespace ExamenGrupo5
                 int ID = Convert.ToInt32(dtgTablaDatos.SelectedRows[0].Cells["IdVenta"].Value);
                 
                     
-                        conexion.EliminarVenta(ID);
-                dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta(cbCategoria.SelectedItem.ToString()).Tables[0];
+                conexion.EliminarVenta(ID);
+                dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta(cbEstadoVenta.SelectedItem.ToString()).Tables[0];
                 return;
                     
                 
@@ -119,6 +142,11 @@ namespace ExamenGrupo5
         private void btn_Imprimir_Click(object sender, EventArgs e)
         {
             // Implementar funcionalidad de impresión aquí
+        }
+
+        private void btnRefrescar(object sender, EventArgs e)
+        {
+
         }
     }
 }

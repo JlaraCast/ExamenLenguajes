@@ -34,8 +34,8 @@ namespace ExamenGrupo5
         {
             try
             {
-                //// Se crea una instancia del formulario FrmRepConsumidores
-                ////FrmRepConsumidores formulario = new FrmRepConsumidores();
+                // Se crea una instancia del formulario FrmRepConsumidores
+                //FrmRepConsumidores formulario = new FrmRepConsumidores();
 
                 //// Se actualiza la lista de usuarios cuando se cierra el formulario
                 //formulario.FormClosed += (s, args) => Buscar("");
