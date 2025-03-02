@@ -47,6 +47,8 @@
             this.groupBoxBuscador = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -55,6 +57,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBoxBuscador.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -81,6 +85,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btn_Volver);
             this.panel2.Controls.Add(this.btn_Imprimir);
             this.panel2.Controls.Add(this.panel5);
@@ -167,7 +173,7 @@
             this.editarToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(240, 38);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(200, 38);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.Editar_Click);
             // 
@@ -176,7 +182,7 @@
             this.eliminarToolStripMenuItem.BackColor = System.Drawing.Color.MidnightBlue;
             this.eliminarToolStripMenuItem.ForeColor = System.Drawing.Color.Snow;
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(240, 38);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(200, 38);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.Eliminar_Click);
             // 
@@ -203,10 +209,10 @@
             this.txt_Estado_compra.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.txt_Estado_compra.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Estado_compra.ForeColor = System.Drawing.Color.Snow;
-            this.txt_Estado_compra.Location = new System.Drawing.Point(14, 79);
+            this.txt_Estado_compra.Location = new System.Drawing.Point(83, 79);
             this.txt_Estado_compra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Estado_compra.Name = "txt_Estado_compra";
-            this.txt_Estado_compra.Size = new System.Drawing.Size(938, 39);
+            this.txt_Estado_compra.Size = new System.Drawing.Size(858, 39);
             this.txt_Estado_compra.TabIndex = 21;
             this.txt_Estado_compra.TextChanged += new System.EventHandler(this.BuscarCompraPorEstado);
             // 
@@ -270,6 +276,29 @@
             this.label1.TabIndex = 9;
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox1.Location = new System.Drawing.Point(534, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.BuscarCompraPorEstado);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(29, 70);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 27;
+            this.pictureBox2.TabStop = false;
+            // 
             // VentanaCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -290,6 +319,8 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBoxBuscador.ResumeLayout(false);
             this.groupBoxBuscador.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,5 +344,7 @@
         private System.Windows.Forms.GroupBox groupBoxBuscador;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
