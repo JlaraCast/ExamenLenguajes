@@ -16,7 +16,7 @@ namespace ExamenGrupo5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VentanaConsumidor());
+            Application.Run(new Principal());
         }
     }
 }
