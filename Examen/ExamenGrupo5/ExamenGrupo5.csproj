@@ -33,9 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,16 +53,137 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="editar con img.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="editar con img.Designer.cs">
+      <DependentUpon>editar con img.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarCompras.Designer.cs">
+      <DependentUpon>EditarCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRepCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRepCompras.Designer.cs">
+      <DependentUpon>FrmRepCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRepConsumidores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRepConsumidores.Designer.cs">
+      <DependentUpon>FrmRepConsumidores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRepCosmeticos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRepCosmeticos.Designer.cs">
+      <DependentUpon>FrmRepCosmeticos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRepVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRepVentas.Designer.cs">
+      <DependentUpon>FrmRepVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Reporte\rpt_Catalogo_Compras.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Catalogo_Compras.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rpt_Catalogo_Consumidores.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Catalogo_Consumidores.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rpt_Catalogo_Cosmeticos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Catalogo_Cosmeticos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rpt_Catalogo_Ventas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Catalogo_Ventas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VentanaAgregarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaAgregarCompra.Designer.cs">
+      <DependentUpon>VentanaAgregarCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaAgregarConsumidor.cs">
+    <Compile Include="VentanaAgregarCosmetico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaAgregarCosmetico.Designer.cs">
+      <DependentUpon>VentanaAgregarCosmetico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaCompras.Designer.cs">
+      <DependentUpon>VentanaCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaConsumidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaConsumidor.Designer.cs">
+      <DependentUpon>VentanaConsumidor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaCosmetico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaCosmetico.Designer.cs">
+      <DependentUpon>VentanaCosmetico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaEditarCosmetico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaEditarCosmetico.Designer.cs">
+      <DependentUpon>VentanaEditarCosmetico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaVentas.Designer.cs">
+      <DependentUpon>VentanaVentas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="editar con img.resx">
+      <DependentUpon>editar con img.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarCompras.resx">
+      <DependentUpon>EditarCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRepCompras.resx">
+      <DependentUpon>FrmRepCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRepConsumidores.resx">
+      <DependentUpon>FrmRepConsumidores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRepCosmeticos.resx">
+      <DependentUpon>FrmRepCosmeticos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRepVentas.resx">
+      <DependentUpon>FrmRepVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,6 +194,48 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reporte\rpt_Catalogo_Compras.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Catalogo_Compras.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rpt_Catalogo_Consumidores.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Catalogo_Consumidores.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rpt_Catalogo_Cosmeticos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Catalogo_Cosmeticos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rpt_Catalogo_Ventas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Catalogo_Ventas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaAgregarCompra.resx">
+      <DependentUpon>VentanaAgregarCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaAgregarConsumidor.resx">
+      <DependentUpon>VentanaAgregarConsumidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaAgregarVenta.resx">
+      <DependentUpon>VentanaAgregarVenta.cs</DependentUpon>
+    <EmbeddedResource Include="VentanaAgregarCosmetico.resx">
+      <DependentUpon>VentanaAgregarCosmetico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaCompras.resx">
+      <DependentUpon>VentanaCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaConsumidor.resx">
+      <DependentUpon>VentanaConsumidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaCosmetico.resx">
+      <DependentUpon>VentanaCosmetico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaEditarCosmetico.resx">
+      <DependentUpon>VentanaEditarCosmetico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaVentas.resx">
+      <DependentUpon>VentanaVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -89,6 +258,9 @@
       <Project>{1d246d43-aaec-4acc-b9b0-020ed5b93dc3}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
