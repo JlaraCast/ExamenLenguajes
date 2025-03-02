@@ -16,6 +16,7 @@ namespace ExamenGrupo5
             InitializeComponent();
             conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
             dtgDatos.DataSource = conexion.BuscarPorEstadoCompra(txt_Estado_compra.Text).Tables[0];
+            ShowToolTipOnMouseUp(pictureBox1, "Actualizar");
         }
 
         private void Agregar_Click(object sender, EventArgs e)
@@ -83,5 +84,16 @@ namespace ExamenGrupo5
         {
             // Lógica para imprimir compras (por implementar)
         }
+
+        private void ShowToolTipOnMouseUp(PictureBox pictureBox, string message)
+        {
+            ToolTip toolTip = new ToolTip();
+
+            pictureBox.MouseUp += (sender, e) =>
+            {
+                toolTip.SetToolTip(pictureBox, message);
+            };
+        }
+
     }
 }
