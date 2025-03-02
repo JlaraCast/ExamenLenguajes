@@ -19,12 +19,22 @@ namespace ExamenGrupo5
         private Venta _venta= null;
         private Conexion _conexion = null;
         private bool edita = false;
+        
         public VentanaAgregarVenta()
         {
             InitializeComponent();
             edita = false;
             _conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
+        }
 
+        public VentanaAgregarVenta(Venta venta)            
+        {
+            _venta = venta;
+            InitializeComponent();
+            edita = true;
+            _conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
+            cargarDatos(_venta);
+            txtPrecioTotal.Text = (venta.CantidadVendido * _conexion.BuscarPorIdCosmetico(venta.IDCosmetico).PrecioUnitario).ToString();
         }
 
         private void CargarComboBoxCosmeticos()
@@ -37,6 +47,7 @@ namespace ExamenGrupo5
                 cbIdCosmetico.DataSource = dsCosmeticos.Tables[0];
                 cbIdCosmetico.DisplayMember = "IDCosmetico";  // Muestra los ID en el ComboBox
                 cbIdCosmetico.ValueMember = "IDCosmetico"; // Guarda el ID como valor
+
             }
             catch (Exception ex)
             {
@@ -139,8 +150,91 @@ namespace ExamenGrupo5
 
         }
 
+        private void ActualizarDatos()
+        {
+            try
+            {
+                
+                // Validar selección de cosmético
+                if (cbIdCosmetico.SelectedValue == null)
+                {
+                    MessageBox.Show("Debe seleccionar un cosmético.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-        
+                // Validar selección de consumidor
+                if (cbIdConsumidor.SelectedValue == null)
+                {
+                    MessageBox.Show("Debe seleccionar un consumidor.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Validar selección de método de pago
+                if (cbMetodoPago.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar un método de pago.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Validar selección de estado de la venta
+                if (cbEstadoVentas.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar un estado para la venta.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Obtener el cosmético desde la base de datos
+                Cosmetico cosmetico = _conexion.BuscarPorIdCosmetico(int.Parse(cbIdCosmetico.SelectedValue.ToString()));
+
+                if (cosmetico == null)
+                {
+                    MessageBox.Show("El cosmético seleccionado no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Calcular el total de la venta
+                double totalVenta = cosmetico.PrecioUnitario * (int)pkCantidadVendidos.Value;
+
+                // Verificar disponibilidad del stock
+                if (cosmetico.StockDisponible < (int)pkCantidadVendidos.Value)
+                {
+                    MessageBox.Show($"No hay suficiente stock. Disponible: {cosmetico.StockDisponible}.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Crear objeto de venta
+                var venta = new Venta
+                {
+                    IdVenta = _venta.IdVenta,
+                    FechaVenta = dtpFechaVenta.Value,
+                    TotalVenta = totalVenta,
+                    MetodoPago = cbMetodoPago.SelectedItem.ToString(),
+                    PuntosUsados = (int)pkPuntosUsados.Value,
+                    CantidadVendido = (int)pkCantidadVendidos.Value,
+                    IDCosmetico = int.Parse(cbIdCosmetico.SelectedValue.ToString()),
+                    IDConsumidor = int.Parse(cbIdConsumidor.SelectedValue.ToString()),
+                    EstadoVenta = cbEstadoVentas.SelectedItem.ToString()
+                };
+
+                // Actualizar la venta en la base de datos
+                _conexion.ModificarVenta(venta);
+
+                // Actualizar el stock del cosmético si la venta está completada
+                if (venta.EstadoVenta == "Completada")
+                {
+                    //cosmetico.StockDisponible -= venta.CantidadVendido;
+                    //_conexion.ModificarCosmetico(cosmetico);
+                }
+
+                // Confirmación
+                MessageBox.Show("Los cambios se han guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -175,11 +269,33 @@ namespace ExamenGrupo5
 
         private void btn_aceptar(object sender, EventArgs e)
         {
+
+            if (edita = false)
+            {
+                GuardarDatos();
+            }
+            else
+            {
+                ActualizarDatos();
+            }
             
-            GuardarDatos();
+
            
+        }
+
+        private void cargarDatos(Venta venta)
+        {
+            _conexion.MostrarIDVenta(venta.IdVenta);
+            dtpFechaVenta.Value = venta.FechaVenta;
+            pkCantidadVendidos.Value = venta.CantidadVendido;
+            pkPuntosUsados.Value = venta.PuntosUsados;
+            cbMetodoPago.SelectedItem = venta.MetodoPago;
+            cbEstadoVentas.SelectedItem = venta.EstadoVenta;
+            cbIdCosmetico.SelectedValue = venta.IDCosmetico;
+            cbIdConsumidor.SelectedValue = venta.IDConsumidor;
 
         }
+
 
         private void pkCantidadVendidos_ValueChanged(object sender, EventArgs e)
         {
