@@ -689,11 +689,12 @@ namespace DAL
             }
         }
 
+
         //Conexion que se refiere a la parte de venta----------------------------------------------------------------------------------------------------------------------------------------------
 
-            
 
-            public void GuardarVentas(Venta venta)
+
+        public void GuardarVentas(Venta venta)
             {
                 try
                 {
@@ -957,7 +958,34 @@ namespace DAL
             }
         }
 
+        public DataSet VentaPorConsumidor(int consumidor)
+        {
+            try
+            {
+                _connection = new SqlConnection(StringConexion);
+                _connection.Open();
+                _command = new SqlCommand();
+                _command.Connection = _connection;
 
+                _command.CommandType = CommandType.StoredProcedure;
+                _command.CommandText = "[Sp_Most_VentaConsumidor]";
+                _command.Parameters.AddWithValue("@IDConsumidor", consumidor);
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                DataSet datos = new DataSet();
+                adapter.SelectCommand = _command;
+                adapter.Fill(datos);
+                _connection.Close();
+                _connection.Dispose();
+                _command.Dispose();
+                adapter.Dispose();
+                return datos;
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
 
 
 

@@ -378,8 +378,37 @@ begin
 	end;
 	go
 
+	use GestionCCVC
+	--busquedas para compras 
+	
+	CREATE OR ALTER PROCEDURE [Sp_Obtener_IDConsumidores]
+AS
+BEGIN
+    SELECT IdConsumidor FROM Consumidores ORDER BY IdConsumidor;
+END;
+GO
 
+create or alter procedure [Sp_Most_VentaConsumidor]
+	@IdConsumidor int
+	as 
+	begin
+	select *
+	from Ventas
+	where IDConsumidor = @IdConsumidor;
+	print 'Busqueda completada'
 
+	end;
+	go
+
+CREATE OR ALTER PROCEDURE [Sp_Obtener_IDCosmeticos]
+AS
+BEGIN
+
+    SELECT IDCosmetico FROM Cosmeticos;
+
+    PRINT 'Búsqueda de IDs de cosméticos completada';
+END;
+GO
 	--Parte de Consumidoresssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
 	
 create or alter procedure [Sp_Ins_Consumidor]

@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -29,8 +30,7 @@ namespace ExamenGrupo5
             _tipoSolicitud = tipoSolicitud;
             _conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
             _consumidor = new Consumidor();
-            numericUpDownFrecuencia.Minimum = 1; // Asegura que el valor mínimo sea 1
-            numericUpDownFrecuencia.Value = 1;
+
             Comprobar_Tipo_Solicitud();
         }
 
@@ -61,6 +61,7 @@ namespace ExamenGrupo5
 
         public void Modificar_Consumidor()
         {
+
             _consumidor = new Consumidor()
             {
                 IdConsumidor = _id,
@@ -68,11 +69,10 @@ namespace ExamenGrupo5
                 telefono = txt_Telefono.Text.Trim(),
                 CorreoElectronico = txt_Correo.Text.Trim(),
                 FechaRegistro = dateTimePickerFechaVencimiento.Value,
-                FrecuenciaCompra = numericUpDownFrecuencia.Value.ToString(),
+                FrecuenciaCompra = obtenerFrecuenciaCompra(),
                 PuntosFidelidad = (int)numericUpDownFidelidad.Value,
                 Direccion = txt_Direccion.Text.Trim()
             };
-            // Guardar el consumidor en la base de datos
             if (_consumidor == null)
             {
                 throw new ArgumentNullException(nameof(_consumidor), "El objeto consumidor no puede ser null.");
@@ -109,14 +109,7 @@ namespace ExamenGrupo5
             txt_Telefono.Text = _consumidor.telefono;
             txt_Correo.Text = _consumidor.CorreoElectronico;
             dateTimePickerFechaVencimiento.Value = _consumidor.FechaRegistro;
-            if (!string.IsNullOrEmpty(_consumidor.FrecuenciaCompra) && int.TryParse(_consumidor.FrecuenciaCompra, out int frecuencia))
-            {
-                numericUpDownFrecuencia.Value = Math.Max(frecuencia, 1); // Si es menor que 1, se asigna 1
-            }
-            else
-            {
-                numericUpDownFrecuencia.Value = 1; // Valor por defecto si no hay datos
-            }
+           
             numericUpDownFidelidad.Value = _consumidor.PuntosFidelidad;
             txt_Direccion.Text = _consumidor.Direccion;
         }
@@ -216,11 +209,7 @@ namespace ExamenGrupo5
                 mensajesError.Add("La fecha de registro no puede ser en el futuro.");
             }
 
-            // Verificar que la frecuencia de compra sea mayor a 0
-            if (numericUpDownFrecuencia.Value <= 0)
-            {
-                mensajesError.Add("La frecuencia de compra debe ser mayor a 0.");
-            }
+    
 
             // Verificar que los puntos de fidelidad no sean negativos
             if (numericUpDownFidelidad.Value < 0)
@@ -237,7 +226,45 @@ namespace ExamenGrupo5
             // Si no hay errores, retornar true
             return true;
         }
+        private string obtenerFrecuenciaCompra()
+        {
+            try
+            {
+                Consumidor consumidor = _conexion.MostrarIDConsumidor(int.Parse(txt_Id.Text));
+                if (consumidor == null)
+                {
+                    DataSet dataSet = _conexion.VentaPorConsumidor(consumidor.IdConsumidor);
+                    if (dataSet != null && dataSet.Tables.Count > 0)
+                    {
+                        DataTable table = dataSet.Tables[0];
+                        int rowCount = table.Rows.Count;
 
+                        if (rowCount <= 5)
+                        {
+                            return "Ocasional";
+                        }
+                        else if (rowCount > 5 && rowCount <= 10)
+                        {
+                            return "Frecuente";
+                        }
+                        else if (rowCount > 10)
+                        {
+                            return "VIP";
+                        }
+                    }
+                }
+
+                return "Ocasional";
+
+            }
+             catch (Exception ex)
+            {
+
+                return "Ocasional";
+            }
+
+         
+        }
         private void Guardar_Consumidor()
         {
             try
@@ -246,20 +273,18 @@ namespace ExamenGrupo5
                 // Buscar el consumidor por email
                 Consumidor consumidor = _conexion.MostrarNombreConsumidor(txt_Nombre.Text);
 
-                // Verificar si el consumidor con ese email ya existe
                 if (consumidor != null)
                 {
                     throw new Exception("El nombre ya ha sido registrado, intente con otro.");
                 }
-
-                // Instanciar un nuevo consumidor
+                //Instanciar un nuevo consumidor
                 _consumidor = new Consumidor()
                 {
                     NombreCompleto = txt_Nombre.Text.Trim(),
                     telefono = txt_Telefono.Text.Trim(),
                     CorreoElectronico = txt_Correo.Text.Trim(),
                     FechaRegistro = dateTimePickerFechaVencimiento.Value,
-                    FrecuenciaCompra = numericUpDownFrecuencia.Value.ToString(),
+                    FrecuenciaCompra = obtenerFrecuenciaCompra(),
                     PuntosFidelidad = (int)numericUpDownFidelidad.Value,
                     Direccion = txt_Direccion.Text.Trim()
                 };

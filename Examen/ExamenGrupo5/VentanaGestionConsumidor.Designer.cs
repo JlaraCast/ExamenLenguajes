@@ -41,11 +41,9 @@
             this.lbID = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDownFidelidad = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownFrecuencia = new System.Windows.Forms.NumericUpDown();
             this.label_Clave = new System.Windows.Forms.Label();
             this.btn_Aceptar = new System.Windows.Forms.Button();
             this.txt_Nombre = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.txt_Telefono = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,7 +54,6 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFidelidad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrecuencia)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -98,11 +95,9 @@
             this.panel2.Controls.Add(this.lbID);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.numericUpDownFidelidad);
-            this.panel2.Controls.Add(this.numericUpDownFrecuencia);
             this.panel2.Controls.Add(this.label_Clave);
             this.panel2.Controls.Add(this.btn_Aceptar);
             this.panel2.Controls.Add(this.txt_Nombre);
-            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btn_Cancelar);
             this.panel2.Controls.Add(this.txt_Telefono);
             this.panel2.Controls.Add(this.label2);
@@ -118,7 +113,7 @@
             this.txt_Direccion.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.txt_Direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Direccion.ForeColor = System.Drawing.Color.Snow;
-            this.txt_Direccion.Location = new System.Drawing.Point(25, 801);
+            this.txt_Direccion.Location = new System.Drawing.Point(27, 746);
             this.txt_Direccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Direccion.Name = "txt_Direccion";
             this.txt_Direccion.Size = new System.Drawing.Size(560, 39);
@@ -216,7 +211,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label5.Location = new System.Drawing.Point(29, 750);
+            this.label5.Location = new System.Drawing.Point(31, 695);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(142, 32);
             this.label5.TabIndex = 36;
@@ -227,28 +222,18 @@
             // 
             this.numericUpDownFidelidad.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.numericUpDownFidelidad.ForeColor = System.Drawing.Color.Snow;
-            this.numericUpDownFidelidad.Location = new System.Drawing.Point(32, 675);
+            this.numericUpDownFidelidad.Location = new System.Drawing.Point(34, 620);
             this.numericUpDownFidelidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDownFidelidad.Name = "numericUpDownFidelidad";
             this.numericUpDownFidelidad.Size = new System.Drawing.Size(557, 39);
             this.numericUpDownFidelidad.TabIndex = 32;
-            // 
-            // numericUpDownFrecuencia
-            // 
-            this.numericUpDownFrecuencia.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.numericUpDownFrecuencia.ForeColor = System.Drawing.Color.Snow;
-            this.numericUpDownFrecuencia.Location = new System.Drawing.Point(32, 585);
-            this.numericUpDownFrecuencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.numericUpDownFrecuencia.Name = "numericUpDownFrecuencia";
-            this.numericUpDownFrecuencia.Size = new System.Drawing.Size(557, 39);
-            this.numericUpDownFrecuencia.TabIndex = 31;
             // 
             // label_Clave
             // 
             this.label_Clave.AutoSize = true;
             this.label_Clave.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Clave.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label_Clave.Location = new System.Drawing.Point(19, 640);
+            this.label_Clave.Location = new System.Drawing.Point(21, 585);
             this.label_Clave.Name = "label_Clave";
             this.label_Clave.Size = new System.Drawing.Size(235, 32);
             this.label_Clave.TabIndex = 26;
@@ -263,7 +248,7 @@
             this.btn_Aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Aceptar.ForeColor = System.Drawing.Color.Snow;
             this.btn_Aceptar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_Aceptar.Location = new System.Drawing.Point(14, 928);
+            this.btn_Aceptar.Location = new System.Drawing.Point(16, 873);
             this.btn_Aceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Aceptar.Name = "btn_Aceptar";
             this.btn_Aceptar.Size = new System.Drawing.Size(180, 52);
@@ -284,18 +269,6 @@
             this.txt_Nombre.TabIndex = 21;
             this.txt_Nombre.Text = "Nombre";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label3.Location = new System.Drawing.Point(28, 550);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(315, 32);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Frecuencia de compra";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // btn_Cancelar
             // 
             this.btn_Cancelar.BackColor = System.Drawing.Color.MidnightBlue;
@@ -304,7 +277,7 @@
             this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancelar.ForeColor = System.Drawing.Color.Snow;
             this.btn_Cancelar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_Cancelar.Location = new System.Drawing.Point(382, 928);
+            this.btn_Cancelar.Location = new System.Drawing.Point(384, 873);
             this.btn_Cancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(180, 52);
@@ -377,7 +350,6 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFidelidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrecuencia)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -395,12 +367,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePickerFechaVencimiento;
         private System.Windows.Forms.NumericUpDown numericUpDownFidelidad;
-        private System.Windows.Forms.NumericUpDown numericUpDownFrecuencia;
         private System.Windows.Forms.Label label_Estado;
         private System.Windows.Forms.Label label_Clave;
         private System.Windows.Forms.Button btn_Aceptar;
         private System.Windows.Forms.TextBox txt_Nombre;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.TextBox txt_Telefono;
         private System.Windows.Forms.Label label2;
