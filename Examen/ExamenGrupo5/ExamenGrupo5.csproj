@@ -65,12 +65,6 @@
     <Compile Include="EditarCompras.Designer.cs">
       <DependentUpon>EditarCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRepConsumidores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmRepConsumidores.Designer.cs">
-      <DependentUpon>FrmRepConsumidores.cs</DependentUpon>
-    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,9 +132,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarCompras.resx">
       <DependentUpon>EditarCompras.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmRepConsumidores.resx">
-      <DependentUpon>FrmRepConsumidores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

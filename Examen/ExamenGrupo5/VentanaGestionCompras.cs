@@ -31,7 +31,7 @@ namespace ExamenGrupo5
                 dtpFechaCompra.Value = compraActual.FechaCompra;
                 spTotalCompra.Text = compraActual.TotalCompra.ToString();
                 cbMetodoPago.Text = compraActual.MetodoPago;
-                txtProveedor.Text = compraActual.Proveedor;
+                cbProveedor.Text = compraActual.Proveedor;
                 numericUpDownCantidad.Value = compraActual.CantidadProductos;
                 cbEstado.Text = compraActual.EstadoCompra;
                 txtIDCosmetico.Text = compraActual.IDCosmeticos.ToString();
@@ -45,7 +45,7 @@ namespace ExamenGrupo5
                 FechaCompra = dtpFechaCompra.Value,
                 TotalCompra = Convert.ToDouble(spTotalCompra.Text),
                 MetodoPago = cbMetodoPago.Text,
-                Proveedor = txtProveedor.Text,
+                Proveedor = cbProveedor.Text,
                 CantidadProductos = (int)numericUpDownCantidad.Value,
                 EstadoCompra = cbEstado.Text,
                 IDCosmeticos = Convert.ToInt32(txtIDCosmetico.Text)

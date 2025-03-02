@@ -132,7 +132,7 @@
             this.Consumidores.TabIndex = 5;
             this.Consumidores.Text = "Consumidores";
             this.Consumidores.UseVisualStyleBackColor = false;
-            this.Consumidores.Click += new System.EventHandler(this.button1_Click);
+            this.Consumidores.Click += new System.EventHandler(this.btnConsumidores);
             // 
             // btn_Cosmeticos
             // 

@@ -835,7 +835,7 @@ namespace DAL
                     _command.Connection = _connection;
 
                     _command.CommandType = CommandType.StoredProcedure;
-                    _command.CommandText = "[Sp_Most_EstadoVentas]";
+                    _command.CommandText = "[Sp_Most_EstadoVenta]";
                     _command.Parameters.AddWithValue("@EstadoVenta", estadoVenta);
                     SqlDataAdapter adapter = new SqlDataAdapter();
                     DataSet datos = new DataSet();
@@ -925,7 +925,7 @@ namespace DAL
                 _command.Connection = _connection;
 
                 _command.CommandType = CommandType.StoredProcedure;
-                _command.CommandText = "[Sp_Most_IDCosmeticos]";
+                _command.CommandText = "[Sp_Most_IDCosmetico]";
                 _command.Parameters.AddWithValue("@IDCosmetico", IdCosmetico);
                 _reader = _command.ExecuteReader();
 

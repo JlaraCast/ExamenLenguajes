@@ -199,6 +199,7 @@
             // cbEstado
             // 
             this.cbEstado.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cbEstado.ForeColor = System.Drawing.Color.Snow;
@@ -212,7 +213,6 @@
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(548, 40);
             this.cbEstado.TabIndex = 35;
-            this.cbEstado.Text = "Seleccione";
             this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.cbEstado_SelectedIndexChanged);
             // 
             // label4
@@ -274,10 +274,10 @@
             // cbCategoria
             // 
             this.cbCategoria.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cbCategoria.ForeColor = System.Drawing.Color.Snow;
-            this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.ImeMode = System.Windows.Forms.ImeMode.On;
             this.cbCategoria.Items.AddRange(new object[] {
             "Maquillaje",
@@ -290,7 +290,6 @@
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(548, 40);
             this.cbCategoria.TabIndex = 30;
-            this.cbCategoria.Text = "Seleccione";
             this.cbCategoria.SelectedIndexChanged += new System.EventHandler(this.cbCategoria_SelectedIndexChanged);
             // 
             // label_Estado

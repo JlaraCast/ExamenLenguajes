@@ -154,8 +154,9 @@
             this.eliminarToolStripMenuItem.BackColor = System.Drawing.Color.MidnightBlue;
             this.eliminarToolStripMenuItem.ForeColor = System.Drawing.Color.Snow;
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(200, 38);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(240, 38);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
@@ -163,8 +164,9 @@
             this.editarToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(200, 38);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(240, 38);
             this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // btn_Volver
             // 
@@ -174,7 +176,7 @@
             this.btn_Volver.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Volver.Name = "btn_Volver";
             this.btn_Volver.Size = new System.Drawing.Size(48, 48);
-            this.btn_Volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btn_Volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Volver.TabIndex = 25;
             this.btn_Volver.TabStop = false;
             this.btn_Volver.Click += new System.EventHandler(this.btn_Volver_Click);
@@ -296,7 +298,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1059, 724);
+            this.ClientSize = new System.Drawing.Size(1053, 724);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

@@ -21,8 +21,8 @@ namespace ExamenGrupo5
         {
             InitializeComponent();
             conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
+            cbCategoria.SelectedIndex = 0; // Selecciona el primer ítem del combo box
             dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta("").Tables[0];
-
         }
 
         private void Salir(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace ExamenGrupo5
       
         private void EstadoVentaChanged(object sender, EventArgs e)
         {
-            dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta(comboBox1.SelectedItem.ToString()).Tables[0];
+            dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta(cbCategoria.SelectedItem.ToString()).Tables[0];
         }
 
         private void Agregar_click(object sender, EventArgs e)
@@ -105,7 +105,7 @@ namespace ExamenGrupo5
                 
                     
                         conexion.EliminarVenta(ID);
-                dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta(comboBox1.SelectedItem.ToString()).Tables[0];
+                dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta(cbCategoria.SelectedItem.ToString()).Tables[0];
                 return;
                     
                 

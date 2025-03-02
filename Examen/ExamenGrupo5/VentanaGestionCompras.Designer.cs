@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbProveedor = new System.Windows.Forms.ComboBox();
             this.txtIDCosmetico = new System.Windows.Forms.TextBox();
             this.numericUpDownCantidad = new System.Windows.Forms.NumericUpDown();
             this.pbImagen = new System.Windows.Forms.PictureBox();
@@ -48,7 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbProveedor = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -111,6 +111,29 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(596, 1028);
             this.panel2.TabIndex = 7;
+            // 
+            // cbProveedor
+            // 
+            this.cbProveedor.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.cbProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.cbProveedor.ForeColor = System.Drawing.Color.Snow;
+            this.cbProveedor.FormattingEnabled = true;
+            this.cbProveedor.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.cbProveedor.Items.AddRange(new object[] {
+            "Internacional",
+            "Nacional",
+            "Distribuidor ",
+            "Exclusivo",
+            "Mayorista",
+            "Minorista",
+            "Fabricante"});
+            this.cbProveedor.Location = new System.Drawing.Point(26, 457);
+            this.cbProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbProveedor.Name = "cbProveedor";
+            this.cbProveedor.Size = new System.Drawing.Size(548, 40);
+            this.cbProveedor.TabIndex = 46;
+            this.cbProveedor.Text = "Seleccione";
             // 
             // txtIDCosmetico
             // 
@@ -344,29 +367,6 @@
             this.label1.Size = new System.Drawing.Size(0, 38);
             this.label1.TabIndex = 9;
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // cbProveedor
-            // 
-            this.cbProveedor.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.cbProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.cbProveedor.ForeColor = System.Drawing.Color.Snow;
-            this.cbProveedor.FormattingEnabled = true;
-            this.cbProveedor.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.cbProveedor.Items.AddRange(new object[] {
-            "Internacional",
-            "Nacional",
-            "Distribuidor ",
-            "Exclusivo",
-            "Mayorista",
-            "Minorista",
-            "Fabricante"});
-            this.cbProveedor.Location = new System.Drawing.Point(26, 457);
-            this.cbProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbProveedor.Name = "cbProveedor";
-            this.cbProveedor.Size = new System.Drawing.Size(548, 40);
-            this.cbProveedor.TabIndex = 46;
-            this.cbProveedor.Text = "Seleccione";
             // 
             // VentanaGestionCompras
             // 

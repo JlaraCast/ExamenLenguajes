@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
@@ -43,7 +44,8 @@ namespace ExamenGrupo5
                 // Verificar si el tipo de solicitud es "Solicitar"
                 case "Crear":
                     txt_Id.Enabled = false;
-                    verificar_Campos();
+                    txt_Id.Visible = false;
+                    lbID.Visible = false;
                     break;
 
                 // Verificar si el tipo de solicitud es "Modificar"
@@ -179,10 +181,28 @@ namespace ExamenGrupo5
             {
                 mensajesError.Add("El campo de teléfono no puede estar vacío.");
             }
+            else
+            {
+                // Verificar el formato del teléfono
+                string telefonoPattern = @"^\+\d{1,3}\s\d{4,14}$";
+                if (!Regex.IsMatch(txt_Telefono.Text, telefonoPattern))
+                {
+                    mensajesError.Add("El formato del teléfono es incorrecto. Debe ser: +Código de país + número.");
+                }
+            }
 
             if (string.IsNullOrWhiteSpace(txt_Correo.Text))
             {
                 mensajesError.Add("El campo de correo electrónico no puede estar vacío.");
+            }
+            else
+            {
+                // Verificar el formato del correo electrónico
+                string correoPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                if (!Regex.IsMatch(txt_Correo.Text, correoPattern))
+                {
+                    mensajesError.Add("El formato del correo electrónico es incorrecto.");
+                }
             }
 
             if (string.IsNullOrWhiteSpace(txt_Direccion.Text))
@@ -212,7 +232,6 @@ namespace ExamenGrupo5
             if (mensajesError.Count > 0)
             {
                 throw new Exception("Errores de validación:\n" + string.Join("\n", mensajesError));
-                //return false;
             }
 
             // Si no hay errores, retornar true
@@ -271,6 +290,9 @@ namespace ExamenGrupo5
             // Si este evento no es necesario, puedes dejarlo vacío o eliminarlo del `Designer.cs`
         }
 
-
+        private void salir(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
