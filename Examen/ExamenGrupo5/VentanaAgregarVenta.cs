@@ -114,6 +114,7 @@ namespace ExamenGrupo5
                 if (cosmetico.StockDisponible < int.Parse(pkCantidadVendidos.Value.ToString()))
                 {
                     MessageBox.Show($"No se cuenta actualmente con la cantidad suficiente de productos para suplir con la venta. Ingrese un numero de productos menor a {cosmetico.StockDisponible}");
+                    return;
                 }
 
                 var venta = new Venta

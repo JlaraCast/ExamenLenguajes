@@ -21,7 +21,7 @@ namespace ExamenGrupo5
         {
             InitializeComponent();
             conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
-            
+            cbEstadoVenta.SelectedIndex = 0; // Selecciona el primer ítem del combo box
             dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta("").Tables[0];
             
         }
