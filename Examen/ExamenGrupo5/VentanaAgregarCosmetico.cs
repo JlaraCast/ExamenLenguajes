@@ -34,7 +34,7 @@ namespace ExamenGrupo5
             InitializeComponent();
             _cosmetico = cos;
             CargarDatos();
-            edita = false;
+            edita = true;
 
             _conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
         }

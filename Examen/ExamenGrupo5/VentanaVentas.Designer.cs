@@ -56,7 +56,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.dtgTablaDatos = new System.Windows.Forms.DataGridView();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.Icnrefrescar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -75,7 +74,6 @@
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTablaDatos)).BeginInit();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Icnrefrescar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -396,7 +394,6 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel8.Controls.Add(this.Icnrefrescar);
             this.panel8.Controls.Add(this.cbEstadoVenta);
             this.panel8.Controls.Add(this.pictureBox1);
             this.panel8.Controls.Add(this.button2);
@@ -409,19 +406,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(853, 479);
             this.panel8.TabIndex = 7;
-            // 
-            // Icnrefrescar
-            // 
-            this.Icnrefrescar.Image = global::ExamenGrupo5.Properties.Resources.icons8_synchronize_48;
-            this.Icnrefrescar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Icnrefrescar.Location = new System.Drawing.Point(472, 22);
-            this.Icnrefrescar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Icnrefrescar.Name = "Icnrefrescar";
-            this.Icnrefrescar.Size = new System.Drawing.Size(38, 30);
-            this.Icnrefrescar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Icnrefrescar.TabIndex = 29;
-            this.Icnrefrescar.TabStop = false;
-            this.Icnrefrescar.Click += new System.EventHandler(this.btnRefrescar);
             // 
             // pictureBox1
             // 
@@ -524,7 +508,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgTablaDatos)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Icnrefrescar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
@@ -566,6 +549,5 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.ComboBox cbEstadoVenta;
-        private System.Windows.Forms.PictureBox Icnrefrescar;
     }
 }

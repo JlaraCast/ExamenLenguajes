@@ -23,8 +23,7 @@ namespace ExamenGrupo5
             conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
             
             dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta("").Tables[0];
-            cbEstadoVenta.SelectedIndex = 0; // Selecciona el primer ítem del combo box
-
+            
         }
 
         private void Salir(object sender, EventArgs e)
@@ -42,35 +41,8 @@ namespace ExamenGrupo5
         private void Agregar_click(object sender, EventArgs e)
         {
             new VentanaAgregarVenta().ShowDialog();
-        }
+            dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta("").Tables[0];
 
-        private void Editar_Click(object sender, EventArgs e)
-        {
-            if (dtgDatos.SelectedRows.Count > 0)
-            {
-                int ID = Convert.ToInt32(dtgDatos.SelectedRows[0].Cells["ID"].Value);
-                if (ID > 0)
-                {
-                    Venta venta = conexion.MostrarIDVenta(ID);
-                    
-                    if (venta != null)
-                    {
-                        new VentanaAgregarVenta(venta).ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show("venta no encontrada.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("El ID de la venta seleccionada no es válido.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione la fila entera para poder editar una venta.");
-            }
         }
 
         private void BuscarNombreCompra(object sender, EventArgs e)
@@ -97,6 +69,7 @@ namespace ExamenGrupo5
                         if (venta != null)
                         {
                             new VentanaAgregarVenta(venta).ShowDialog();
+                            dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta("").Tables[0];
                         }
                         else
                         {

@@ -128,10 +128,11 @@ namespace ExamenGrupo5
                     IDConsumidor = int.Parse(cbIdConsumidor.SelectedValue.ToString()), // ComboBox con los IDs de consumidores
                     EstadoVenta = cbEstadoVentas.SelectedItem.ToString() // ComboBox con el estado de la venta
                 };
-                venta.IdVenta = 1;
+                
                 _conexion.GuardarVentas(venta);
+                
 
-                if(venta.EstadoVenta == "Completado")
+                if (venta.EstadoVenta == "Completada" || venta.EstadoVenta == "Pendiente")
                 {
                     cosmetico.StockDisponible -= venta.CantidadVendido;
                     _conexion.ModificarCosmetico(cosmetico);
@@ -215,7 +216,7 @@ namespace ExamenGrupo5
                     IDConsumidor = int.Parse(cbIdConsumidor.SelectedValue.ToString()),
                     EstadoVenta = cbEstadoVentas.SelectedItem.ToString()
                 };
-
+                
                 // Actualizar la venta en la base de datos
                 _conexion.ModificarVenta(venta);
 
@@ -270,7 +271,7 @@ namespace ExamenGrupo5
         private void btn_aceptar(object sender, EventArgs e)
         {
 
-            if (edita = false)
+            if (edita == false)
             {
                 GuardarDatos();
             }
@@ -279,8 +280,9 @@ namespace ExamenGrupo5
                 ActualizarDatos();
             }
             
+            this.Close();
 
-           
+
         }
 
         private void cargarDatos(Venta venta)
