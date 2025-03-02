@@ -71,7 +71,7 @@ namespace DAL
 
                 _command.CommandText = "[Sp_Upd_Cosmeticos]";
 
-                _command.Parameters.AddWithValue("@IDCosmeticos", cosmetico.IDCosmetico);
+                _command.Parameters.AddWithValue("@IDCosmetico", cosmetico.IDCosmetico);
                 _command.Parameters.AddWithValue("@Nombre", cosmetico.Nombre);
                 _command.Parameters.AddWithValue("@Marca", cosmetico.Marca);
                 _command.Parameters.AddWithValue("@PrecioUnitario", cosmetico.PrecioUnitario);
@@ -180,9 +180,6 @@ namespace DAL
                 _command.Dispose();
                 adapter.Dispose();
                 return datos;
-
-
-
 
             }
             catch (Exception e)
@@ -707,7 +704,7 @@ namespace DAL
 
                     _command.CommandType = CommandType.StoredProcedure;
 
-                    _command.CommandText = "[Sp_Ins_Venta]";
+                    _command.CommandText = "[Sp_Ins_Ventas]";
 
                     _command.Parameters.AddWithValue("@FechaVenta", venta.FechaVenta);
                     _command.Parameters.AddWithValue("@TotalVenta", venta.TotalVenta);
@@ -838,7 +835,7 @@ namespace DAL
                     _command.Connection = _connection;
 
                     _command.CommandType = CommandType.StoredProcedure;
-                    _command.CommandText = "[Sp_Most_EstadoVenta]";
+                    _command.CommandText = "[Sp_Most_EstadoVentas]";
                     _command.Parameters.AddWithValue("@EstadoVenta", estadoVenta);
                     SqlDataAdapter adapter = new SqlDataAdapter();
                     DataSet datos = new DataSet();
@@ -856,7 +853,114 @@ namespace DAL
                     throw e;
                 }
             }
+//metodos agregados por sebas en la noche
+
+        public DataSet CosmeticosId()
+        {
+            try
+            {
+                _connection = new SqlConnection(StringConexion);
+                _connection.Open();
+                _command = new SqlCommand();
+                _command.Connection = _connection;
+
+                _command.CommandType = CommandType.StoredProcedure;
+                _command.CommandText = "[Sp_Obtener_IDCosmeticos]"; 
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                DataSet datos = new DataSet();
+                adapter.SelectCommand = _command;
+                adapter.Fill(datos);
+
+                _connection.Close();
+                _connection.Dispose();
+                _command.Dispose();
+                adapter.Dispose();
+
+                return datos;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public DataSet ObtenerIDConsumidores()
+        {
+            try
+            {
+                _connection = new SqlConnection(StringConexion);
+                _connection.Open();
+                _command = new SqlCommand();
+                _command.Connection = _connection;
+
+                _command.CommandType = CommandType.StoredProcedure;
+                _command.CommandText = "[Sp_Obtener_IDConsumidores]"; // Asegúrate de que el SP existe
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                DataSet datos = new DataSet();
+                adapter.SelectCommand = _command;
+                adapter.Fill(datos);
+
+                _connection.Close();
+                _connection.Dispose();
+                _command.Dispose();
+                adapter.Dispose();
+
+                return datos;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public Cosmetico BuscarPorIdCosmetico(int IdCosmetico)
+        {
+            try
+            {
+                _connection = new SqlConnection(StringConexion);
+                _connection.Open();
+                _command = new SqlCommand();
+                _command.Connection = _connection;
+
+                _command.CommandType = CommandType.StoredProcedure;
+                _command.CommandText = "[Sp_Most_IDCosmeticos]";
+                _command.Parameters.AddWithValue("@IDCosmetico", IdCosmetico);
+                _reader = _command.ExecuteReader();
+
+                Cosmetico temp = null;
+
+                if (_reader.Read())
+                {
+                    temp = new Cosmetico();
+                    temp.IDCosmetico = int.Parse(_reader.GetValue(0).ToString());
+                    temp.Nombre = _reader.GetValue(1).ToString();
+                    temp.Marca = _reader.GetValue(2).ToString();
+                    temp.PrecioUnitario = double.Parse(_reader.GetValue(3).ToString());
+                    temp.StockDisponible = int.Parse(_reader.GetValue(4).ToString());
+                    temp.FechaVencimiento = DateTime.Parse(_reader.GetValue(5).ToString());
+                    temp.Categoria = _reader.GetValue(6).ToString();
+                    temp.EstadoProducto = _reader.GetValue(7).ToString();
+                    temp.Imagen = _reader.GetValue(8).ToString();
+                }
+
+                _connection.Close();
+                _connection.Dispose();
+                _command.Dispose();
+
+                return temp;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 
-        }//fin para la clase
+
+
+
+
+    }//fin para la clase
 }//fin para el namespace

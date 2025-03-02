@@ -91,17 +91,23 @@
     <Compile Include="VentanaAgregarCosmetico.Designer.cs">
       <DependentUpon>VentanaAgregarCosmetico.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaAgregarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaAgregarVenta.Designer.cs">
+      <DependentUpon>VentanaAgregarVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaCompras.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VentanaCompras.Designer.cs">
       <DependentUpon>VentanaCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaConsumidor.cs">
+    <Compile Include="VentaConsumidor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaConsumidor.Designer.cs">
-      <DependentUpon>VentanaConsumidor.cs</DependentUpon>
+    <Compile Include="VentaConsumidor.Designer.cs">
+      <DependentUpon>VentaConsumidor.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanaCosmetico.cs">
       <SubType>Form</SubType>
@@ -158,11 +164,14 @@
       <LastGenOutput>VentanaAgregarCosmetico1.Designer.cs</LastGenOutput>
       <DependentUpon>VentanaAgregarCosmetico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VentanaAgregarVenta.resx">
+      <DependentUpon>VentanaAgregarVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaCompras.resx">
       <DependentUpon>VentanaCompras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaConsumidor.resx">
-      <DependentUpon>VentanaConsumidor.cs</DependentUpon>
+    <EmbeddedResource Include="VentaConsumidor.resx">
+      <DependentUpon>VentaConsumidor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaCosmetico.resx">
       <DependentUpon>VentanaCosmetico.cs</DependentUpon>
