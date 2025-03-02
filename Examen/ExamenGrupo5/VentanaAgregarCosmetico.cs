@@ -324,6 +324,9 @@ namespace ExamenGrupo5
                 }
             }
         }
+
+
+
         private Image Redimensionar_Y_Recortar_Circular(Image imagen, int ancho, int alto)
         {
             // Crear un nuevo bitmap con las dimensiones deseadas

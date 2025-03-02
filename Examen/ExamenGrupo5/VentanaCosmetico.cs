@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using BLL;
 using DAL;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ToolTip = System.Windows.Forms.ToolTip;
 
 namespace ExamenGrupo5
 {
@@ -22,6 +23,7 @@ namespace ExamenGrupo5
             InitializeComponent();
             conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
             dtgDatos.DataSource = conexion.BuscarPorNombreCosmeticos(txt_Nombre_Producto.Text).Tables[0];
+            ShowToolTipOnMouseUp(pictureBox1, "Actualizar");
         }
 
         private void Agregar_click(object sender, EventArgs e)
@@ -123,6 +125,16 @@ namespace ExamenGrupo5
             {
                 MessageBox.Show("Seleccione la fila entera para poder eliminar un cosmetico.");
             }
+        }
+
+        private void ShowToolTipOnMouseUp(PictureBox pictureBox, string message)
+        {
+            ToolTip toolTip = new ToolTip();
+
+            pictureBox.MouseUp += (sender, e) =>
+            {
+                toolTip.SetToolTip(pictureBox, message);
+            };
         }
 
         private void btn_Imprimir_Click(object sender, EventArgs e)

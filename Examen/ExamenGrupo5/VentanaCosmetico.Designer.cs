@@ -42,20 +42,23 @@
             this.btn_Volver = new System.Windows.Forms.PictureBox();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.dtgDatos = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_Editar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dtgDatos = new System.Windows.Forms.DataGridView();
             this.groupBoxBuscador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Volver)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -103,7 +106,7 @@
             this.btn_agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_agregar.ForeColor = System.Drawing.Color.Snow;
             this.btn_agregar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_agregar.Location = new System.Drawing.Point(659, 11);
+            this.btn_agregar.Location = new System.Drawing.Point(688, 11);
             this.btn_agregar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(137, 68);
@@ -117,10 +120,10 @@
             this.txt_Nombre_Producto.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.txt_Nombre_Producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Nombre_Producto.ForeColor = System.Drawing.Color.Snow;
-            this.txt_Nombre_Producto.Location = new System.Drawing.Point(17, 89);
+            this.txt_Nombre_Producto.Location = new System.Drawing.Point(107, 89);
             this.txt_Nombre_Producto.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txt_Nombre_Producto.Name = "txt_Nombre_Producto";
-            this.txt_Nombre_Producto.Size = new System.Drawing.Size(903, 39);
+            this.txt_Nombre_Producto.Size = new System.Drawing.Size(813, 39);
             this.txt_Nombre_Producto.TabIndex = 21;
             this.txt_Nombre_Producto.TextChanged += new System.EventHandler(this.BuscarNombreCosmetico);
             // 
@@ -189,7 +192,7 @@
             this.btn_Imprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Imprimir.ForeColor = System.Drawing.Color.Snow;
             this.btn_Imprimir.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_Imprimir.Location = new System.Drawing.Point(502, 11);
+            this.btn_Imprimir.Location = new System.Drawing.Point(544, 11);
             this.btn_Imprimir.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btn_Imprimir.Name = "btn_Imprimir";
             this.btn_Imprimir.Size = new System.Drawing.Size(138, 68);
@@ -207,23 +210,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(945, 420);
             this.panel5.TabIndex = 23;
-            // 
-            // dtgDatos
-            // 
-            this.dtgDatos.AllowUserToAddRows = false;
-            this.dtgDatos.BackgroundColor = System.Drawing.Color.Snow;
-            this.dtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDatos.ContextMenuStrip = this.contextMenuStrip1;
-            this.dtgDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgDatos.GridColor = System.Drawing.Color.DarkGoldenrod;
-            this.dtgDatos.Location = new System.Drawing.Point(0, 0);
-            this.dtgDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dtgDatos.MultiSelect = false;
-            this.dtgDatos.Name = "dtgDatos";
-            this.dtgDatos.ReadOnly = true;
-            this.dtgDatos.RowHeadersWidth = 51;
-            this.dtgDatos.Size = new System.Drawing.Size(945, 420);
-            this.dtgDatos.TabIndex = 1;
             // 
             // contextMenuStrip1
             // 
@@ -250,7 +236,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel2.Controls.Add(this.btn_Editar);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btn_Volver);
             this.panel2.Controls.Add(this.btn_Imprimir);
             this.panel2.Controls.Add(this.panel5);
@@ -265,24 +252,6 @@
             this.panel2.Size = new System.Drawing.Size(947, 598);
             this.panel2.TabIndex = 7;
             // 
-            // btn_Editar
-            // 
-            this.btn_Editar.AutoSize = true;
-            this.btn_Editar.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Editar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Editar.ForeColor = System.Drawing.Color.Snow;
-            this.btn_Editar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_Editar.Location = new System.Drawing.Point(377, 11);
-            this.btn_Editar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.btn_Editar.Name = "btn_Editar";
-            this.btn_Editar.Size = new System.Drawing.Size(107, 68);
-            this.btn_Editar.TabIndex = 26;
-            this.btn_Editar.Text = "Editar";
-            this.btn_Editar.UseVisualStyleBackColor = false;
-            this.btn_Editar.Click += new System.EventHandler(this.Editar_Click);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkGoldenrod;
@@ -292,6 +261,48 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1049, 725);
             this.panel3.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox1.Location = new System.Drawing.Point(472, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 68);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.BuscarNombreCosmetico);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox2.Location = new System.Drawing.Point(35, 89);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(53, 41);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 27;
+            this.pictureBox2.TabStop = false;
+            // 
+            // dtgDatos
+            // 
+            this.dtgDatos.AllowUserToAddRows = false;
+            this.dtgDatos.BackgroundColor = System.Drawing.Color.Snow;
+            this.dtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgDatos.ContextMenuStrip = this.contextMenuStrip1;
+            this.dtgDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgDatos.GridColor = System.Drawing.Color.DarkGoldenrod;
+            this.dtgDatos.Location = new System.Drawing.Point(0, 0);
+            this.dtgDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtgDatos.MultiSelect = false;
+            this.dtgDatos.Name = "dtgDatos";
+            this.dtgDatos.ReadOnly = true;
+            this.dtgDatos.RowHeadersWidth = 51;
+            this.dtgDatos.Size = new System.Drawing.Size(945, 420);
+            this.dtgDatos.TabIndex = 1;
             // 
             // VentanaCosmetico
             // 
@@ -306,12 +317,14 @@
             this.groupBoxBuscador.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Volver)).EndInit();
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,11 +343,12 @@
         private System.Windows.Forms.PictureBox btn_Volver;
         private System.Windows.Forms.Button btn_Imprimir;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridView dtgDatos;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btn_Editar;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dtgDatos;
     }
 }
