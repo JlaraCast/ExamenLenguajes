@@ -73,6 +73,12 @@
     <Compile Include="VentanaAgregarCosmetico.Designer.cs">
       <DependentUpon>VentanaAgregarCosmetico.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaAgregarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaAgregarVenta.Designer.cs">
+      <DependentUpon>VentanaAgregarVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>VentanaAgregarCosmetico1.Designer.cs</LastGenOutput>
       <DependentUpon>VentanaAgregarCosmetico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaAgregarVenta.resx">
+      <DependentUpon>VentanaAgregarVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaCompras.resx">
       <DependentUpon>VentanaCompras.cs</DependentUpon>

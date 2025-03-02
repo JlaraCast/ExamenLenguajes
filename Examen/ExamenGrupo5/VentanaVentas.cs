@@ -21,7 +21,8 @@ namespace ExamenGrupo5
         {
             InitializeComponent();
             conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
-            dataGridView1.DataSource = conexion.BuscarPorEstadoVenta("").Tables[0];
+            dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta("").Tables[0];
+
         }
 
         private void Salir(object sender, EventArgs e)
@@ -29,14 +30,15 @@ namespace ExamenGrupo5
             Close();
         }
 
+      
         private void EstadoVentaChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = conexion.BuscarPorEstadoVenta(comboBox1.SelectedItem.ToString()).Tables[0];
+            dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta(comboBox1.SelectedItem.ToString()).Tables[0];
         }
 
         private void Agregar_click(object sender, EventArgs e)
         {
-            //new VentanaAgregarCompra().ShowDialog();
+            new VentanaAgregarVenta().ShowDialog();
         }
 
         private void Editar_Click(object sender, EventArgs e)
@@ -97,13 +99,13 @@ namespace ExamenGrupo5
 
         private void Eliminar(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dtgTablaDatos.SelectedRows.Count > 0)
             {
-                int ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["IdVenta"].Value);
+                int ID = Convert.ToInt32(dtgTablaDatos.SelectedRows[0].Cells["IdVenta"].Value);
                 
                     
                         conexion.EliminarVenta(ID);
-                dataGridView1.DataSource = conexion.BuscarPorEstadoVenta(comboBox1.SelectedItem.ToString()).Tables[0];
+                dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta(comboBox1.SelectedItem.ToString()).Tables[0];
                 return;
                     
                 
