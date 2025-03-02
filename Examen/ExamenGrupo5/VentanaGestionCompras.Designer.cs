@@ -31,8 +31,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtIDCosmetico = new System.Windows.Forms.TextBox();
+            this.numericUpDownCantidad = new System.Windows.Forms.NumericUpDown();
             this.pbImagen = new System.Windows.Forms.PictureBox();
             this.pb_salir = new System.Windows.Forms.PictureBox();
+            this.txtProveedor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,20 +45,17 @@
             this.label_Estado = new System.Windows.Forms.Label();
             this.label_Clave = new System.Windows.Forms.Label();
             this.btn_Aceptar = new System.Windows.Forms.Button();
-            this.txtProveedor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDownCantidad = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_salir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTotalCompra)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -89,7 +89,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtIDCosmetico);
             this.panel2.Controls.Add(this.numericUpDownCantidad);
             this.panel2.Controls.Add(this.pbImagen);
             this.panel2.Controls.Add(this.pb_salir);
@@ -112,6 +112,31 @@
             this.panel2.Size = new System.Drawing.Size(596, 1028);
             this.panel2.TabIndex = 7;
             // 
+            // txtIDCosmetico
+            // 
+            this.txtIDCosmetico.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.txtIDCosmetico.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtIDCosmetico.ForeColor = System.Drawing.Color.Snow;
+            this.txtIDCosmetico.Location = new System.Drawing.Point(20, 797);
+            this.txtIDCosmetico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIDCosmetico.Name = "txtIDCosmetico";
+            this.txtIDCosmetico.Size = new System.Drawing.Size(560, 39);
+            this.txtIDCosmetico.TabIndex = 45;
+            // 
+            // numericUpDownCantidad
+            // 
+            this.numericUpDownCantidad.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.numericUpDownCantidad.ForeColor = System.Drawing.Color.Snow;
+            this.numericUpDownCantidad.Location = new System.Drawing.Point(26, 558);
+            this.numericUpDownCantidad.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.numericUpDownCantidad.Name = "numericUpDownCantidad";
+            this.numericUpDownCantidad.Size = new System.Drawing.Size(556, 39);
+            this.numericUpDownCantidad.TabIndex = 44;
+            // 
             // pbImagen
             // 
             this.pbImagen.Image = global::ExamenGrupo5.Properties.Resources.icons8_add_48;
@@ -133,6 +158,19 @@
             this.pb_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_salir.TabIndex = 42;
             this.pb_salir.TabStop = false;
+            this.pb_salir.Click += new System.EventHandler(this.btn_salir);
+            // 
+            // txtProveedor
+            // 
+            this.txtProveedor.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.txtProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtProveedor.ForeColor = System.Drawing.Color.Snow;
+            this.txtProveedor.Location = new System.Drawing.Point(22, 457);
+            this.txtProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtProveedor.Name = "txtProveedor";
+            this.txtProveedor.Size = new System.Drawing.Size(560, 39);
+            this.txtProveedor.TabIndex = 21;
+            this.txtProveedor.Text = "Nombre proveedor";
             // 
             // label5
             // 
@@ -236,7 +274,6 @@
             this.label_Estado.TabIndex = 29;
             this.label_Estado.Text = "Cantidad de productos";
             this.label_Estado.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label_Estado.Click += new System.EventHandler(this.label_Estado_Click);
             // 
             // label_Clave
             // 
@@ -267,19 +304,7 @@
             this.btn_Aceptar.TabIndex = 25;
             this.btn_Aceptar.Text = "Aceptar";
             this.btn_Aceptar.UseVisualStyleBackColor = false;
-            // 
-            // txtProveedor
-            // 
-            this.txtProveedor.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.txtProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.txtProveedor.ForeColor = System.Drawing.Color.Snow;
-            this.txtProveedor.Location = new System.Drawing.Point(22, 457);
-            this.txtProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtProveedor.Name = "txtProveedor";
-            this.txtProveedor.Size = new System.Drawing.Size(560, 39);
-            this.txtProveedor.TabIndex = 21;
-            this.txtProveedor.Text = "Nombre proveedor";
-            this.txtProveedor.TextChanged += new System.EventHandler(this.txt_TextChanged);
+            this.btn_Aceptar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
             // label3
             // 
@@ -332,31 +357,6 @@
             this.label1.TabIndex = 9;
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // numericUpDownCantidad
-            // 
-            this.numericUpDownCantidad.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.numericUpDownCantidad.ForeColor = System.Drawing.Color.Snow;
-            this.numericUpDownCantidad.Location = new System.Drawing.Point(26, 558);
-            this.numericUpDownCantidad.Maximum = new decimal(new int[] {
-            1410065408,
-            2,
-            0,
-            0});
-            this.numericUpDownCantidad.Name = "numericUpDownCantidad";
-            this.numericUpDownCantidad.Size = new System.Drawing.Size(556, 39);
-            this.numericUpDownCantidad.TabIndex = 44;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.textBox1.ForeColor = System.Drawing.Color.Snow;
-            this.textBox1.Location = new System.Drawing.Point(20, 797);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(560, 39);
-            this.textBox1.TabIndex = 45;
-            // 
             // VentanaGestionCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -372,10 +372,10 @@
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_salir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTotalCompra)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,6 +403,6 @@
         private System.Windows.Forms.Label Label;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDownCantidad;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtIDCosmetico;
     }
 }
