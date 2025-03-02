@@ -14,11 +14,11 @@ namespace ExamenGrupo5
 {
     public partial class VentanaConsumidor : Form
     {
-        private conexion _conexion = null;
+        private Conexion _conexion = null;
         public VentanaConsumidor()
         {
             InitializeComponent();
-            _conexion = new conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
+            _conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
 
             Buscar("");
 
@@ -160,14 +160,7 @@ namespace ExamenGrupo5
         {
             try
             {
-                // Se crea una instancia del formulario FrmCuenta
-                VentanaGestionConsumidor frmCuenta = new VentanaGestionConsumidor(funcion, id);
-
-                // Se actualiza la lista de usuarios cuando se cierre el formulario
-                frmCuenta.FormClosed += (s, args) => Buscar("");
-
-                // Se muestra el formulario
-                frmCuenta.Show();
+               
             }
             catch (Exception ex)
             {

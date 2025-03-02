@@ -123,6 +123,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="VentanaAgregarCosmetico.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VentanaAgregarCosmetico1.Designer.cs</LastGenOutput>
       <DependentUpon>VentanaAgregarCosmetico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaCompras.resx">

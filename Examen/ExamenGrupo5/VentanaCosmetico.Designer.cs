@@ -46,8 +46,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.btn_Editar = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.groupBoxBuscador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Volver)).BeginInit();
             this.panel5.SuspendLayout();
@@ -63,7 +63,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label1.Location = new System.Drawing.Point(18, 156);
+            this.label1.Location = new System.Drawing.Point(18, 155);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 38);
             this.label1.TabIndex = 9;
@@ -76,11 +76,11 @@
             this.groupBoxBuscador.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBoxBuscador.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxBuscador.ForeColor = System.Drawing.Color.Snow;
-            this.groupBoxBuscador.Location = new System.Drawing.Point(14, 4);
-            this.groupBoxBuscador.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBoxBuscador.Location = new System.Drawing.Point(14, 5);
+            this.groupBoxBuscador.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.groupBoxBuscador.Name = "groupBoxBuscador";
-            this.groupBoxBuscador.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxBuscador.Size = new System.Drawing.Size(998, 670);
+            this.groupBoxBuscador.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.groupBoxBuscador.Size = new System.Drawing.Size(982, 669);
             this.groupBoxBuscador.TabIndex = 6;
             this.groupBoxBuscador.TabStop = false;
             this.groupBoxBuscador.Text = "Buscador";
@@ -88,10 +88,10 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel4.Location = new System.Drawing.Point(21, 221);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel4.Location = new System.Drawing.Point(21, 222);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(225, 419);
+            this.panel4.Size = new System.Drawing.Size(161, 418);
             this.panel4.TabIndex = 23;
             // 
             // btn_agregar
@@ -103,31 +103,33 @@
             this.btn_agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_agregar.ForeColor = System.Drawing.Color.Snow;
             this.btn_agregar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_agregar.Location = new System.Drawing.Point(744, 11);
-            this.btn_agregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_agregar.Location = new System.Drawing.Point(659, 11);
+            this.btn_agregar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(151, 58);
+            this.btn_agregar.Size = new System.Drawing.Size(137, 68);
             this.btn_agregar.TabIndex = 22;
             this.btn_agregar.Text = "Agregar";
             this.btn_agregar.UseVisualStyleBackColor = false;
+            this.btn_agregar.Click += new System.EventHandler(this.Agregar_click);
             // 
             // txt_Nombre_Producto
             // 
             this.txt_Nombre_Producto.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.txt_Nombre_Producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Nombre_Producto.ForeColor = System.Drawing.Color.Snow;
-            this.txt_Nombre_Producto.Location = new System.Drawing.Point(14, 79);
-            this.txt_Nombre_Producto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_Nombre_Producto.Location = new System.Drawing.Point(17, 89);
+            this.txt_Nombre_Producto.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txt_Nombre_Producto.Name = "txt_Nombre_Producto";
-            this.txt_Nombre_Producto.Size = new System.Drawing.Size(938, 39);
+            this.txt_Nombre_Producto.Size = new System.Drawing.Size(903, 39);
             this.txt_Nombre_Producto.TabIndex = 21;
+            this.txt_Nombre_Producto.TextChanged += new System.EventHandler(this.BuscarNombreCosmetico);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label2.Location = new System.Drawing.Point(11, 136);
+            this.label2.Location = new System.Drawing.Point(10, 135);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(191, 38);
             this.label2.TabIndex = 10;
@@ -153,6 +155,7 @@
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(200, 38);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.Eliminar);
             // 
             // editarToolStripMenuItem
             // 
@@ -162,18 +165,20 @@
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(200, 38);
             this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.TbEditar);
             // 
             // btn_Volver
             // 
             this.btn_Volver.Image = ((System.Drawing.Image)(resources.GetObject("btn_Volver.Image")));
             this.btn_Volver.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_Volver.Location = new System.Drawing.Point(909, 11);
-            this.btn_Volver.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Volver.Location = new System.Drawing.Point(842, 11);
+            this.btn_Volver.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btn_Volver.Name = "btn_Volver";
-            this.btn_Volver.Size = new System.Drawing.Size(48, 48);
-            this.btn_Volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btn_Volver.Size = new System.Drawing.Size(53, 68);
+            this.btn_Volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Volver.TabIndex = 25;
             this.btn_Volver.TabStop = false;
+            this.btn_Volver.Click += new System.EventHandler(this.btn_salir);
             // 
             // btn_Imprimir
             // 
@@ -184,22 +189,23 @@
             this.btn_Imprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Imprimir.ForeColor = System.Drawing.Color.Snow;
             this.btn_Imprimir.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_Imprimir.Location = new System.Drawing.Point(588, 11);
-            this.btn_Imprimir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Imprimir.Location = new System.Drawing.Point(502, 11);
+            this.btn_Imprimir.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btn_Imprimir.Name = "btn_Imprimir";
-            this.btn_Imprimir.Size = new System.Drawing.Size(152, 58);
+            this.btn_Imprimir.Size = new System.Drawing.Size(138, 68);
             this.btn_Imprimir.TabIndex = 24;
             this.btn_Imprimir.Text = "Imprimir";
             this.btn_Imprimir.UseVisualStyleBackColor = false;
+            this.btn_Imprimir.Click += new System.EventHandler(this.btn_Imprimir_Click);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.panel5.Controls.Add(this.dtgDatos);
-            this.panel5.Location = new System.Drawing.Point(1, 178);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel5.Location = new System.Drawing.Point(2, 178);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(958, 420);
+            this.panel5.Size = new System.Drawing.Size(945, 420);
             this.panel5.TabIndex = 23;
             // 
             // dtgDatos
@@ -214,7 +220,7 @@
             this.dtgDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtgDatos.Name = "dtgDatos";
             this.dtgDatos.RowHeadersWidth = 51;
-            this.dtgDatos.Size = new System.Drawing.Size(958, 420);
+            this.dtgDatos.Size = new System.Drawing.Size(945, 420);
             this.dtgDatos.TabIndex = 1;
             // 
             // contextMenuStrip1
@@ -234,9 +240,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.groupBoxBuscador);
             this.panel1.Location = new System.Drawing.Point(10, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1029, 695);
+            this.panel1.Size = new System.Drawing.Size(1017, 695);
             this.panel1.TabIndex = 2;
             // 
             // panel2
@@ -252,20 +258,10 @@
             this.panel2.Controls.Add(this.Label);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(32, 49);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(960, 599);
+            this.panel2.Size = new System.Drawing.Size(947, 598);
             this.panel2.TabIndex = 7;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.panel3.Controls.Add(this.panel1);
-            this.panel3.Location = new System.Drawing.Point(3, 1);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1056, 724);
-            this.panel3.TabIndex = 6;
             // 
             // btn_Editar
             // 
@@ -276,19 +272,30 @@
             this.btn_Editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Editar.ForeColor = System.Drawing.Color.Snow;
             this.btn_Editar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_Editar.Location = new System.Drawing.Point(431, 11);
-            this.btn_Editar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Editar.Location = new System.Drawing.Point(377, 11);
+            this.btn_Editar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btn_Editar.Name = "btn_Editar";
-            this.btn_Editar.Size = new System.Drawing.Size(151, 58);
+            this.btn_Editar.Size = new System.Drawing.Size(107, 68);
             this.btn_Editar.TabIndex = 26;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.UseVisualStyleBackColor = false;
+            this.btn_Editar.Click += new System.EventHandler(this.Editar_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel3.Controls.Add(this.panel1);
+            this.panel3.Location = new System.Drawing.Point(3, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1049, 725);
+            this.panel3.TabIndex = 6;
             // 
             // VentanaCosmetico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 729);
+            this.ClientSize = new System.Drawing.Size(1041, 729);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VentanaCosmetico";

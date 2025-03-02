@@ -40,6 +40,12 @@ namespace ExamenGrupo5
 
         private void btnCosmeticosCLick(object sender, EventArgs e)
         {
+            new VentanaCosmetico().ShowDialog();
+        }
+
+        private void SalirClick(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

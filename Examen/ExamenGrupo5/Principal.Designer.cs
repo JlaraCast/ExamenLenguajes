@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.btn_Ventas = new System.Windows.Forms.Button();
             this.btn_Compras = new System.Windows.Forms.Button();
             this.txt_Bienvienido = new System.Windows.Forms.Label();
@@ -36,18 +35,18 @@
             this.Consumidores = new System.Windows.Forms.Button();
             this.btn_Cosmeticos = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pb_Salir = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pb_Salir = new System.Windows.Forms.PictureBox();
+            this.pbSalir = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Salir)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Salir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Ventas
@@ -164,6 +163,16 @@
             this.panel2.Size = new System.Drawing.Size(811, 113);
             this.panel2.TabIndex = 7;
             // 
+            // pb_Salir
+            // 
+            this.pb_Salir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pb_Salir.Location = new System.Drawing.Point(1006, 15);
+            this.pb_Salir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pb_Salir.Name = "pb_Salir";
+            this.pb_Salir.Size = new System.Drawing.Size(78, 69);
+            this.pb_Salir.TabIndex = 0;
+            this.pb_Salir.TabStop = false;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.MidnightBlue;
@@ -174,7 +183,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(811, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(811, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -202,30 +211,22 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.pbSalir);
             this.panel4.Location = new System.Drawing.Point(326, 4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(815, 100);
             this.panel4.TabIndex = 0;
             // 
-            // pictureBox1
+            // pbSalir
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(711, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pb_Salir
-            // 
-            this.pb_Salir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pb_Salir.Location = new System.Drawing.Point(1006, 15);
-            this.pb_Salir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pb_Salir.Name = "pb_Salir";
-            this.pb_Salir.Size = new System.Drawing.Size(78, 69);
-            this.pb_Salir.TabIndex = 0;
-            this.pb_Salir.TabStop = false;
+            this.pbSalir.Image = global::ExamenGrupo5.Properties.Resources.icons8_logout_48;
+            this.pbSalir.Location = new System.Drawing.Point(711, 14);
+            this.pbSalir.Name = "pbSalir";
+            this.pbSalir.Size = new System.Drawing.Size(64, 70);
+            this.pbSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSalir.TabIndex = 0;
+            this.pbSalir.TabStop = false;
+            this.pbSalir.Click += new System.EventHandler(this.SalirClick);
             // 
             // Principal
             // 
@@ -245,10 +246,10 @@
             this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Salir)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Salir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -266,6 +267,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button Consumidores;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbSalir;
     }
 }
