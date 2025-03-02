@@ -31,6 +31,17 @@ namespace BLL
             PuntosFidelidad = puntosFidelidad;
             Direccion = direccion;
         }
+        public Consumidor(string nombreCompleto, string telefono,
+          string correoElectronico, DateTime fechaRegistro, string frecuenciaCompra, int puntosFidelidad, string direccion)
+        {
+            NombreCompleto = nombreCompleto;
+            telefono = telefono;
+            CorreoElectronico = correoElectronico;
+            FechaRegistro = fechaRegistro;
+            FrecuenciaCompra = frecuenciaCompra;
+            PuntosFidelidad = puntosFidelidad;
+            Direccion = direccion;
+        }
 
         public Consumidor()
         {

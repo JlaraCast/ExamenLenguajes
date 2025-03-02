@@ -622,6 +622,47 @@ namespace DAL
             }
         }
 
+
+        public Consumidor MostrarNombreConsumidor(string NombreCompleto)
+        {
+            try
+            {
+                using (SqlConnection _connection = new SqlConnection(StringConexion))
+                {
+                    _connection.Open();
+                    using (SqlCommand _command = new SqlCommand("[Sp_Most_NombreConsumidor]", _connection))
+                    {
+                        _command.CommandType = CommandType.StoredProcedure;
+                        _command.Parameters.AddWithValue("@NombreCompleto", NombreCompleto);
+
+                        using (SqlDataReader _reader = _command.ExecuteReader())
+                        {
+                            if (_reader.Read())
+                            {
+                                return new Consumidor
+                                {
+                                    IdConsumidor = _reader.IsDBNull(0) ? 0 : _reader.GetInt32(0),
+                                    NombreCompleto = _reader.IsDBNull(1) ? string.Empty : _reader.GetString(1),
+                                    telefono = _reader.IsDBNull(2) ? string.Empty : _reader.GetString(2),
+                                    CorreoElectronico = _reader.IsDBNull(3) ? string.Empty : _reader.GetString(3),
+                                    FechaRegistro = _reader.IsDBNull(4) ? DateTime.MinValue : _reader.GetDateTime(4),
+                                    FrecuenciaCompra = _reader.IsDBNull(5) ? "0" : _reader.GetString(5),
+                                    PuntosFidelidad = _reader.IsDBNull(6) ? 0 : _reader.GetInt32(6),
+                                    Direccion = _reader.IsDBNull(7) ? string.Empty : _reader.GetString(7)
+                                };
+                            }
+                        }
+                    }
+                }
+                return null; // Retorna null si no encuentra resultados
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al buscar consumidor por nombre: " + ex.Message, ex);
+            }
+        }
+
+
         public DataSet BuscarPorEstadoConsumidor(String NombreCompleto)
         {
             try

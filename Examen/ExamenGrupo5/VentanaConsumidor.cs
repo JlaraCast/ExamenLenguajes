@@ -26,38 +26,31 @@ namespace ExamenGrupo5
 
         private void ImprimirBTN_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //MostrarInforme(); // Se llama al método para mostrar el informe
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
         // Método para mostrar el informe de usuarios en un formulario
-        //public void MostrarInforme()
-        //{
-        //    try
-        //    {
-        //        // Se crea una instancia del formulario FrmRepConsumidores
-        //        FrmRepConsumidores formulario = new FrmRepConsumidores();
+        public void MostrarInforme()
+        {
+            try
+            {
+                // Se crea una instancia del formulario FrmRepConsumidores
+                FrmRepConsumidores formulario = new FrmRepConsumidores();
 
-        //        // Se actualiza la lista de usuarios cuando se cierra el formulario
-        //        formulario.FormClosed += (s, args) => Buscar("");
+                // Se actualiza la lista de usuarios cuando se cierra el formulario
+                formulario.FormClosed += (s, args) => Buscar("");
 
-        //        // Se muestra el formulario de informe de usuarios en un diálogo modal
-        //        formulario.ShowDialog();
+                // Se muestra el formulario de informe de usuarios en un diálogo modal
+                formulario.ShowDialog();
 
-        //        // Se libera la memoria del formulario después de cerrarlo
-        //        formulario.Dispose();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+                // Se libera la memoria del formulario después de cerrarlo
+                formulario.Dispose();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         private void Label_Click(object sender, EventArgs e)
         {
@@ -160,7 +153,9 @@ namespace ExamenGrupo5
         {
             try
             {
-               
+                VentanaGestionConsumidor ventana = new VentanaGestionConsumidor(funcion, id);
+                ventana.FormClosed += (s, args) => Buscar("");
+                ventana.Show();
             }
             catch (Exception ex)
             {
@@ -168,5 +163,44 @@ namespace ExamenGrupo5
             }
         }
 
+        private void dtgDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (this.dtgDatos.SelectedRows.Count > 0)
+                {
+                    // Se procede a eliminar los datos del usuario
+                    _conexion.EliminarConsumidor(int.Parse(this.dtgDatos.SelectedRows[0].Cells["IdConsumidor"].Value.ToString()));
+
+                    // Se actualiza la lista de usuarios
+                    this.Buscar("");
+                }
+                else
+                {
+                    throw new Exception("Seleccione la fila del usuario que desea eliminar");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_Imprimir_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                MostrarInforme();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -39,7 +39,6 @@
             this.Label = new System.Windows.Forms.Label();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_Volver = new System.Windows.Forms.PictureBox();
             this.btn_Imprimir = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgDatos = new System.Windows.Forms.DataGridView();
@@ -48,14 +47,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_Editar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_Volver = new System.Windows.Forms.PictureBox();
             this.groupBoxBuscador.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Volver)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Volver)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -161,18 +161,6 @@
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(182, 34);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
-            // btn_Volver
-            // 
-            this.btn_Volver.Image = ((System.Drawing.Image)(resources.GetObject("btn_Volver.Image")));
-            this.btn_Volver.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_Volver.Location = new System.Drawing.Point(808, 9);
-            this.btn_Volver.Name = "btn_Volver";
-            this.btn_Volver.Size = new System.Drawing.Size(48, 48);
-            this.btn_Volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.btn_Volver.TabIndex = 25;
-            this.btn_Volver.TabStop = false;
-            this.btn_Volver.Click += new System.EventHandler(this.btn_Volver_Click);
-            // 
             // btn_Imprimir
             // 
             this.btn_Imprimir.AutoSize = true;
@@ -188,6 +176,7 @@
             this.btn_Imprimir.TabIndex = 24;
             this.btn_Imprimir.Text = "Imprimir";
             this.btn_Imprimir.UseVisualStyleBackColor = false;
+            this.btn_Imprimir.Click += new System.EventHandler(this.btn_Imprimir_Click);
             // 
             // panel5
             // 
@@ -207,11 +196,13 @@
             this.dtgDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDatos.GridColor = System.Drawing.Color.DarkGoldenrod;
             this.dtgDatos.Location = new System.Drawing.Point(0, 0);
-            this.dtgDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgDatos.Margin = new System.Windows.Forms.Padding(4);
             this.dtgDatos.Name = "dtgDatos";
             this.dtgDatos.RowHeadersWidth = 51;
             this.dtgDatos.Size = new System.Drawing.Size(852, 336);
             this.dtgDatos.TabIndex = 1;
+            this.dtgDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellContentClick);
+            this.dtgDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -277,6 +268,18 @@
             this.panel3.Size = new System.Drawing.Size(939, 579);
             this.panel3.TabIndex = 6;
             // 
+            // btn_Volver
+            // 
+            this.btn_Volver.Image = ((System.Drawing.Image)(resources.GetObject("btn_Volver.Image")));
+            this.btn_Volver.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_Volver.Location = new System.Drawing.Point(808, 9);
+            this.btn_Volver.Name = "btn_Volver";
+            this.btn_Volver.Size = new System.Drawing.Size(48, 48);
+            this.btn_Volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btn_Volver.TabIndex = 25;
+            this.btn_Volver.TabStop = false;
+            this.btn_Volver.Click += new System.EventHandler(this.btn_Volver_Click);
+            // 
             // VentanaConsumidor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -288,7 +291,6 @@
             this.Text = "VentanaConsumidor";
             this.groupBoxBuscador.ResumeLayout(false);
             this.groupBoxBuscador.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Volver)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -296,6 +298,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Volver)).EndInit();
             this.ResumeLayout(false);
 
         }
