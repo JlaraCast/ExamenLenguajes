@@ -175,7 +175,7 @@ namespace ExamenGrupo5
 
                         // Definimos la relación entre puntos y descuento
                         int puntosPorPorcentaje = 10000;
-                            int porcentajeDescuento = 1; // 1% de descuento por cada 10,000 puntos
+                        double porcentajeDescuento = 0.01; // 1% de descuento por cada 10,000 puntos
 
                             // Calculamos el descuento
                             double descuento = ((int)pkPuntosUsados.Value / puntosPorPorcentaje) * porcentajeDescuento;
@@ -194,6 +194,11 @@ namespace ExamenGrupo5
                         MessageBox.Show("El producto que desea comprar supera a sus puntos, no se puede realizar la venta.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
+                }
+                else
+                {
+                    modificarPuntos = totalVenta / 100;
+                    consumidor.PuntosFidelidad += (int)modificarPuntos;
                 }
 
                 MessageBox.Show($"Descuento.{totalVenta}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -227,12 +232,7 @@ namespace ExamenGrupo5
                 ///////////////////////////////////////////////////////////////   // _conexion.GuardarVentas(venta);
 
                 
-                if (cbMetodoPago.SelectedItem != "Puntos")
-                {
-                    modificarPuntos = totalVenta / 100;
-                    consumidor.PuntosFidelidad += (int)modificarPuntos;
-
-                }
+               
 
 
 
