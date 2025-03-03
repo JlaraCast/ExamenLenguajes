@@ -15,13 +15,20 @@ namespace ExamenGrupo5
         {
             InitializeComponent();
             conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
-            dtgDatos.DataSource = conexion.BuscarPorEstadoCompra(txt_Estado_compra.Text).Tables[0];
+            ActualizarTabla();
             ShowToolTipOnMouseUp(pictureBox1, "Actualizar");
+        }
+
+        private void ActualizarTabla()
+        {
+            dtgDatos.DataSource = conexion.BuscarPorEstadoCompra(txt_Estado_compra.Text).Tables[0];
         }
 
         private void Agregar_Click(object sender, EventArgs e)
         {
-            new VentanaGestionCompras().ShowDialog();
+            VentanaGestionCompras ventana = new VentanaGestionCompras();
+            ventana.FormClosed += (s, args) => ActualizarTabla();
+            ventana.ShowDialog();
         }
 
         private void Editar_Click(object sender, EventArgs e)
@@ -33,7 +40,19 @@ namespace ExamenGrupo5
 
                 if (compra != null)
                 {
-                    new VentanaGestionCompras(compra).ShowDialog();
+                    VentanaGestionCompras ventana = new VentanaGestionCompras(compra);
+                    ventana.FormClosed += (s, args) =>
+                    {
+                        ActualizarTabla();
+
+                        if (compra.EstadoCompra == "Cancelada")
+                        {
+                            Cosmetico cosmetico = conexion.BuscarPorIdCosmetico(compra.IDCosmeticos);
+                            cosmetico.StockDisponible -= compra.CantidadProductos;
+                            conexion.ModificarCosmetico(cosmetico);
+                        }
+                    };
+                    ventana.ShowDialog();
                 }
                 else
                 {
@@ -48,7 +67,7 @@ namespace ExamenGrupo5
 
         private void BuscarCompraPorEstado(object sender, EventArgs e)
         {
-            dtgDatos.DataSource = conexion.BuscarPorEstadoCompra(txt_Estado_compra.Text).Tables[0];
+            ActualizarTabla();
         }
 
         private void Eliminar_Click(object sender, EventArgs e)
@@ -60,7 +79,6 @@ namespace ExamenGrupo5
 
                 if (compra != null)
                 {
-                    // Confirmación antes de eliminar
                     DialogResult confirmacion = MessageBox.Show(
                         "¿Está seguro de que desea eliminar esta compra?",
                         "Confirmación de eliminación",
@@ -70,7 +88,7 @@ namespace ExamenGrupo5
                     if (confirmacion == DialogResult.Yes)
                     {
                         conexion.EliminarCompra(compra.IDCompra);
-                        dtgDatos.DataSource = conexion.BuscarPorEstadoCompra(txt_Estado_compra.Text).Tables[0];
+                        ActualizarTabla();
                         MessageBox.Show("Compra eliminada correctamente.", "Eliminación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -85,7 +103,6 @@ namespace ExamenGrupo5
             }
         }
 
-
         private void btn_Salir_Click(object sender, EventArgs e)
         {
             Close();
@@ -99,12 +116,7 @@ namespace ExamenGrupo5
         private void ShowToolTipOnMouseUp(PictureBox pictureBox, string message)
         {
             ToolTip toolTip = new ToolTip();
-
-            pictureBox.MouseUp += (sender, e) =>
-            {
-                toolTip.SetToolTip(pictureBox, message);
-            };
+            pictureBox.MouseUp += (sender, e) => toolTip.SetToolTip(pictureBox, message);
         }
-
     }
 }

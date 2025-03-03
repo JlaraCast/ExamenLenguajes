@@ -22,40 +22,65 @@ namespace ExamenGrupo5
         {
             InitializeComponent();
             conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
-            dtgDatos.DataSource = conexion.BuscarPorNombreCosmeticos(txt_Nombre_Producto.Text).Tables[0];
             ShowToolTipOnMouseUp(pictureBox1, "Actualizar");
+            Buscar("");
         }
 
         private void Agregar_click(object sender, EventArgs e)
         {
-            new VentanaAgregarCosmetico().ShowDialog();
+            VentanaAgregarCosmetico ventana = new VentanaAgregarCosmetico();
+            ventana.FormClosed += (s, args) => Buscar(""); // Actualizar la tabla al cerrar la ventana
+            ventana.ShowDialog();
         }
 
         private void Editar_Click(object sender, EventArgs e)
         {
-            if (dtgDatos.SelectedRows.Count > 0)
+            try
             {
-                string nombre = dtgDatos.SelectedRows[0].Cells["Nombre"].Value?.ToString().Trim();
-                if (!string.IsNullOrEmpty(nombre))
+                if (dtgDatos.SelectedRows.Count > 0)
                 {
-                    Cosmetico cosmetico = conexion.BuscarPorNombreCosmetico(nombre);
-                    if (cosmetico != null)
+                    string nombre = dtgDatos.SelectedRows[0].Cells["Nombre"].Value?.ToString().Trim();
+                    if (!string.IsNullOrEmpty(nombre))
                     {
-                        new VentanaAgregarCosmetico(cosmetico).ShowDialog();
+                        Cosmetico cosmetico = conexion.BuscarPorNombreCosmetico(nombre);
+                        if (cosmetico != null)
+                        {
+                            VentanaAgregarCosmetico ventana = new VentanaAgregarCosmetico(cosmetico);
+                            ventana.FormClosed += (s, args) => Buscar("");
+                            ventana.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cosmético no encontrado.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Cosmético no encontrado.");
+                        MessageBox.Show("El nombre del cosmético seleccionado no es válido.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("El nombre del cosmético seleccionado no es válido.");
+                    throw new Exception("Seleccione la fila entera para poder editar un cosmético.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Seleccione la fila entera para poder editar un cosmetico.");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Buscar(string pNombre)
+        {
+            try
+            {
+                dtgDatos.DataSource = conexion.BuscarPorNombreCosmeticos(txt_Nombre_Producto.Text).Tables[0];
+                dtgDatos.AutoResizeColumns();
+                dtgDatos.ReadOnly = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
@@ -66,81 +91,101 @@ namespace ExamenGrupo5
 
         private void BuscarNombreCosmetico(object sender, EventArgs e)
         {
-            dtgDatos.DataSource = conexion.BuscarPorNombreCosmeticos(txt_Nombre_Producto.Text).Tables[0];
+            try
+            {
+                Buscar(txt_Nombre_Producto.Text.Trim());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void TbEditar(object sender, EventArgs e)
         {
-            if (dtgDatos.SelectedRows.Count > 0)
+            try
             {
-                string nombre = dtgDatos.SelectedRows[0].Cells["Nombre"].Value?.ToString().Trim();
-                if (!string.IsNullOrEmpty(nombre))
+                if (dtgDatos.SelectedRows.Count > 0)
                 {
-                    Cosmetico cosmetico = conexion.BuscarPorNombreCosmetico(nombre);
-                    if (cosmetico != null)
+                    string nombre = dtgDatos.SelectedRows[0].Cells["Nombre"].Value?.ToString().Trim();
+                    if (!string.IsNullOrEmpty(nombre))
                     {
-                        new VentanaAgregarCosmetico(cosmetico).ShowDialog();
+                        Cosmetico cosmetico = conexion.BuscarPorNombreCosmetico(nombre);
+                        if (cosmetico != null)
+                        {
+                            VentanaAgregarCosmetico ventana = new VentanaAgregarCosmetico(cosmetico);
+                            ventana.FormClosed += (s, args) => Buscar(""); // Actualizar la tabla al cerrar la ventana
+                            ventana.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cosmético no encontrado.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Cosmético no encontrado.");
+                        throw new Exception("Seleccione la fila entera para poder editar un cosmético.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione la fila entera para poder editar un cosmetico.");
+                    throw new Exception("Seleccione la fila entera para poder editar un cosmético.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Seleccione la fila entera para poder editar un cosmetico.");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void Eliminar(object sender, EventArgs e)
         {
-            if (dtgDatos.SelectedRows.Count > 0)
+            try
             {
-                string nombre = dtgDatos.SelectedRows[0].Cells["Nombre"].Value?.ToString().Trim();
-                if (!string.IsNullOrEmpty(nombre))
+                if (dtgDatos.SelectedRows.Count > 0)
                 {
-                    Cosmetico cosmetico = conexion.BuscarPorNombreCosmetico(nombre);
-                    if (cosmetico != null)
+                    string nombre = dtgDatos.SelectedRows[0].Cells["Nombre"].Value?.ToString().Trim();
+                    if (!string.IsNullOrEmpty(nombre))
                     {
-                        // 💡 *Nueva Validación: Verificar si el cosmético ha sido vendido*
-                        if (conexion.CosmeticoVendido(cosmetico.IDCosmetico))
+                        Cosmetico cosmetico = conexion.BuscarPorNombreCosmetico(nombre);
+                        if (cosmetico != null)
                         {
-                            MessageBox.Show("El cosmético ha sido vendido. Se marcará como 'Inactivo' en lugar de eliminarlo.",
-                                "Advertencia",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
+                            if (conexion.CosmeticoVendido(cosmetico.IDCosmetico))
+                            {
+                                MessageBox.Show("El cosmético ha sido vendido. Se marcará como 'Inactivo' en lugar de eliminarlo.",
+                                    "Advertencia",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
 
-                            // Cambiar el estado a "Inactivo"
-                            cosmetico.EstadoProducto = "Inactiva";
-                            conexion.ModificarCosmetico(cosmetico);
+                                cosmetico.EstadoProducto = "Inactiva";
+                                conexion.ModificarCosmetico(cosmetico);
+                            }
+                            else
+                            {
+                                conexion.EliminarCosmetico(cosmetico.IDCosmetico);
+                            }
+
+                            Buscar("");
+                            return;
                         }
                         else
                         {
-                            // Si no ha sido vendido, eliminarlo normalmente
-                            conexion.EliminarCosmetico(cosmetico.IDCosmetico);
+                            MessageBox.Show("Cosmético no encontrado.");
                         }
-
-                        dtgDatos.DataSource = conexion.BuscarPorNombreCosmeticos(txt_Nombre_Producto.Text).Tables[0];
-                        return;
                     }
                     else
                     {
-                        MessageBox.Show("Cosmético no encontrado.");
+                        throw new Exception("Seleccione la fila entera para poder eliminar un cosmético.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione la fila entera para poder eliminar un cosmético.");
+                    throw new Exception("Seleccione la fila entera para poder eliminar un cosmético.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Seleccione la fila entera para poder eliminar un cosmético.");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -156,7 +201,26 @@ namespace ExamenGrupo5
 
         private void btn_Imprimir_Click(object sender, EventArgs e)
         {
+            try
+            {
+                MostrarInforme();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        public void MostrarInforme()
+        {
+            try
+            {
+                // Implementar la lógica para mostrar el informe de cosméticos
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

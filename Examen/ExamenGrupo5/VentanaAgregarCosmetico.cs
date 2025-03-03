@@ -35,7 +35,7 @@ namespace ExamenGrupo5
             _cosmetico = cos;
             CargarDatos();
             edita = true;
-
+            txtNombre.Enabled = false;
             _conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
         }
         private void CargarDatos()
@@ -73,16 +73,21 @@ namespace ExamenGrupo5
             {
                 try
                 {
+
                     List<string> mensajesError = new List<string>();
 
                     Cosmetico cosmetico = _conexion.BuscarPorNombreCosmetico(txtNombre.Text.Trim());
+
+                    if (string.IsNullOrWhiteSpace(txtNombre.Text))
+                    {
+                        throw new Exception("Ingrese un nombre");
+                    }
                     if (cosmetico != null)
                     {
                         throw new Exception("cosmestico ya ha sido registrado, intente con otro cosmetico");
 
 
                     }
-
                     if (string.IsNullOrWhiteSpace(txtMarca.Text))
                     {
                         mensajesError.Add("El campo de la Marca del producto no puede quedar vacio.");
@@ -138,6 +143,8 @@ namespace ExamenGrupo5
 
 
                     _conexion.GuardarCosmetico(this._cosmetico);
+                    this.Close();
+                    new VentanaCosmetico();
                     MessageBox.Show("Guardado correctamente",
                         "information",
                         MessageBoxButtons.OK,
@@ -233,6 +240,8 @@ namespace ExamenGrupo5
                     };
 
                     _conexion.ModificarCosmetico(cos);
+                    this.Close();
+                    new VentanaCosmetico();
                     MessageBox.Show("Modificado correctamente",
                         "Information",
                         MessageBoxButtons.OK,
