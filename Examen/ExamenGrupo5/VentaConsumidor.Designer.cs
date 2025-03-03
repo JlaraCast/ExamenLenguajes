@@ -46,8 +46,9 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_Editar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBoxBuscador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Volver)).BeginInit();
             this.panel5.SuspendLayout();
@@ -56,6 +57,8 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -117,10 +120,10 @@
             this.txt_Nombre_Completo.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.txt_Nombre_Completo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Nombre_Completo.ForeColor = System.Drawing.Color.Snow;
-            this.txt_Nombre_Completo.Location = new System.Drawing.Point(14, 79);
+            this.txt_Nombre_Completo.Location = new System.Drawing.Point(82, 79);
             this.txt_Nombre_Completo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Nombre_Completo.Name = "txt_Nombre_Completo";
-            this.txt_Nombre_Completo.Size = new System.Drawing.Size(938, 39);
+            this.txt_Nombre_Completo.Size = new System.Drawing.Size(870, 39);
             this.txt_Nombre_Completo.TabIndex = 21;
             this.txt_Nombre_Completo.TextChanged += new System.EventHandler(this.txt_Nombre_Completo_TextChanged);
             // 
@@ -154,7 +157,7 @@
             this.eliminarToolStripMenuItem.BackColor = System.Drawing.Color.MidnightBlue;
             this.eliminarToolStripMenuItem.ForeColor = System.Drawing.Color.Snow;
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(240, 38);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(200, 38);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
@@ -164,7 +167,7 @@
             this.editarToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(240, 38);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(200, 38);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
@@ -251,7 +254,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel2.Controls.Add(this.btn_Editar);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btn_Volver);
             this.panel2.Controls.Add(this.btn_Imprimir);
             this.panel2.Controls.Add(this.panel5);
@@ -266,24 +270,6 @@
             this.panel2.Size = new System.Drawing.Size(960, 599);
             this.panel2.TabIndex = 7;
             // 
-            // btn_Editar
-            // 
-            this.btn_Editar.AutoSize = true;
-            this.btn_Editar.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Editar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Editar.ForeColor = System.Drawing.Color.Snow;
-            this.btn_Editar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_Editar.Location = new System.Drawing.Point(431, 11);
-            this.btn_Editar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_Editar.Name = "btn_Editar";
-            this.btn_Editar.Size = new System.Drawing.Size(151, 58);
-            this.btn_Editar.TabIndex = 27;
-            this.btn_Editar.Text = "Editar";
-            this.btn_Editar.UseVisualStyleBackColor = false;
-            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkGoldenrod;
@@ -293,6 +279,31 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1056, 724);
             this.panel3.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox1.Location = new System.Drawing.Point(534, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 58);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.txt_Nombre_Completo_TextChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox2.Location = new System.Drawing.Point(19, 79);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(53, 41);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
             // 
             // VentanaConsumidor
             // 
@@ -314,6 +325,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -337,6 +350,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btn_Editar;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

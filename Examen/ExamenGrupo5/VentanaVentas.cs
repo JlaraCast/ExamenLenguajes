@@ -23,7 +23,8 @@ namespace ExamenGrupo5
             conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
             cbEstadoVenta.SelectedIndex = 0; // Selecciona el primer ítem del combo box
             dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta("").Tables[0];
-            
+            ShowToolTipOnMouseUp(pictureBox1, "Actualizar");
+
         }
 
         private void Salir(object sender, EventArgs e)
@@ -31,7 +32,16 @@ namespace ExamenGrupo5
             Close();
         }
 
-      
+        private void ShowToolTipOnMouseUp(PictureBox pictureBox, string message)
+        {
+            ToolTip toolTip = new ToolTip();
+
+            pictureBox.MouseUp += (sender, e) =>
+            {
+                toolTip.SetToolTip(pictureBox, message);
+            };
+        }
+
         private void EstadoVentaChanged(object sender, EventArgs e)
         {
 
@@ -97,14 +107,18 @@ namespace ExamenGrupo5
         {
             if (dtgTablaDatos.SelectedRows.Count > 0)
             {
-                int ID = Convert.ToInt32(dtgTablaDatos.SelectedRows[0].Cells["IdVenta"].Value);
-                
-                    
-                conexion.EliminarVenta(ID);
-                dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta(cbEstadoVenta.SelectedItem.ToString()).Tables[0];
-                return;
-                    
-                
+                DialogResult confirmacion = MessageBox.Show(
+                    "¿Está seguro de que desea eliminar esta compra?",
+                    "Confirmación de eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (confirmacion == DialogResult.Yes)
+                {
+                    int ID = Convert.ToInt32(dtgTablaDatos.SelectedRows[0].Cells["IdVenta"].Value);
+                    conexion.EliminarVenta(ID);
+                    dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta(cbEstadoVenta.SelectedItem.ToString()).Tables[0];
+                }
             }
             else
             {

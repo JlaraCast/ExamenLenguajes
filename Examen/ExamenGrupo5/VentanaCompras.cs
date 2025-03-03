@@ -60,20 +60,31 @@ namespace ExamenGrupo5
 
                 if (compra != null)
                 {
-                    conexion.EliminarCompra(compra.IDCompra);
-                    dtgDatos.DataSource = conexion.BuscarPorEstadoCompra(txt_Estado_compra.Text).Tables[0];
-                    return;
+                    // Confirmación antes de eliminar
+                    DialogResult confirmacion = MessageBox.Show(
+                        "¿Está seguro de que desea eliminar esta compra?",
+                        "Confirmación de eliminación",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning);
+
+                    if (confirmacion == DialogResult.Yes)
+                    {
+                        conexion.EliminarCompra(compra.IDCompra);
+                        dtgDatos.DataSource = conexion.BuscarPorEstadoCompra(txt_Estado_compra.Text).Tables[0];
+                        MessageBox.Show("Compra eliminada correctamente.", "Eliminación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Compra no encontrada.");
+                    MessageBox.Show("Compra no encontrada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Seleccione una fila para eliminar la compra.");
+                MessageBox.Show("Seleccione una fila para eliminar la compra.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
 
         private void btn_Salir_Click(object sender, EventArgs e)
         {

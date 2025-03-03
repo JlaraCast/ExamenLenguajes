@@ -44,7 +44,6 @@
             this.label_Clave = new System.Windows.Forms.Label();
             this.btn_Aceptar = new System.Windows.Forms.Button();
             this.txt_Nombre = new System.Windows.Forms.TextBox();
-            this.btn_Cancelar = new System.Windows.Forms.Button();
             this.txt_Telefono = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Label = new System.Windows.Forms.Label();
@@ -98,7 +97,6 @@
             this.panel2.Controls.Add(this.label_Clave);
             this.panel2.Controls.Add(this.btn_Aceptar);
             this.panel2.Controls.Add(this.txt_Nombre);
-            this.panel2.Controls.Add(this.btn_Cancelar);
             this.panel2.Controls.Add(this.txt_Telefono);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.Label);
@@ -253,10 +251,10 @@
             this.btn_Aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Aceptar.ForeColor = System.Drawing.Color.Snow;
             this.btn_Aceptar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_Aceptar.Location = new System.Drawing.Point(14, 698);
+            this.btn_Aceptar.Location = new System.Drawing.Point(137, 859);
             this.btn_Aceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Aceptar.Name = "btn_Aceptar";
-            this.btn_Aceptar.Size = new System.Drawing.Size(160, 42);
+            this.btn_Aceptar.Size = new System.Drawing.Size(283, 52);
             this.btn_Aceptar.TabIndex = 25;
             this.btn_Aceptar.Text = "Aceptar";
             this.btn_Aceptar.UseVisualStyleBackColor = false;
@@ -273,22 +271,6 @@
             this.txt_Nombre.Size = new System.Drawing.Size(498, 34);
             this.txt_Nombre.TabIndex = 21;
             this.txt_Nombre.Text = "Nombre";
-            // 
-            // btn_Cancelar
-            // 
-            this.btn_Cancelar.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cancelar.ForeColor = System.Drawing.Color.Snow;
-            this.btn_Cancelar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_Cancelar.Location = new System.Drawing.Point(341, 698);
-            this.btn_Cancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(160, 42);
-            this.btn_Cancelar.TabIndex = 16;
-            this.btn_Cancelar.Text = "Cancelar";
-            this.btn_Cancelar.UseVisualStyleBackColor = false;
             // 
             // txt_Telefono
             // 
@@ -375,7 +357,6 @@
         private System.Windows.Forms.Label label_Clave;
         private System.Windows.Forms.Button btn_Aceptar;
         private System.Windows.Forms.TextBox txt_Nombre;
-        private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.TextBox txt_Telefono;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Label;
