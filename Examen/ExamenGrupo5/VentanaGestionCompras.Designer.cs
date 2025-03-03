@@ -32,28 +32,26 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbProveedor = new System.Windows.Forms.ComboBox();
-            this.txtIDCosmetico = new System.Windows.Forms.TextBox();
             this.numericUpDownCantidad = new System.Windows.Forms.NumericUpDown();
-            this.pbImagen = new System.Windows.Forms.PictureBox();
             this.pb_salir = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpFechaCompra = new System.Windows.Forms.DateTimePicker();
-            this.spTotalCompra = new System.Windows.Forms.NumericUpDown();
             this.cbMetodoPago = new System.Windows.Forms.ComboBox();
             this.label_Estado = new System.Windows.Forms.Label();
             this.label_Clave = new System.Windows.Forms.Label();
             this.btn_Aceptar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.Label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.spTotalCompra = new System.Windows.Forms.NumericUpDown();
+            this.cbIDCosmetico = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_salir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTotalCompra)).BeginInit();
             this.SuspendLayout();
@@ -89,10 +87,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel2.Controls.Add(this.cbIDCosmetico);
             this.panel2.Controls.Add(this.cbProveedor);
-            this.panel2.Controls.Add(this.txtIDCosmetico);
             this.panel2.Controls.Add(this.numericUpDownCantidad);
-            this.panel2.Controls.Add(this.pbImagen);
             this.panel2.Controls.Add(this.pb_salir);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.cbEstado);
@@ -115,6 +112,7 @@
             // cbProveedor
             // 
             this.cbProveedor.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.cbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cbProveedor.ForeColor = System.Drawing.Color.Snow;
@@ -128,29 +126,17 @@
             "Mayorista",
             "Minorista",
             "Fabricante"});
-            this.cbProveedor.Location = new System.Drawing.Point(26, 457);
+            this.cbProveedor.Location = new System.Drawing.Point(31, 356);
             this.cbProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbProveedor.Name = "cbProveedor";
             this.cbProveedor.Size = new System.Drawing.Size(548, 40);
             this.cbProveedor.TabIndex = 46;
-            this.cbProveedor.Text = "Seleccione";
-            // 
-            // txtIDCosmetico
-            // 
-            this.txtIDCosmetico.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.txtIDCosmetico.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.txtIDCosmetico.ForeColor = System.Drawing.Color.Snow;
-            this.txtIDCosmetico.Location = new System.Drawing.Point(20, 797);
-            this.txtIDCosmetico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIDCosmetico.Name = "txtIDCosmetico";
-            this.txtIDCosmetico.Size = new System.Drawing.Size(560, 39);
-            this.txtIDCosmetico.TabIndex = 45;
             // 
             // numericUpDownCantidad
             // 
             this.numericUpDownCantidad.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.numericUpDownCantidad.ForeColor = System.Drawing.Color.Snow;
-            this.numericUpDownCantidad.Location = new System.Drawing.Point(26, 558);
+            this.numericUpDownCantidad.Location = new System.Drawing.Point(31, 457);
             this.numericUpDownCantidad.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -159,17 +145,8 @@
             this.numericUpDownCantidad.Name = "numericUpDownCantidad";
             this.numericUpDownCantidad.Size = new System.Drawing.Size(556, 39);
             this.numericUpDownCantidad.TabIndex = 44;
-            // 
-            // pbImagen
-            // 
-            this.pbImagen.Image = global::ExamenGrupo5.Properties.Resources.icons8_add_48;
-            this.pbImagen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pbImagen.Location = new System.Drawing.Point(231, 15);
-            this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(110, 86);
-            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbImagen.TabIndex = 43;
-            this.pbImagen.TabStop = false;
+            this.numericUpDownCantidad.ValueChanged += new System.EventHandler(this.numericUpDownCantidad_ValueChanged);
+            this.numericUpDownCantidad.VisibleChanged += new System.EventHandler(this.numericUpDownCantidad_ValueChanged);
             // 
             // pb_salir
             // 
@@ -189,7 +166,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label5.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(14, 635);
+            this.label5.Location = new System.Drawing.Point(19, 534);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 32);
             this.label5.TabIndex = 36;
@@ -199,6 +176,7 @@
             // cbEstado
             // 
             this.cbEstado.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cbEstado.ForeColor = System.Drawing.Color.Snow;
@@ -208,12 +186,11 @@
             "Pendiente",
             "Completada",
             "Cancelada"});
-            this.cbEstado.Location = new System.Drawing.Point(20, 684);
+            this.cbEstado.Location = new System.Drawing.Point(25, 583);
             this.cbEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(548, 40);
             this.cbEstado.TabIndex = 35;
-            this.cbEstado.Text = "Seleccione";
             // 
             // label4
             // 
@@ -221,7 +198,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label4.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(20, 751);
+            this.label4.Location = new System.Drawing.Point(23, 641);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(188, 32);
             this.label4.TabIndex = 34;
@@ -239,23 +216,10 @@
             this.dtpFechaCompra.Size = new System.Drawing.Size(548, 39);
             this.dtpFechaCompra.TabIndex = 33;
             // 
-            // spTotalCompra
-            // 
-            this.spTotalCompra.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.spTotalCompra.ForeColor = System.Drawing.Color.Snow;
-            this.spTotalCompra.Location = new System.Drawing.Point(22, 258);
-            this.spTotalCompra.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
-            0});
-            this.spTotalCompra.Name = "spTotalCompra";
-            this.spTotalCompra.Size = new System.Drawing.Size(556, 39);
-            this.spTotalCompra.TabIndex = 31;
-            // 
             // cbMetodoPago
             // 
             this.cbMetodoPago.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.cbMetodoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMetodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbMetodoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cbMetodoPago.ForeColor = System.Drawing.Color.Snow;
@@ -266,12 +230,11 @@
             "Tarjeta de Crédito",
             "Tarjeta de Débito",
             "Transferencia"});
-            this.cbMetodoPago.Location = new System.Drawing.Point(14, 352);
+            this.cbMetodoPago.Location = new System.Drawing.Point(19, 251);
             this.cbMetodoPago.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMetodoPago.Name = "cbMetodoPago";
             this.cbMetodoPago.Size = new System.Drawing.Size(548, 40);
             this.cbMetodoPago.TabIndex = 30;
-            this.cbMetodoPago.Text = "Seleccione";
             // 
             // label_Estado
             // 
@@ -279,7 +242,7 @@
             this.label_Estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label_Estado.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.label_Estado.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Estado.Location = new System.Drawing.Point(16, 523);
+            this.label_Estado.Location = new System.Drawing.Point(21, 422);
             this.label_Estado.Name = "label_Estado";
             this.label_Estado.Size = new System.Drawing.Size(321, 32);
             this.label_Estado.TabIndex = 29;
@@ -292,7 +255,7 @@
             this.label_Clave.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label_Clave.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.label_Clave.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Clave.Location = new System.Drawing.Point(20, 423);
+            this.label_Clave.Location = new System.Drawing.Point(25, 322);
             this.label_Clave.Name = "label_Clave";
             this.label_Clave.Size = new System.Drawing.Size(154, 32);
             this.label_Clave.TabIndex = 26;
@@ -323,25 +286,12 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label3.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(9, 318);
+            this.label3.Location = new System.Drawing.Point(14, 217);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(233, 32);
             this.label3.TabIndex = 17;
             this.label3.Text = "Método de pago";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label2.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(16, 223);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 32);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Total de compra";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Label
             // 
@@ -368,6 +318,59 @@
             this.label1.TabIndex = 9;
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label2.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(25, 752);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(233, 32);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Total de compra";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // spTotalCompra
+            // 
+            this.spTotalCompra.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.spTotalCompra.Enabled = false;
+            this.spTotalCompra.ForeColor = System.Drawing.Color.Snow;
+            this.spTotalCompra.Location = new System.Drawing.Point(31, 796);
+            this.spTotalCompra.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
+            this.spTotalCompra.Name = "spTotalCompra";
+            this.spTotalCompra.Size = new System.Drawing.Size(556, 39);
+            this.spTotalCompra.TabIndex = 31;
+            this.spTotalCompra.Click += new System.EventHandler(this.numericUpDownCantidad_ValueChanged);
+            // 
+            // cbIDCosmetico
+            // 
+            this.cbIDCosmetico.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.cbIDCosmetico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIDCosmetico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbIDCosmetico.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.cbIDCosmetico.ForeColor = System.Drawing.Color.Snow;
+            this.cbIDCosmetico.FormattingEnabled = true;
+            this.cbIDCosmetico.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.cbIDCosmetico.Items.AddRange(new object[] {
+            "Internacional",
+            "Nacional",
+            "Distribuidor ",
+            "Exclusivo",
+            "Mayorista",
+            "Minorista",
+            "Fabricante"});
+            this.cbIDCosmetico.Location = new System.Drawing.Point(27, 690);
+            this.cbIDCosmetico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbIDCosmetico.Name = "cbIDCosmetico";
+            this.cbIDCosmetico.Size = new System.Drawing.Size(548, 40);
+            this.cbIDCosmetico.TabIndex = 47;
+            this.cbIDCosmetico.ValueMemberChanged += new System.EventHandler(this.numericUpDownCantidad_ValueChanged);
+            // 
             // VentanaGestionCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -378,13 +381,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VentanaGestionCompras";
             this.Text = "VentanaGestionCompras";
+            this.Load += new System.EventHandler(this.VentanaGestionCompras_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCantidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_salir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTotalCompra)).EndInit();
             this.ResumeLayout(false);
@@ -397,23 +400,22 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pbImagen;
         private System.Windows.Forms.PictureBox pb_salir;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpFechaCompra;
-        private System.Windows.Forms.NumericUpDown spTotalCompra;
         private System.Windows.Forms.ComboBox cbMetodoPago;
         private System.Windows.Forms.Label label_Estado;
         private System.Windows.Forms.Label label_Clave;
         private System.Windows.Forms.Button btn_Aceptar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Label;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDownCantidad;
-        private System.Windows.Forms.TextBox txtIDCosmetico;
         private System.Windows.Forms.ComboBox cbProveedor;
+        private System.Windows.Forms.NumericUpDown spTotalCompra;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbIDCosmetico;
     }
 }

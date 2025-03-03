@@ -36,10 +36,12 @@ namespace ExamenGrupo5
             if (dtgDatos.SelectedRows.Count > 0)
             {
                 int idCompra = Convert.ToInt32(dtgDatos.SelectedRows[0].Cells["IDCompra"].Value);
-                Compra compra = conexion.MostrarIDCompra(idCompra);
+                Compra compraPrevia = conexion.MostrarIDCompra(idCompra); // 🔹 Obtener compra previa
 
-                if (compra != null)
+                if (compraPrevia != null)
                 {
+
+                    //parte del main
                     VentanaGestionCompras ventana = new VentanaGestionCompras(compra);
                     ventana.FormClosed += (s, args) =>
                     {
@@ -52,7 +54,26 @@ namespace ExamenGrupo5
                             conexion.ModificarCosmetico(cosmetico);
                         }
                     };
+                    //parte del main
+
+
                     ventana.ShowDialog();
+
+                    // 🔹 Después de la edición, obtener la compra actualizada
+                    Compra compraActualizada = conexion.MostrarIDCompra(idCompra);
+
+                    if (compraActualizada != null && compraActualizada.EstadoCompra == "Completada")
+                    {
+                        // 🔹 Obtener el cosmético relacionado
+                        Cosmetico cosmetico = conexion.BuscarPorIdCosmetico(compraActualizada.IDCosmeticos);
+
+                        // 🔹 Calcular diferencia de stock
+                        int diferenciaStock = compraActualizada.CantidadProductos - compraPrevia.CantidadProductos;
+
+                        // 🔹 Aplicar ajuste al stock
+                        cosmetico.StockDisponible += diferenciaStock;
+                        conexion.ModificarCosmetico(cosmetico);
+                    }
                 }
                 else
                 {
@@ -64,6 +85,7 @@ namespace ExamenGrupo5
                 MessageBox.Show("Seleccione una fila para editar la compra.");
             }
         }
+
 
         private void BuscarCompraPorEstado(object sender, EventArgs e)
         {
