@@ -163,14 +163,7 @@ namespace ExamenGrupo5
                 //  descuento). Este sistema de recompensas incentiva a los consumidores a comprar más
                 if (cbMetodoPago.SelectedItem == "Puntos")
                 {
-                    bool puedeUsarPuntos = _conexion.PuedeUsarPuntosFidelidad(consumidor.IdConsumidor);
-
-                    if (!puedeUsarPuntos)
-                    {
-                        MessageBox.Show("No puedes pagar el 100% con puntos. Debes realizar al menos 3 compras con otro método de pago primero.",
-                                        "Restricción de puntos de fidelidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
+                    
                     // Verificar si el cliente tiene suficientes puntos
                     if (consumidor.PuntosFidelidad < (int)pkPuntosUsados.Value)
                     {
@@ -183,10 +176,20 @@ namespace ExamenGrupo5
                     // Restar los puntos usados
                     consumidor.PuntosFidelidad -= (int)pkPuntosUsados.Value;
 
-
-
                     // Calcular el descuento (10,000 puntos = 1% de descuento)
                     double descuento = Math.Min((int)pkPuntosUsados.Value / 10000.0, 100); // Máximo 100% de descuento
+
+                    if (descuento == 100)
+                    {
+                        bool puedeUsarPuntos = _conexion.PuedeUsarPuntosFidelidad(consumidor.IdConsumidor);
+
+                        if (!puedeUsarPuntos)
+                        {
+                            MessageBox.Show("No puedes pagar el 100% con puntos. Debes realizar al menos 3 compras con otro método de pago primero.",
+                                            "Restricción de puntos de fidelidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
 
                     // Aplicar el descuento al total de la venta
 
@@ -518,10 +521,10 @@ namespace ExamenGrupo5
 
         private void pkCantidadVendidos_ValueChanged(object sender, EventArgs e)
         {
-            if (cbIdCosmetico.SelectedValue != null) // Verificar que haya un cosmético seleccionado
+            if (cbIdCosmetico.SelectedValue != null && int.TryParse(cbIdCosmetico.SelectedValue.ToString(), out int idCosmetico))
             {
                 // Buscar el cosmético por ID
-                Cosmetico cosmetico = _conexion.BuscarPorIdCosmetico(int.Parse(cbIdCosmetico.SelectedValue.ToString()));
+                Cosmetico cosmetico = _conexion.BuscarPorIdCosmetico(idCosmetico);
 
                 int cantidadVendida = (int)pkCantidadVendidos.Value;
                 double totalVenta = cosmetico.PrecioUnitario * cantidadVendida;
@@ -534,7 +537,6 @@ namespace ExamenGrupo5
 
                 txtPrecioTotal.Text = totalVenta.ToString("0.00");
             }
-
         }
 
        

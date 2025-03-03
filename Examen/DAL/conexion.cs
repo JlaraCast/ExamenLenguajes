@@ -866,7 +866,7 @@ namespace DAL
                 _command.Connection = _connection;
 
                 _command.CommandType = CommandType.StoredProcedure;
-                _command.CommandText = "[Sp_Obtener_IDCosmetico]"; 
+                _command.CommandText = "[Sp_Obtener_IDCosmeticos]"; 
 
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 DataSet datos = new DataSet();
