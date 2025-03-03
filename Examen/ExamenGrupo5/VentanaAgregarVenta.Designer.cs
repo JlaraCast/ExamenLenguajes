@@ -317,7 +317,7 @@
             this.cbEstadoVentas.FormattingEnabled = true;
             this.cbEstadoVentas.ImeMode = System.Windows.Forms.ImeMode.On;
             this.cbEstadoVentas.Items.AddRange(new object[] {
-            "Pendiente ",
+            "Pendiente",
             "Completada",
             "Cancelada"});
             this.cbEstadoVentas.Location = new System.Drawing.Point(13, 712);
@@ -408,7 +408,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(593, 867);
+            this.ClientSize = new System.Drawing.Size(614, 888);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;

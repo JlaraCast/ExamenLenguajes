@@ -25,6 +25,7 @@ namespace ExamenGrupo5
             InitializeComponent();
             edita = false;
             _conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
+            
         }
 
         public VentanaAgregarVenta(Venta venta)            
@@ -77,11 +78,7 @@ namespace ExamenGrupo5
             double modificarPuntos = 0;
             try
             {
-                if (dtpFechaVenta.MinDate < DateTime.Today)
-                {
-                    MessageBox.Show("No puedes realizar una venta en un dia pasado al actual.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+               
 
                 if (cbIdCosmetico.SelectedValue == null)
                 {
@@ -160,21 +157,20 @@ namespace ExamenGrupo5
                 {
                     totalVenta *= 0.95;
                 }
-                //------------------------------------------------------------------------------------------------------------------------------------
-                //sebastian
-                //Restricción de Cancelación de Ventas: Las ventas solo pueden ser canceladas dentro de las primeras 24 horas
-                //después de haber sido registradas y solo si están en estado "Pendiente".Las ventas ya completadas no pueden ser
-                //canceladas para evitar problemas con el inventario y la facturación.
-
-                TimeSpan diferencia = DateTime.Now - dtpFechaVenta.Value;
-
-
-                //------------------------------------------------------------------------------------------------------------------------------------
+             
 
                 //esta es la tercera consideracion logica.
                 //  descuento). Este sistema de recompensas incentiva a los consumidores a comprar más
                 if (cbMetodoPago.SelectedItem == "Puntos")
                 {
+                    bool puedeUsarPuntos = _conexion.PuedeUsarPuntosFidelidad(consumidor.IdConsumidor);
+
+                    if (!puedeUsarPuntos)
+                    {
+                        MessageBox.Show("No puedes pagar el 100% con puntos. Debes realizar al menos 3 compras con otro método de pago primero.",
+                                        "Restricción de puntos de fidelidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                     // Verificar si el cliente tiene suficientes puntos
                     if (consumidor.PuntosFidelidad < (int)pkPuntosUsados.Value)
                     {
@@ -182,8 +178,12 @@ namespace ExamenGrupo5
                         return;
                     }
 
+                    
+
                     // Restar los puntos usados
                     consumidor.PuntosFidelidad -= (int)pkPuntosUsados.Value;
+
+
 
                     // Calcular el descuento (10,000 puntos = 1% de descuento)
                     double descuento = Math.Min((int)pkPuntosUsados.Value / 10000.0, 100); // Máximo 100% de descuento
@@ -225,7 +225,7 @@ namespace ExamenGrupo5
 
 
                 //lo comente para no guaradar la venta de manera innecesaria
-                ///////////////////////////////////////////////////////////////   // _conexion.GuardarVentas(venta);
+               _conexion.GuardarVentas(venta);
 
                 consumidor.FrecuenciaCompra = obtenerFrecuenciaCompra();
 
@@ -296,7 +296,7 @@ namespace ExamenGrupo5
         {
             try
             {
-                // ✅ 1️⃣ Validaciones de selección
+                // ✅ 1️⃣ Validaciones iniciales
                 if (cbIdCosmetico.SelectedValue == null)
                 {
                     MessageBox.Show("Debe seleccionar un cosmético.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -355,6 +355,7 @@ namespace ExamenGrupo5
                     totalVenta *= 0.95; // Aplicar descuento del 5%
                 }
 
+                Venta ventaPrevia = _conexion.MostrarIDVenta(_venta.IdVenta);
                 // ✅ 6️⃣ Crear el objeto de venta
                 var venta = new Venta
                 {
@@ -369,42 +370,51 @@ namespace ExamenGrupo5
                     EstadoVenta = cbEstadoVentas.SelectedItem.ToString()
                 };
 
-                // • Restricción de Cancelación de Ventas: Las ventas solo pueden ser 
-                // canceladas dentro de las primeras 24 horas después de haber sido registradas
-                // y sólo si están en estado "Pendiente". Las ventas ya completadas no pueden ser
-                // canceladas para evitar problemas con el inventario y la facturación.
+               
 
-                switch (venta.EstadoVenta)
+
+                // ✅ 7️⃣ RESTRICCIÓN: No permitir cancelaciones después de 24 horas
+                TimeSpan diferencia = DateTime.Now - venta.FechaVenta;
+
+                if (ventaPrevia.EstadoVenta.Equals("Pendiente") && diferencia.TotalHours > 24 && venta.EstadoVenta.Equals("Cancelada"))
                 {
-                    case "Pendiente":
-                        TimeSpan diferencia = DateTime.Now - venta.FechaVenta;
-                        if (diferencia.TotalHours > 24)
-                        {
-                            MessageBox.Show("No se puede cancelar una venta después de 24 horas.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
-                        }
-                        break;
-
-                    case "Completada":
-                        return;
-                        break;
+                    MessageBox.Show("No se puede cancelar una venta después de 24 horas.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (ventaPrevia.EstadoVenta == "Completada")
+                {
+                    MessageBox.Show("No se puede cancelar una venta ya completada.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
 
-
-
-
-
-                // ✅ 7️⃣ Actualizar la venta en la base de datos
+                // ✅ 9️⃣ Actualizar la venta en la base de datos
                 _conexion.ModificarVenta(venta);
 
                 // ✅ 8️⃣ Si la venta es completada o pendiente, actualizar stock
                 if (venta.EstadoVenta == "Completada" || venta.EstadoVenta == "Pendiente")
                 {
+
+                    Consumidor consumidor = _conexion.BuscarPorIdConsumidor(venta.IDConsumidor);
+                    consumidor.PuntosFidelidad += ventaPrevia.PuntosUsados;
+                    consumidor.PuntosFidelidad -= venta.PuntosUsados;
+                    _conexion.ModificarConsumidor(consumidor);
+
+                    cosmetico.StockDisponible += ventaPrevia.CantidadVendido;
+                    //Este pasa en caso de que se llegara a editar el stock
                     cosmetico.StockDisponible -= cantidadVendida;
                     _conexion.ModificarCosmetico(cosmetico);
                 }
+                if (venta.EstadoVenta == "Cancelada")
+                {
+                    cosmetico.StockDisponible += ventaPrevia.CantidadVendido;
 
-                // ✅ 9️⃣ Confirmación y cierre de la ventana
+                    _conexion.ModificarCosmetico(cosmetico);
+                    Consumidor consumidor = _conexion.BuscarPorIdConsumidor(venta.IDConsumidor);
+                    consumidor.PuntosFidelidad += ventaPrevia.PuntosUsados;
+                    _conexion.ModificarConsumidor(consumidor);
+                }
+
+                // ✅ 🔟 Confirmación y cierre de la ventana
                 MessageBox.Show("Los cambios se han guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

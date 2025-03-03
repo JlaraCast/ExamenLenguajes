@@ -136,6 +136,7 @@ namespace ExamenGrupo5
 
                     };
 
+
                     _conexion.GuardarCosmetico(this._cosmetico);
                     MessageBox.Show("Guardado correctamente",
                         "information",
@@ -160,22 +161,21 @@ namespace ExamenGrupo5
 
                     if (!cosmetico.Nombre.Equals(txtNombre.Text.Trim()))
                     {
-
-                        mensajesError.Add("cosmetico no ha sido registrado, intente con otro cosmetico");
+                        mensajesError.Add("Cosmético no ha sido registrado, intente con otro.");
                     }
                     if (cosmetico == null || cosmetico.IDCosmetico != _cosmetico.IDCosmetico)
                     {
-                        mensajesError.Add("cosmetico no ha sido registrado, intente con otro cosmetico");
+                        mensajesError.Add("Cosmético no ha sido registrado, intente con otro.");
                     }
 
                     if (string.IsNullOrWhiteSpace(txtNombre.Text))
                     {
-                        mensajesError.Add("El campo de Nombre del producto no puede quedar vacio.");
+                        mensajesError.Add("El campo de Nombre del producto no puede quedar vacío.");
                     }
 
                     if (string.IsNullOrWhiteSpace(txtMarca.Text))
                     {
-                        mensajesError.Add("El campo de la Marca del producto no puede quedar vacio.");
+                        mensajesError.Add("El campo de la Marca del producto no puede quedar vacío.");
                     }
 
                     if (spPrecio.Value <= 0)
@@ -208,6 +208,12 @@ namespace ExamenGrupo5
                         mensajesError.Add("Debe seleccionar una imagen para el producto.");
                     }
 
+                    // 💡 *Nueva Validación: Verificar si el cosmético tiene ventas pendientes*
+                    if (_conexion.VentasPendientes(cosmetico.IDCosmetico))
+                    {
+                        mensajesError.Add("No se puede modificar el precio porque existen ventas pendientes.");
+                    }
+
                     if (mensajesError.Count > 0)
                     {
                         throw new Exception(string.Join("\n", mensajesError));
@@ -224,12 +230,11 @@ namespace ExamenGrupo5
                         Categoria = cbCategoria.SelectedItem.ToString(),
                         EstadoProducto = cbEstado.SelectedItem.ToString(),
                         Imagen = Guardar_Imagen(pbImagen.Image)
-
                     };
 
                     _conexion.ModificarCosmetico(cos);
-                    MessageBox.Show("modificado correctamente",
-                        "information",
+                    MessageBox.Show("Modificado correctamente",
+                        "Information",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
@@ -241,8 +246,6 @@ namespace ExamenGrupo5
                         MessageBoxIcon.Error);
                 }
             }
-
-
         }//fin del boton para guardar los cosmeticos
 
         private string Guardar_Imagen(Image imagen)

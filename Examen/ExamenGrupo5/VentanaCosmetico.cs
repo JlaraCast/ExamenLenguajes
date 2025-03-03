@@ -107,7 +107,24 @@ namespace ExamenGrupo5
                     Cosmetico cosmetico = conexion.BuscarPorNombreCosmetico(nombre);
                     if (cosmetico != null)
                     {
-                        conexion.EliminarCosmetico(cosmetico.IDCosmetico);
+                        // 💡 *Nueva Validación: Verificar si el cosmético ha sido vendido*
+                        if (conexion.CosmeticoVendido(cosmetico.IDCosmetico))
+                        {
+                            MessageBox.Show("El cosmético ha sido vendido. Se marcará como 'Inactivo' en lugar de eliminarlo.",
+                                "Advertencia",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+
+                            // Cambiar el estado a "Inactivo"
+                            cosmetico.EstadoProducto = "Inactiva";
+                            conexion.ModificarCosmetico(cosmetico);
+                        }
+                        else
+                        {
+                            // Si no ha sido vendido, eliminarlo normalmente
+                            conexion.EliminarCosmetico(cosmetico.IDCosmetico);
+                        }
+
                         dtgDatos.DataSource = conexion.BuscarPorNombreCosmeticos(txt_Nombre_Producto.Text).Tables[0];
                         return;
                     }
@@ -118,12 +135,12 @@ namespace ExamenGrupo5
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione la fila entera para poder eliminar un cosmetico.");
+                    MessageBox.Show("Seleccione la fila entera para poder eliminar un cosmético.");
                 }
             }
             else
             {
-                MessageBox.Show("Seleccione la fila entera para poder eliminar un cosmetico.");
+                MessageBox.Show("Seleccione la fila entera para poder eliminar un cosmético.");
             }
         }
 

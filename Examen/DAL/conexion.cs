@@ -1028,6 +1028,86 @@ namespace DAL
             }
         }
 
+        public bool VentasPendientes(int idCosmetico)
+        {
+            try
+            {
+                _connection = new SqlConnection(StringConexion);
+                _connection.Open();
+                _command = new SqlCommand();
+                _command.Connection = _connection;
+
+                _command.CommandType = CommandType.StoredProcedure;
+                _command.CommandText = "[Sp_Verificar_VentasPendientes]";
+                _command.Parameters.AddWithValue("@IDCosmetico", idCosmetico);
+
+                int resultado = (int)_command.ExecuteScalar(); // Ejecuta y obtiene un número
+
+                _connection.Close();
+                _connection.Dispose();
+                _command.Dispose();
+
+                return resultado > 0; // Si hay ventas pendientes, retorna true
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al verificar ventas pendientes: " + ex.Message, ex);
+            }
+        }
+
+        public bool CosmeticoVendido(int idCosmetico)
+        {
+            try
+            {
+                _connection = new SqlConnection(StringConexion);
+                _connection.Open();
+                _command = new SqlCommand();
+                _command.Connection = _connection;
+
+                _command.CommandType = CommandType.StoredProcedure;
+                _command.CommandText = "[Sp_Verificar_CosmeticoVendido]";
+                _command.Parameters.AddWithValue("@IDCosmetico", idCosmetico);
+
+                int resultado = (int)_command.ExecuteScalar(); // Ejecuta y obtiene un número
+
+                _connection.Close();
+                _connection.Dispose();
+                _command.Dispose();
+
+                return resultado > 0; // Si el cosmético ha sido vendido, retorna true
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al verificar si el cosmético fue vendido: " + ex.Message, ex);
+            }
+        }
+
+        public bool PuedeUsarPuntosFidelidad(int idConsumidor)
+        {
+            try
+            {
+                _connection = new SqlConnection(StringConexion);
+                _connection.Open();
+                _command = new SqlCommand();
+                _command.Connection = _connection;
+
+                _command.CommandType = CommandType.StoredProcedure;
+                _command.CommandText = "[Sp_Validar_Uso_Puntos]";
+                _command.Parameters.AddWithValue("@IDConsumidor", idConsumidor);
+
+                int resultado = (int)_command.ExecuteScalar(); // Obtiene un número (0 o 1)
+
+                _connection.Close();
+                _connection.Dispose();
+                _command.Dispose();
+
+                return resultado > 0; // Si ha hecho 3 compras sin puntos, retorna true
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al validar uso de puntos de fidelidad: " + ex.Message, ex);
+            }
+        }
 
 
     }//fin para la clase
