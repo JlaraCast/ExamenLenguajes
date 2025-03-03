@@ -39,7 +39,7 @@ namespace ExamenGrupo5
         }
 
         private void Agregar_click(object sender, EventArgs e)
-        {
+         {
             new VentanaAgregarVenta().ShowDialog();
             dtgTablaDatos.DataSource = conexion.BuscarPorEstadoVenta("").Tables[0];
 

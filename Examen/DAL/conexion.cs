@@ -987,6 +987,46 @@ namespace DAL
             }
         }
 
+        public Consumidor BuscarPorIdConsumidor(int IdConsumidor)
+        {
+            try
+            {
+                _connection = new SqlConnection(StringConexion);
+                _connection.Open();
+                _command = new SqlCommand();
+                _command.Connection = _connection;
+
+                _command.CommandType = CommandType.StoredProcedure;
+                _command.CommandText = "[Sp_Most_IDConsumidor]";
+                _command.Parameters.AddWithValue("@IDConsumidor", IdConsumidor);
+                _reader = _command.ExecuteReader();
+
+                Consumidor temp = null;
+
+                if (_reader.Read())
+                {
+                    temp = new Consumidor();
+                    temp.IdConsumidor = int.Parse(_reader.GetValue(0).ToString());
+                    temp.NombreCompleto = _reader.GetValue(1).ToString();
+                    temp.telefono = _reader.GetValue(2).ToString();
+                    temp.CorreoElectronico = _reader.GetValue(3).ToString();
+                    temp.FechaRegistro = DateTime.Parse(_reader.GetValue(4).ToString());
+                    temp.FrecuenciaCompra = _reader.GetValue(5).ToString();
+                    temp.PuntosFidelidad = int.Parse(_reader.GetValue(6).ToString());
+                    temp.Direccion = _reader.GetValue(7).ToString();
+                }
+
+                _connection.Close();
+                _connection.Dispose();
+                _command.Dispose();
+
+                return temp;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 
 

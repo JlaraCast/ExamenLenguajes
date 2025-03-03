@@ -43,7 +43,7 @@ namespace ExamenGrupo5
             this.txtNombre.Text = _cosmetico.Nombre;
             this.txtMarca.Text = _cosmetico.Marca;
             this.spPrecio.Value = (decimal)_cosmetico.PrecioUnitario;
-            this.spPrecio.Value = _cosmetico.StockDisponible;
+            this.spStock.Value = _cosmetico.StockDisponible;
             this.dtpFecha.Value = _cosmetico.FechaVencimiento;
             this.cbCategoria.SelectedItem = _cosmetico.Categoria;
             this.cbEstado.SelectedItem = _cosmetico.EstadoProducto;
@@ -65,9 +65,11 @@ namespace ExamenGrupo5
 
         }
 
+
+
         private void btnAgregar(object sender, EventArgs e)
         {
-            if (edita=true)
+            if (edita != true)
             {
                 try
                 {
@@ -78,11 +80,7 @@ namespace ExamenGrupo5
                     {
                         throw new Exception("cosmestico ya ha sido registrado, intente con otro cosmetico");
 
-                    }
 
-                    if (string.IsNullOrWhiteSpace(txtNombre.Text))
-                    {
-                        mensajesError.Add("El campo de Nombre del producto no puede quedar vacio.");
                     }
 
                     if (string.IsNullOrWhiteSpace(txtMarca.Text))
@@ -159,9 +157,15 @@ namespace ExamenGrupo5
                     List<string> mensajesError = new List<string>();
 
                     Cosmetico cosmetico = _conexion.BuscarPorNombreCosmetico(txtNombre.Text.Trim());
-                    if (cosmetico != null && cosmetico.IDCosmetico !=_cosmetico.IDCosmetico)
+
+                    if (!cosmetico.Nombre.Equals(txtNombre.Text.Trim()))
                     {
-                        throw new Exception("cosmestico ya ha sido registrado, intente con otro cosmetico");
+
+                        mensajesError.Add("cosmetico no ha sido registrado, intente con otro cosmetico");
+                    }
+                    if (cosmetico == null || cosmetico.IDCosmetico != _cosmetico.IDCosmetico)
+                    {
+                        mensajesError.Add("cosmetico no ha sido registrado, intente con otro cosmetico");
                     }
 
                     if (string.IsNullOrWhiteSpace(txtNombre.Text))
@@ -209,8 +213,9 @@ namespace ExamenGrupo5
                         throw new Exception(string.Join("\n", mensajesError));
                     }
 
-                    this._cosmetico = new Cosmetico
+                    Cosmetico cos = new Cosmetico
                     {
+                        IDCosmetico = cosmetico.IDCosmetico,
                         Nombre = txtNombre.Text.Trim(),
                         Marca = txtMarca.Text.Trim(),
                         PrecioUnitario = (double)spPrecio.Value,
@@ -222,8 +227,8 @@ namespace ExamenGrupo5
 
                     };
 
-                    _conexion.ModificarCosmetico(this._cosmetico);
-                    MessageBox.Show("Guardado correctamente",
+                    _conexion.ModificarCosmetico(cos);
+                    MessageBox.Show("modificado correctamente",
                         "information",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);

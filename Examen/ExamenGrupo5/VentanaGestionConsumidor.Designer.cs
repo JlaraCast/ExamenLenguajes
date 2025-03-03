@@ -63,7 +63,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(699, 1110);
+            this.panel1.Size = new System.Drawing.Size(621, 888);
             this.panel1.TabIndex = 6;
             // 
             // groupBox1
@@ -73,11 +73,11 @@
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Snow;
-            this.groupBox1.Location = new System.Drawing.Point(14, 2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 2);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(632, 1092);
+            this.groupBox1.Size = new System.Drawing.Size(562, 874);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cosumidor";
@@ -102,10 +102,10 @@
             this.panel2.Controls.Add(this.txt_Telefono);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.Label);
-            this.panel2.Location = new System.Drawing.Point(25, 49);
+            this.panel2.Location = new System.Drawing.Point(22, 39);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(596, 1028);
+            this.panel2.Size = new System.Drawing.Size(530, 822);
             this.panel2.TabIndex = 7;
             // 
             // txt_Direccion
@@ -113,20 +113,20 @@
             this.txt_Direccion.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.txt_Direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Direccion.ForeColor = System.Drawing.Color.Snow;
-            this.txt_Direccion.Location = new System.Drawing.Point(27, 746);
+            this.txt_Direccion.Location = new System.Drawing.Point(24, 597);
             this.txt_Direccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Direccion.Name = "txt_Direccion";
-            this.txt_Direccion.Size = new System.Drawing.Size(560, 39);
+            this.txt_Direccion.Size = new System.Drawing.Size(498, 34);
             this.txt_Direccion.TabIndex = 42;
             this.txt_Direccion.Text = "Direccion";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ExamenGrupo5.Properties.Resources.icons8_logout_48;
-            this.pictureBox1.Location = new System.Drawing.Point(505, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(449, 5);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(57, 45);
+            this.pictureBox1.Size = new System.Drawing.Size(51, 36);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
@@ -139,10 +139,10 @@
             this.dateTimePickerFechaVencimiento.CalendarTitleBackColor = System.Drawing.Color.Snow;
             this.dateTimePickerFechaVencimiento.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.dateTimePickerFechaVencimiento.Enabled = false;
-            this.dateTimePickerFechaVencimiento.Location = new System.Drawing.Point(32, 488);
+            this.dateTimePickerFechaVencimiento.Location = new System.Drawing.Point(28, 390);
             this.dateTimePickerFechaVencimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerFechaVencimiento.Name = "dateTimePickerFechaVencimiento";
-            this.dateTimePickerFechaVencimiento.Size = new System.Drawing.Size(548, 39);
+            this.dateTimePickerFechaVencimiento.Size = new System.Drawing.Size(488, 34);
             this.dateTimePickerFechaVencimiento.TabIndex = 33;
             // 
             // label_Estado
@@ -150,9 +150,9 @@
             this.label_Estado.AutoSize = true;
             this.label_Estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Estado.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label_Estado.Location = new System.Drawing.Point(28, 452);
+            this.label_Estado.Location = new System.Drawing.Point(25, 362);
             this.label_Estado.Name = "label_Estado";
-            this.label_Estado.Size = new System.Drawing.Size(262, 32);
+            this.label_Estado.Size = new System.Drawing.Size(228, 29);
             this.label_Estado.TabIndex = 29;
             this.label_Estado.Text = "Fecha de Registro";
             this.label_Estado.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -162,10 +162,10 @@
             this.txt_Correo.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.txt_Correo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Correo.ForeColor = System.Drawing.Color.Snow;
-            this.txt_Correo.Location = new System.Drawing.Point(29, 368);
+            this.txt_Correo.Location = new System.Drawing.Point(26, 294);
             this.txt_Correo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Correo.Name = "txt_Correo";
-            this.txt_Correo.Size = new System.Drawing.Size(560, 39);
+            this.txt_Correo.Size = new System.Drawing.Size(498, 34);
             this.txt_Correo.TabIndex = 37;
             this.txt_Correo.Text = "Correo electronico";
             // 
@@ -174,9 +174,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label6.Location = new System.Drawing.Point(27, 314);
+            this.label6.Location = new System.Drawing.Point(24, 251);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(264, 32);
+            this.label6.Size = new System.Drawing.Size(231, 29);
             this.label6.TabIndex = 38;
             this.label6.Text = "Correo electronico";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -187,10 +187,10 @@
             this.txt_Id.Enabled = false;
             this.txt_Id.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Id.ForeColor = System.Drawing.Color.Snow;
-            this.txt_Id.Location = new System.Drawing.Point(32, 62);
+            this.txt_Id.Location = new System.Drawing.Point(28, 50);
             this.txt_Id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Id.Name = "txt_Id";
-            this.txt_Id.Size = new System.Drawing.Size(560, 39);
+            this.txt_Id.Size = new System.Drawing.Size(498, 34);
             this.txt_Id.TabIndex = 40;
             this.txt_Id.TextChanged += new System.EventHandler(this.txt_Id_TextChanged);
             // 
@@ -199,9 +199,9 @@
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbID.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.lbID.Location = new System.Drawing.Point(29, 19);
+            this.lbID.Location = new System.Drawing.Point(26, 15);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(264, 32);
+            this.lbID.Size = new System.Drawing.Size(230, 29);
             this.lbID.TabIndex = 39;
             this.lbID.Text = "ID del Consumidor";
             this.lbID.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -211,9 +211,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label5.Location = new System.Drawing.Point(31, 695);
+            this.label5.Location = new System.Drawing.Point(28, 556);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 32);
+            this.label5.Size = new System.Drawing.Size(124, 29);
             this.label5.TabIndex = 36;
             this.label5.Text = "Direccion";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -222,10 +222,15 @@
             // 
             this.numericUpDownFidelidad.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.numericUpDownFidelidad.ForeColor = System.Drawing.Color.Snow;
-            this.numericUpDownFidelidad.Location = new System.Drawing.Point(34, 620);
+            this.numericUpDownFidelidad.Location = new System.Drawing.Point(30, 496);
             this.numericUpDownFidelidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numericUpDownFidelidad.Maximum = new decimal(new int[] {
+            -1981284352,
+            -1966660860,
+            0,
+            0});
             this.numericUpDownFidelidad.Name = "numericUpDownFidelidad";
-            this.numericUpDownFidelidad.Size = new System.Drawing.Size(557, 39);
+            this.numericUpDownFidelidad.Size = new System.Drawing.Size(495, 34);
             this.numericUpDownFidelidad.TabIndex = 32;
             // 
             // label_Clave
@@ -233,9 +238,9 @@
             this.label_Clave.AutoSize = true;
             this.label_Clave.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Clave.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label_Clave.Location = new System.Drawing.Point(21, 585);
+            this.label_Clave.Location = new System.Drawing.Point(19, 468);
             this.label_Clave.Name = "label_Clave";
-            this.label_Clave.Size = new System.Drawing.Size(235, 32);
+            this.label_Clave.Size = new System.Drawing.Size(202, 29);
             this.label_Clave.TabIndex = 26;
             this.label_Clave.Text = "Puntos fidelidad";
             this.label_Clave.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -248,10 +253,10 @@
             this.btn_Aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Aceptar.ForeColor = System.Drawing.Color.Snow;
             this.btn_Aceptar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_Aceptar.Location = new System.Drawing.Point(16, 873);
+            this.btn_Aceptar.Location = new System.Drawing.Point(14, 698);
             this.btn_Aceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Aceptar.Name = "btn_Aceptar";
-            this.btn_Aceptar.Size = new System.Drawing.Size(180, 52);
+            this.btn_Aceptar.Size = new System.Drawing.Size(160, 42);
             this.btn_Aceptar.TabIndex = 25;
             this.btn_Aceptar.Text = "Aceptar";
             this.btn_Aceptar.UseVisualStyleBackColor = false;
@@ -262,10 +267,10 @@
             this.txt_Nombre.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.txt_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Nombre.ForeColor = System.Drawing.Color.Snow;
-            this.txt_Nombre.Location = new System.Drawing.Point(32, 161);
+            this.txt_Nombre.Location = new System.Drawing.Point(28, 129);
             this.txt_Nombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(560, 39);
+            this.txt_Nombre.Size = new System.Drawing.Size(498, 34);
             this.txt_Nombre.TabIndex = 21;
             this.txt_Nombre.Text = "Nombre";
             // 
@@ -277,10 +282,10 @@
             this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancelar.ForeColor = System.Drawing.Color.Snow;
             this.btn_Cancelar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_Cancelar.Location = new System.Drawing.Point(384, 873);
+            this.btn_Cancelar.Location = new System.Drawing.Point(341, 698);
             this.btn_Cancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(180, 52);
+            this.btn_Cancelar.Size = new System.Drawing.Size(160, 42);
             this.btn_Cancelar.TabIndex = 16;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = false;
@@ -290,10 +295,10 @@
             this.txt_Telefono.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.txt_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Telefono.ForeColor = System.Drawing.Color.Snow;
-            this.txt_Telefono.Location = new System.Drawing.Point(29, 245);
+            this.txt_Telefono.Location = new System.Drawing.Point(26, 196);
             this.txt_Telefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Telefono.Name = "txt_Telefono";
-            this.txt_Telefono.Size = new System.Drawing.Size(560, 39);
+            this.txt_Telefono.Size = new System.Drawing.Size(498, 34);
             this.txt_Telefono.TabIndex = 11;
             this.txt_Telefono.Text = "Telefono";
             // 
@@ -302,9 +307,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label2.Location = new System.Drawing.Point(29, 202);
+            this.label2.Location = new System.Drawing.Point(26, 162);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 32);
+            this.label2.Size = new System.Drawing.Size(118, 29);
             this.label2.TabIndex = 10;
             this.label2.Text = "Telefono";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -314,9 +319,9 @@
             this.Label.AutoSize = true;
             this.Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.Label.Location = new System.Drawing.Point(26, 115);
+            this.Label.Location = new System.Drawing.Point(23, 92);
             this.Label.Name = "Label";
-            this.Label.Size = new System.Drawing.Size(335, 32);
+            this.Label.Size = new System.Drawing.Size(294, 29);
             this.Label.TabIndex = 9;
             this.Label.Text = "Nombre del consumidor";
             this.Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -326,21 +331,20 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label1.Location = new System.Drawing.Point(18, 158);
+            this.label1.Location = new System.Drawing.Point(16, 126);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 38);
+            this.label1.Size = new System.Drawing.Size(0, 32);
             this.label1.TabIndex = 9;
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // VentanaGestionConsumidor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(713, 593);
+            this.ClientSize = new System.Drawing.Size(634, 474);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "VentanaGestionConsumidor";
             this.Text = "VentanaAddEditConsumidor";
             this.panel1.ResumeLayout(false);
