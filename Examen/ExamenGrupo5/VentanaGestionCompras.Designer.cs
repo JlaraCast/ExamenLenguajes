@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbIDCosmetico = new System.Windows.Forms.ComboBox();
             this.cbProveedor = new System.Windows.Forms.ComboBox();
             this.numericUpDownCantidad = new System.Windows.Forms.NumericUpDown();
             this.pb_salir = new System.Windows.Forms.PictureBox();
@@ -38,16 +39,15 @@
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpFechaCompra = new System.Windows.Forms.DateTimePicker();
+            this.spTotalCompra = new System.Windows.Forms.NumericUpDown();
             this.cbMetodoPago = new System.Windows.Forms.ComboBox();
             this.label_Estado = new System.Windows.Forms.Label();
             this.label_Clave = new System.Windows.Forms.Label();
             this.btn_Aceptar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.Label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.spTotalCompra = new System.Windows.Forms.NumericUpDown();
-            this.cbIDCosmetico = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -108,6 +108,31 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(596, 1028);
             this.panel2.TabIndex = 7;
+            // 
+            // cbIDCosmetico
+            // 
+            this.cbIDCosmetico.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.cbIDCosmetico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIDCosmetico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbIDCosmetico.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.cbIDCosmetico.ForeColor = System.Drawing.Color.Snow;
+            this.cbIDCosmetico.FormattingEnabled = true;
+            this.cbIDCosmetico.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.cbIDCosmetico.Items.AddRange(new object[] {
+            "Internacional",
+            "Nacional",
+            "Distribuidor ",
+            "Exclusivo",
+            "Mayorista",
+            "Minorista",
+            "Fabricante"});
+            this.cbIDCosmetico.Location = new System.Drawing.Point(27, 690);
+            this.cbIDCosmetico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbIDCosmetico.Name = "cbIDCosmetico";
+            this.cbIDCosmetico.Size = new System.Drawing.Size(548, 40);
+            this.cbIDCosmetico.TabIndex = 47;
+            this.cbIDCosmetico.SelectedIndexChanged += new System.EventHandler(this.numericUpDownCantidad_ValueChanged);
+            this.cbIDCosmetico.ValueMemberChanged += new System.EventHandler(this.numericUpDownCantidad_ValueChanged);
             // 
             // cbProveedor
             // 
@@ -216,6 +241,22 @@
             this.dtpFechaCompra.Size = new System.Drawing.Size(548, 39);
             this.dtpFechaCompra.TabIndex = 33;
             // 
+            // spTotalCompra
+            // 
+            this.spTotalCompra.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.spTotalCompra.Enabled = false;
+            this.spTotalCompra.ForeColor = System.Drawing.Color.Snow;
+            this.spTotalCompra.Location = new System.Drawing.Point(31, 796);
+            this.spTotalCompra.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
+            this.spTotalCompra.Name = "spTotalCompra";
+            this.spTotalCompra.Size = new System.Drawing.Size(556, 39);
+            this.spTotalCompra.TabIndex = 31;
+            this.spTotalCompra.Click += new System.EventHandler(this.numericUpDownCantidad_ValueChanged);
+            // 
             // cbMetodoPago
             // 
             this.cbMetodoPago.BackColor = System.Drawing.Color.DarkGoldenrod;
@@ -293,6 +334,19 @@
             this.label3.Text = "Método de pago";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label2.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(25, 752);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(233, 32);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Total de compra";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Label
             // 
             this.Label.AutoSize = true;
@@ -317,59 +371,6 @@
             this.label1.Size = new System.Drawing.Size(0, 38);
             this.label1.TabIndex = 9;
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label2.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(25, 752);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 32);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Total de compra";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // spTotalCompra
-            // 
-            this.spTotalCompra.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.spTotalCompra.Enabled = false;
-            this.spTotalCompra.ForeColor = System.Drawing.Color.Snow;
-            this.spTotalCompra.Location = new System.Drawing.Point(31, 796);
-            this.spTotalCompra.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
-            0});
-            this.spTotalCompra.Name = "spTotalCompra";
-            this.spTotalCompra.Size = new System.Drawing.Size(556, 39);
-            this.spTotalCompra.TabIndex = 31;
-            this.spTotalCompra.Click += new System.EventHandler(this.numericUpDownCantidad_ValueChanged);
-            // 
-            // cbIDCosmetico
-            // 
-            this.cbIDCosmetico.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.cbIDCosmetico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbIDCosmetico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbIDCosmetico.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.cbIDCosmetico.ForeColor = System.Drawing.Color.Snow;
-            this.cbIDCosmetico.FormattingEnabled = true;
-            this.cbIDCosmetico.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.cbIDCosmetico.Items.AddRange(new object[] {
-            "Internacional",
-            "Nacional",
-            "Distribuidor ",
-            "Exclusivo",
-            "Mayorista",
-            "Minorista",
-            "Fabricante"});
-            this.cbIDCosmetico.Location = new System.Drawing.Point(27, 690);
-            this.cbIDCosmetico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbIDCosmetico.Name = "cbIDCosmetico";
-            this.cbIDCosmetico.Size = new System.Drawing.Size(548, 40);
-            this.cbIDCosmetico.TabIndex = 47;
-            this.cbIDCosmetico.ValueMemberChanged += new System.EventHandler(this.numericUpDownCantidad_ValueChanged);
             // 
             // VentanaGestionCompras
             // 

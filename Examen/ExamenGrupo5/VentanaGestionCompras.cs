@@ -164,10 +164,10 @@ namespace ExamenGrupo5
 
         private void numericUpDownCantidad_ValueChanged(object sender, EventArgs e)
         {
-            if (cbIDCosmetico.SelectedValue != null) // Verificar que haya un cosmético seleccionado
+            if (cbIDCosmetico.SelectedValue != null && int.TryParse(cbIDCosmetico.SelectedValue.ToString(), out int idCosmetico))
             {
                 // Buscar el cosmético por ID
-                Cosmetico cosmetico = conexion.BuscarPorIdCosmetico(int.Parse(cbIDCosmetico.SelectedValue.ToString()));
+                Cosmetico cosmetico = conexion.BuscarPorIdCosmetico(idCosmetico);
 
                 // Verificar si el cosmético existe
                 if (cosmetico == null)
@@ -181,6 +181,12 @@ namespace ExamenGrupo5
 
                 // Calcular el total sin aplicar descuentos
                 double totalCompra = cosmetico.PrecioUnitario * cantidadComprada;
+
+                // Aplicar el 5% de descuento si se compran más de 100 unidades
+                if (cantidadComprada > 100)
+                {
+                    totalCompra *= 0.95;
+                }
 
                 // Verificar que el valor calculado no exceda el rango del NumericUpDown
                 if (totalCompra > (double)spTotalCompra.Maximum)
