@@ -15,13 +15,20 @@ namespace ExamenGrupo5
         {
             InitializeComponent();
             conexion = new Conexion(ConfigurationManager.ConnectionStrings["StringConexion"].ConnectionString);
-            dtgDatos.DataSource = conexion.BuscarPorEstadoCompra(txt_Estado_compra.Text).Tables[0];
+            ActualizarTabla();
             ShowToolTipOnMouseUp(pictureBox1, "Actualizar");
+        }
+
+        private void ActualizarTabla()
+        {
+            dtgDatos.DataSource = conexion.BuscarPorEstadoCompra(txt_Estado_compra.Text).Tables[0];
         }
 
         private void Agregar_Click(object sender, EventArgs e)
         {
-            new VentanaGestionCompras().ShowDialog();
+            VentanaGestionCompras ventana = new VentanaGestionCompras();
+            ventana.FormClosed += (s, args) => ActualizarTabla();
+            ventana.ShowDialog();
         }
 
         private void Editar_Click(object sender, EventArgs e)
@@ -29,11 +36,28 @@ namespace ExamenGrupo5
             if (dtgDatos.SelectedRows.Count > 0)
             {
                 int idCompra = Convert.ToInt32(dtgDatos.SelectedRows[0].Cells["IDCompra"].Value);
-                Compra compra = conexion.MostrarIDCompra(idCompra);
+                Compra compraPrevia = conexion.MostrarIDCompra(idCompra); // 🔹 Obtener compra previa
 
-                if (compra != null)
+                if (compraPrevia != null)
                 {
-                    new VentanaGestionCompras(compra).ShowDialog();
+                    VentanaGestionCompras ventanaEdicion = new VentanaGestionCompras(compraPrevia);
+                    ventanaEdicion.ShowDialog();
+
+                    // 🔹 Después de la edición, obtener la compra actualizada
+                    Compra compraActualizada = conexion.MostrarIDCompra(idCompra);
+
+                    if (compraActualizada != null && compraActualizada.EstadoCompra == "Completada")
+                    {
+                        // 🔹 Obtener el cosmético relacionado
+                        Cosmetico cosmetico = conexion.BuscarPorIdCosmetico(compraActualizada.IDCosmeticos);
+
+                        // 🔹 Calcular diferencia de stock
+                        int diferenciaStock = compraActualizada.CantidadProductos - compraPrevia.CantidadProductos;
+
+                        // 🔹 Aplicar ajuste al stock
+                        cosmetico.StockDisponible += diferenciaStock;
+                        conexion.ModificarCosmetico(cosmetico);
+                    }
                 }
                 else
                 {
@@ -46,9 +70,10 @@ namespace ExamenGrupo5
             }
         }
 
+
         private void BuscarCompraPorEstado(object sender, EventArgs e)
         {
-            dtgDatos.DataSource = conexion.BuscarPorEstadoCompra(txt_Estado_compra.Text).Tables[0];
+            ActualizarTabla();
         }
 
         private void Eliminar_Click(object sender, EventArgs e)
@@ -60,7 +85,6 @@ namespace ExamenGrupo5
 
                 if (compra != null)
                 {
-                    // Confirmación antes de eliminar
                     DialogResult confirmacion = MessageBox.Show(
                         "¿Está seguro de que desea eliminar esta compra?",
                         "Confirmación de eliminación",
@@ -70,7 +94,7 @@ namespace ExamenGrupo5
                     if (confirmacion == DialogResult.Yes)
                     {
                         conexion.EliminarCompra(compra.IDCompra);
-                        dtgDatos.DataSource = conexion.BuscarPorEstadoCompra(txt_Estado_compra.Text).Tables[0];
+                        ActualizarTabla();
                         MessageBox.Show("Compra eliminada correctamente.", "Eliminación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -85,7 +109,6 @@ namespace ExamenGrupo5
             }
         }
 
-
         private void btn_Salir_Click(object sender, EventArgs e)
         {
             Close();
@@ -99,12 +122,7 @@ namespace ExamenGrupo5
         private void ShowToolTipOnMouseUp(PictureBox pictureBox, string message)
         {
             ToolTip toolTip = new ToolTip();
-
-            pictureBox.MouseUp += (sender, e) =>
-            {
-                toolTip.SetToolTip(pictureBox, message);
-            };
+            pictureBox.MouseUp += (sender, e) => toolTip.SetToolTip(pictureBox, message);
         }
-
     }
 }
