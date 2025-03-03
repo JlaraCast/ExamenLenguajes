@@ -77,6 +77,12 @@ namespace ExamenGrupo5
             double modificarPuntos = 0;
             try
             {
+                if (dtpFechaVenta.MinDate < DateTime.Today)
+                {
+                    MessageBox.Show("No puedes realizar una venta en un dia pasado al actual.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (cbIdCosmetico.SelectedValue == null)
                 {
                     MessageBox.Show("Debe seleccionar un cosmético.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -94,9 +100,9 @@ namespace ExamenGrupo5
                     MessageBox.Show("Debe seleccionar un método de pago.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                
 
-                        if (cbEstadoVentas.SelectedItem == null)
+
+                if (cbEstadoVentas.SelectedItem == null)
                 {
                     MessageBox.Show("Debe seleccionar un estado para la venta.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -106,7 +112,7 @@ namespace ExamenGrupo5
                 Cosmetico cosmetico = _conexion.BuscarPorIdCosmetico(int.Parse(cbIdCosmetico.SelectedValue.ToString()));
                 Consumidor consumidor = _conexion.BuscarPorIdConsumidor(int.Parse(cbIdConsumidor.SelectedValue.ToString()));
 
-               
+
                 // ⚠ Validación de existencia
                 if (cosmetico == null)
                 {
@@ -130,6 +136,8 @@ namespace ExamenGrupo5
                     return;
                 }
 
+               
+
                 // ✅ 4️⃣ Calcular total de la venta
                 double totalVenta = cosmetico.PrecioUnitario * cantidadVendida;
 
@@ -147,8 +155,6 @@ namespace ExamenGrupo5
 
                 }
 
-                
-
                 //esta es la cuarta consideracion logica.
                 if (cantidadVendida > 100)
                 {
@@ -164,41 +170,33 @@ namespace ExamenGrupo5
 
 
                 //------------------------------------------------------------------------------------------------------------------------------------
-                // (10,000 puntos = 1% de
+
+                //esta es la tercera consideracion logica.
                 //  descuento). Este sistema de recompensas incentiva a los consumidores a comprar más
                 if (cbMetodoPago.SelectedItem == "Puntos")
                 {
-                    if (consumidor.PuntosFidelidad > (int)pkPuntosUsados.Value)
-                    {
-                        modificarPuntos = totalVenta;
-                        consumidor.PuntosFidelidad -= (int)modificarPuntos; //Aqui se resta los puntos que esta gastando el consumidor
-
-                        // Definimos la relación entre puntos y descuento
-                        int puntosPorPorcentaje = 10000;
-                        double porcentajeDescuento = 0.01; // 1% de descuento por cada 10,000 puntos
-
-                            // Calculamos el descuento
-                            double descuento = ((int)pkPuntosUsados.Value / puntosPorPorcentaje) * porcentajeDescuento;
-
-                            // Aseguramos que el descuento no sea mayor al 100%
-                        if(descuento > 100)
-                        {
-                            MessageBox.Show("El descuento no debe de ser mayor a 100%.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
-                        }//fin del if
-                        totalVenta = totalVenta * (100 - descuento) / 100;
-
-                    }
-                    else
+                    // Verificar si el cliente tiene suficientes puntos
+                    if (consumidor.PuntosFidelidad < (int)pkPuntosUsados.Value)
                     {
                         MessageBox.Show("El producto que desea comprar supera a sus puntos, no se puede realizar la venta.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
+
+                    // Restar los puntos usados
+                    consumidor.PuntosFidelidad -= (int)pkPuntosUsados.Value;
+
+                    // Calcular el descuento (10,000 puntos = 1% de descuento)
+                    double descuento = Math.Min((int)pkPuntosUsados.Value / 10000.0, 100); // Máximo 100% de descuento
+
+                    // Aplicar el descuento al total de la venta
+
+                    MessageBox.Show($"Descuento.{descuento}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    totalVenta = totalVenta * (100 - descuento) / 100;
                 }
                 else
                 {
-                    modificarPuntos = totalVenta / 100;
-                    consumidor.PuntosFidelidad += (int)modificarPuntos;
+                    // Si no usa puntos, acumular puntos basados en el total de la venta
+                    consumidor.PuntosFidelidad += (int)(totalVenta / 100);
                 }
 
                 MessageBox.Show($"Descuento.{totalVenta}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -208,8 +206,6 @@ namespace ExamenGrupo5
                 {
                     return;
                 }
-
-
 
                 // ✅ 6️⃣ Crear la venta
                 var venta = new Venta
@@ -230,11 +226,6 @@ namespace ExamenGrupo5
 
                 //lo comente para no guaradar la venta de manera innecesaria
                 ///////////////////////////////////////////////////////////////   // _conexion.GuardarVentas(venta);
-
-                
-               
-
-
 
                 consumidor.FrecuenciaCompra = obtenerFrecuenciaCompra();
 
@@ -378,6 +369,31 @@ namespace ExamenGrupo5
                     EstadoVenta = cbEstadoVentas.SelectedItem.ToString()
                 };
 
+                // • Restricción de Cancelación de Ventas: Las ventas solo pueden ser 
+                // canceladas dentro de las primeras 24 horas después de haber sido registradas
+                // y sólo si están en estado "Pendiente". Las ventas ya completadas no pueden ser
+                // canceladas para evitar problemas con el inventario y la facturación.
+
+                switch (venta.EstadoVenta)
+                {
+                    case "Pendiente":
+                        TimeSpan diferencia = DateTime.Now - venta.FechaVenta;
+                        if (diferencia.TotalHours > 24)
+                        {
+                            MessageBox.Show("No se puede cancelar una venta después de 24 horas.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        break;
+
+                    case "Completada":
+                        return;
+                        break;
+                }
+
+
+
+
+
                 // ✅ 7️⃣ Actualizar la venta en la base de datos
                 _conexion.ModificarVenta(venta);
 
@@ -463,13 +479,15 @@ namespace ExamenGrupo5
             if (edita == false)
             {
                 GuardarDatos();
+                this.Close();
             }
             else
             {
                 ActualizarDatos();
+                this.Close();
             }
             
-            this.Close();
+            
 
 
         }
