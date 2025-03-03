@@ -59,6 +59,30 @@
     <Compile Include="EditarCompras.Designer.cs">
       <DependentUpon>EditarCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRepConsumidores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRepConsumidores.Designer.cs">
+      <DependentUpon>FrmRepConsumidores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRepCosmeticos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRepCosmeticos.Designer.cs">
+      <DependentUpon>FrmRepCosmeticos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteCompra.Designer.cs">
+      <DependentUpon>FrmReporteCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRepVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRepVentas.Designer.cs">
+      <DependentUpon>FrmRepVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +91,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\rp_Catalogo_Compras.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_Catalogo_Compras.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rp_Catalogo_Consumidores.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_Catalogo_Consumidores.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rp_Catalogo_Cosmetico.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_Catalogo_Cosmetico.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rp_Catalogo_ventas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_Catalogo_ventas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="VentanaAgregarCosmetico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +166,18 @@
     <EmbeddedResource Include="EditarCompras.resx">
       <DependentUpon>EditarCompras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRepConsumidores.resx">
+      <DependentUpon>FrmRepConsumidores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRepCosmeticos.resx">
+      <DependentUpon>FrmRepCosmeticos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteCompra.resx">
+      <DependentUpon>FrmReporteCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRepVentas.resx">
+      <DependentUpon>FrmRepVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +191,22 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\rp_Catalogo_Compras.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_Catalogo_Compras.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rp_Catalogo_Consumidores.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_Catalogo_Consumidores.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rp_Catalogo_Cosmetico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_Catalogo_Cosmetico.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rp_Catalogo_ventas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_Catalogo_ventas.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaAgregarCosmetico.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>VentanaAgregarCosmetico1.Designer.cs</LastGenOutput>

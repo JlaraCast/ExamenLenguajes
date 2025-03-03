@@ -137,5 +137,10 @@ namespace ExamenGrupo5
             ToolTip toolTip = new ToolTip();
             pictureBox.MouseUp += (sender, e) => toolTip.SetToolTip(pictureBox, message);
         }
+
+        private void btn_Imprimir_Click_1(object sender, EventArgs e)
+        {
+            new FrmReporteCompra().ShowDialog();
+        }
     }
 }

@@ -215,7 +215,7 @@ namespace ExamenGrupo5
         {
             try
             {
-                // Implementar la lógica para mostrar el informe de cosméticos
+               new FrmRepCosmeticos().ShowDialog();
             }
             catch (Exception ex)
             {

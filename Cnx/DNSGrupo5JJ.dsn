@@ -1,0 +1,8 @@
+[ODBC]
+DRIVER=SQL Server
+UID=sa
+DATABASE=GestionCCVC
+WSID=DESKTOP-DPRL675
+APP=Sistema operativo Microsoft® Windows®
+SERVER=DESKTOP-DPRL675\SQLEXPRESS
+Description=DNS para crystalReports

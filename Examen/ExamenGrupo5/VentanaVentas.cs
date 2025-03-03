@@ -128,7 +128,7 @@ namespace ExamenGrupo5
 
         private void btn_Imprimir_Click(object sender, EventArgs e)
         {
-            // Implementar funcionalidad de impresión aquí
+           new FrmRepVentas().ShowDialog();
         }
 
         private void btnRefrescar(object sender, EventArgs e)

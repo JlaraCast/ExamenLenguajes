@@ -212,5 +212,10 @@ namespace ExamenGrupo5
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btn_Imprimir_Click_1(object sender, EventArgs e)
+        {
+            new FrmRepConsumidores().ShowDialog();
+        }
     }
 }
